@@ -1,3 +1,7 @@
 <h2><%= @organisation.name %></h2>
 
 <%= link_to "Edit Organisation", edit_organisation_path(@organisation) %>
+
+<%= form_tag organisation_path(@organisation.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@organisation.name}" %>
+<% end %>

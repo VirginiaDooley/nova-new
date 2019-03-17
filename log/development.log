@@ -671,3 +671,150 @@ Processing by OrganisationsController#show as HTML
 Completed 200 OK in 85ms (Views: 76.3ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/organisations/" for 127.0.0.1 at 2019-03-17 10:52:38 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.9ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (28.4ms)
+Completed 200 OK in 497ms (Views: 468.3ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/organisations/3" for 127.0.0.1 at 2019-03-17 10:52:42 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 74ms (Views: 57.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/organisations/3" for 127.0.0.1 at 2019-03-17 10:52:44 +0000
+Processing by OrganisationsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/L6Tt+/SN9433kHvn4R6nPaXz9bG49XbXnj2isWAiqpwL94ClzsHsq66eTCTYG6x64T9bjruJih0yj0B8lY9ag==", "commit"=>"Delete Nova New Opportunities", "id"=>"3"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[36mOrganisation Destroy (0.5ms)[0m  [1m[31mDELETE FROM "organisations" WHERE "organisations"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+Redirected to http://localhost:3000/organisations
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:52:44 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/4" for 127.0.0.1 at 2019-03-17 10:52:47 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 61ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/organisations/4" for 127.0.0.1 at 2019-03-17 10:52:48 +0000
+Processing by OrganisationsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kCHac/R4gISIOFxG0z6d+VL+zd/H2EL1TbK50jWOA83+npsVI38uXCrhWuEj11hgIJQi96oBx8Sx1iruMA+9aA==", "commit"=>"Delete Midaye Somali Development Organisation", "id"=>"4"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[36mOrganisation Destroy (2.0ms)[0m  [1m[31mDELETE FROM "organisations" WHERE "organisations"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+Redirected to http://localhost:3000/organisations
+Completed 302 Found in 9ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:52:48 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/5" for 127.0.0.1 at 2019-03-17 10:52:55 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 122ms (Views: 110.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/organisations/5" for 127.0.0.1 at 2019-03-17 10:52:57 +0000
+Processing by OrganisationsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UrkPmvDnTXpYYkXF3ewoVRPe9pt9SX5sJXez6QgstbObMHH7WAijSxTdMr+WmSwWMtWhQ6zhS+b0a7NoZc5+ig==", "commit"=>"Delete CAST", "id"=>"5"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[36mOrganisation Destroy (1.1ms)[0m  [1m[31mDELETE FROM "organisations" WHERE "organisations"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+Redirected to http://localhost:3000/organisations
+Completed 302 Found in 13ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:52:57 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 89ms (Views: 72.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:53:01 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/organisations/6" for 127.0.0.1 at 2019-03-17 10:53:03 +0000
+Processing by OrganisationsController#destroy as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PoHZRV8UNiOMDu82+YE/qFFf3kfrm6vPJsqJ53o4VzlHwbgX93qWA3L9QBkGSOU+4DaqFt8++42UhjEgqcxx4g==", "commit"=>"Delete Mums in Technology", "id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[36mOrganisation Destroy (1.2ms)[0m  [1m[31mDELETE FROM "organisations" WHERE "organisations"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/organisations_controller.rb:32
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:32
+Redirected to http://localhost:3000/organisations
+Completed 302 Found in 10ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:53:03 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
