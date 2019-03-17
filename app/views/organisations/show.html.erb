@@ -2,9 +2,20 @@
 
 <% @organisation.programmes.each do |p| %>
 <li>
-  <%= link_to p.title, programme_path(p) %>
+  <%= p.title %>
 </li>
 <% end %>
+
+<%= form_for ([@organisation, @programme]) do |f| %>
+  <%= f.label "Title" %>
+  <%= f.text_field :title %><p>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+
 
 <%= link_to "Edit Organisation", edit_organisation_path(@organisation) %>
 
