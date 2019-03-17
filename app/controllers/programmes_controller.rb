@@ -12,10 +12,10 @@ class ProgrammesController < ApplicationController
     @organisation = Organisation.find(params[:organisation_id])
     @programme = @organisation.programmes.build(programme_params)
     if @programme.save
-      redirect_to organisation_path(@organisation)
+      redirect_to programme_path(@programme)
     else
-      render: index
-    end 
+      render "organisations/show"
+    end
   end
 
   private
