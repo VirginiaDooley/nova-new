@@ -1,0 +1,7 @@
+<h2><%= @programme.name %></h2>
+
+<%= link_to "Edit Programme", edit_programme_path(@programme) %>
+
+<%= form_tag programme_path(@programme.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@programme.title}" %>
+<% end %>
