@@ -7,15 +7,10 @@
 <% end %>
 
 <%= form_for ([@organisation, @programme]) do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %><p>
-
+  <%= f.label "Programme Title" %>
+  <%= f.text_field :title, :placeholder => (@programme.errors.full_messages_for(:title).first) %><p>
   <%= f.submit %>
 <% end %>
-
-
-
-
 
 <%= link_to "Edit Organisation", edit_organisation_path(@organisation) %>
 
