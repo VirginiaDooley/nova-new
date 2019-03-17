@@ -21,7 +21,7 @@ class ProgrammesController < ApplicationController
   private
 
   def programme_params
-    params.require(:programme).permit(:title)
+    params.require(:programme).permit(:title, :organisation_id)
   end
 
 
