@@ -1,8 +1,0 @@
-<h2>Programmes</h2>
-  <% @programmes.each do |p| %>
-  <ul>
-    <li><%= link_to p.name, programme_path(p) %></li>
-  </ul>
-<% end %>
-
-<%= link_to "Create a New Programme", new_programme_path(@programme) %>

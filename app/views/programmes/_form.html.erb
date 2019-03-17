@@ -1,7 +1,0 @@
-<%= form_for @programme do |f| %>
-  <%= f.label "Title" %>
-  <%= f.text_field :title %><p>
-  <br><%= f.label "Choose Organisation" %><p>
-    <%= f.collection_check_boxes :organisation, Organisation.all, :id, :name %><p>
-  <%= f.submit %>
-<% end %>
