@@ -512,3 +512,162 @@ Processing by OrganisationsController#edit as HTML
 Completed 200 OK in 67ms (Views: 60.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:44:16 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 452ms (Views: 411.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/organisations/6/edit" for 127.0.0.1 at 2019-03-17 10:44:19 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:22
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (22.2ms)
+  Rendered organisations/edit.html.erb within layouts/application (442.0ms)
+Completed 500 Internal Server Error in 467ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007f87aff5a9e0>:0x007f87ad466388>):
+    1: <h2>Edit Organisation</h2>
+    2: <%= render 'form', organisation: @organisation %>
+    3: <%= f.submit "Update Organisation"%>
+  
+app/views/organisations/edit.html.erb:3:in `_app_views_organisations_edit_html_erb___3743843143314042303_70110352193200'
+Started GET "/organisations/6/edit" for 127.0.0.1 at 2019-03-17 10:45:23 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.7ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:22
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (2.3ms)
+  Rendered organisations/edit.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/_form.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/_form.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/organisations/_form.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/organisations/_form.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/organisations/edit.html.erb:2:in `_app_views_organisations_edit_html_erb___3743843143314042303_70110396831200'
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:45:27 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:45:28 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 49ms (Views: 42.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/organisations/6/edit" for 127.0.0.1 at 2019-03-17 10:45:29 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:22
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (3.5ms)
+  Rendered organisations/edit.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/_form.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/_form.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/organisations/_form.html.erb:6: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/organisations/_form.html.erb:8: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/organisations/edit.html.erb:2:in `_app_views_organisations_edit_html_erb___3743843143314042303_70110396849560'
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:47:34 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (1.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 176ms (Views: 144.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/organisations/6/edit" for 127.0.0.1 at 2019-03-17 10:47:38 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:22
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (11.4ms)
+  Rendered organisations/edit.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 104ms (Views: 94.4ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/organisations/6" for 127.0.0.1 at 2019-03-17 10:47:41 +0000
+Processing by OrganisationsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VTfKj8bM4Wu2m5Pompkt7B40A3cIPSOOkNUmOd0qztYya4daLS34T5LhyNcTskBFBmVr0UwWftq6WRS7oqGb9w==", "organisation"=>{"name"=>"Mums in Technology"}, "commit"=>"Update Organisation", "id"=>"6"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:26
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:27
+  [1m[36mOrganisation Update (1.3ms)[0m  [1m[33mUPDATE "organisations" SET "name" = ?, "updated_at" = ? WHERE "organisations"."id" = ?[0m  [["name", "Mums in Technology"], ["updated_at", "2019-03-17 10:47:41.777613"], ["id", 6]]
+  ↳ app/controllers/organisations_controller.rb:27
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:27
+Redirected to http://localhost:3000/organisations/6
+Completed 302 Found in 31ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:47:41 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 70ms (Views: 64.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/organisations/" for 127.0.0.1 at 2019-03-17 10:47:47 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 37ms (Views: 31.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-17 10:47:50 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (4.3ms)
+  Rendered organisations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 66ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organisations/2" for 127.0.0.1 at 2019-03-17 10:47:55 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 85ms (Views: 76.3ms | ActiveRecord: 0.3ms)
+
+
