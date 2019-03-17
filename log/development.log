@@ -395,3 +395,120 @@ Processing by OrganisationsController#edit as HTML
 Completed 200 OK in 74ms (Views: 66.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:34:12 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 367ms (Views: 348.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:34:15 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 37.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:34:23 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:34:24 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 67ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:34:49 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-17 10:34:50 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/new.html.erb within layouts/application (379.1ms)
+Completed 500 Internal Server Error in 399ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `organisation' for #<#<Class:0x007f8940765ae0>:0x007f8941456fb0>
+Did you mean?  @organisation):
+    1: <%= render 'form', organisation: organisation %>
+  
+app/views/organisations/new.html.erb:1:in `_app_views_organisations_new_html_erb___3575783076837147212_70113741159620'
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:35:19 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 57ms (Views: 49.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 10:35:21 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 86ms (Views: 79.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-17 10:35:23 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (49.0ms)
+  Rendered organisations/new.html.erb within layouts/application (57.4ms)
+Completed 200 OK in 122ms (Views: 110.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organisations" for 127.0.0.1 at 2019-03-17 10:35:31 +0000
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2KvhFOQ4YbpqvEjHgF/Zj1JUsJKa62AnG5VKGTGeDa6UfFMFMlvx3+tGL9wKFuEs8YwOIYoL5VOg6z3fsvZisQ==", "organisation"=>{"name"=>"Mums in Tech"}, "commit"=>"Create Organisation"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:16
+  [1m[36mOrganisation Create (1.2ms)[0m  [1m[32mINSERT INTO "organisations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mums in Tech"], ["created_at", "2019-03-17 10:35:31.387428"], ["updated_at", "2019-03-17 10:35:31.387428"]]
+  ↳ app/controllers/organisations_controller.rb:16
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:16
+Redirected to http://localhost:3000/organisations/6
+Completed 302 Found in 12ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/organisations/6" for 127.0.0.1 at 2019-03-17 10:35:31 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 82ms (Views: 68.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organisations/6/edit" for 127.0.0.1 at 2019-03-17 10:35:33 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 67ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
