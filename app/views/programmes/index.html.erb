@@ -1,8 +1,8 @@
-<h2>Organisations</h2>
-  <% @organisations.each do |org| %>
+<h2>Programmes</h2>
+  <% @programmes.each do |p| %>
   <ul>
-    <li><%= link_to org.name, organisation_path(org) %></li>
+    <li><%= link_to p.name, programme_path(p) %></li>
   </ul>
 <% end %>
 
-<%= link_to "Create a New Organisation", new_organisation_path(@organisation) %>
+<%= link_to "Create a New Programme", new_programme_path(@programme) %>
