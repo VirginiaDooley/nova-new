@@ -1782,3 +1782,32 @@ Processing by OrganisationsController#show as HTML
 Completed 200 OK in 54ms (Views: 41.3ms | ActiveRecord: 1.4ms)
 
 
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProgramme Load (1.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ? LIMIT ?[0m  [["organisation_id", 1], ["LIMIT", 11]]
+  [1m[36mProgramme Load (2.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ? LIMIT ?[0m  [["organisation_id", 1], ["LIMIT", 11]]
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ? LIMIT ?[0m  [["organisation_id", 1], ["LIMIT", 11]]
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ? AND "programmes"."id" = ? LIMIT ?[0m  [["organisation_id", 1], ["id", 1], ["LIMIT", 1]]
+Started GET "/organisations" for 127.0.0.1 at 2019-03-17 12:47:06 +0000
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 398ms (Views: 365.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 12:47:11 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.5ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 116ms (Views: 95.5ms | ActiveRecord: 1.9ms)
+
+
