@@ -2,7 +2,7 @@
 
 <% @organisation.programmes.each do |p| %>
 <li>
-  <%= p.title %>
+  <%= link_to p.title, programme_path(p) %>
 </li>
 <% end %>
 
