@@ -334,3 +334,64 @@ Processing by OrganisationsController#edit as HTML
 Completed 200 OK in 63ms (Views: 54.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 10:29:13 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 471ms (Views: 437.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-17 10:29:18 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/new.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  
+app/views/organisations/new.html.erb:8: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-17 10:29:27 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/new.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 95ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/organisations" for 127.0.0.1 at 2019-03-17 10:29:42 +0000
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MYf0nyEipeo74z7hiRBHsAjrT6GYcNvGqEhS+UKETBF1pKHEb+1OvyljfFw+Gf/XcSX7+roubADfnGGB/aTFNQ==", "organisation"=>{"name"=>"CAST"}, "commit"=>"Create Organisation"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:16
+  [1m[36mOrganisation Create (1.4ms)[0m  [1m[32mINSERT INTO "organisations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "CAST"], ["created_at", "2019-03-17 10:29:42.271612"], ["updated_at", "2019-03-17 10:29:42.271612"]]
+  ↳ app/controllers/organisations_controller.rb:16
+  [1m[35m (22.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:16
+Redirected to http://localhost:3000/organisations/5
+Completed 302 Found in 80ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/organisations/5" for 127.0.0.1 at 2019-03-17 10:29:42 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 109ms (Views: 83.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/5/edit" for 127.0.0.1 at 2019-03-17 10:29:46 +0000
+Processing by OrganisationsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  Rendering organisations/edit.html.erb within layouts/application
+  Rendered organisations/edit.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 74ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
