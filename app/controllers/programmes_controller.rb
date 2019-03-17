@@ -11,9 +11,11 @@ class ProgrammesController < ApplicationController
   def create
     @organisation = Organisation.find(params[:organisation_id])
     @programme = @organisation.programmes.build(programme_params)
-    @programme.save
-
-    redirect_to organisation_path(@organisation)
+    if @programme.save
+      redirect_to organisation_path(@organisation)
+    else
+      render: index
+    end 
   end
 
   private
