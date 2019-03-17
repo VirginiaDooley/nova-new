@@ -3468,3 +3468,425 @@ Processing by ProgrammesController#create as HTML
 Completed 200 OK in 52ms (Views: 45.2ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:46:42 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+Completed 406 Not Acceptable in 146ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ProgrammesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:46:51 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+Completed 406 Not Acceptable in 143ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ProgrammesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 17:46:55 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 404ms (Views: 351.1ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:46:59 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tmRwMfu3TLvj7aSO+SqxDIMwWULT31U+ZnyKZ6H81FnyRyVqtXin7vFt5jNOIwlr+v7tGfGB4vgRqLkfHtxdfQ==", "programme"=>{"title"=>"STEM"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (1.3ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "STEM"], ["organisation_id", 1], ["created_at", "2019-03-17 17:46:59.890842"], ["updated_at", "2019-03-17 17:46:59.890842"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 3.4ms)
+
+
+  
+NoMethodError (undefined method `programme_path' for #<ProgrammesController:0x007fac0ac01a80>
+Did you mean?  programme_params):
+  
+app/controllers/programmes_controller.rb:15:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:48:15 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tmRwMfu3TLvj7aSO+SqxDIMwWULT31U+ZnyKZ6H81FnyRyVqtXin7vFt5jNOIwlr+v7tGfGB4vgRqLkfHtxdfQ==", "programme"=>{"title"=>"STEM"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.9ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (1.2ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "STEM"], ["organisation_id", 1], ["created_at", "2019-03-17 17:48:15.300307"], ["updated_at", "2019-03-17 17:48:15.300307"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `programme_path' for #<ProgrammesController:0x007fac0f459d00>
+Did you mean?  programme_params):
+  
+app/controllers/programmes_controller.rb:15:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:48:31 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tmRwMfu3TLvj7aSO+SqxDIMwWULT31U+ZnyKZ6H81FnyRyVqtXin7vFt5jNOIwlr+v7tGfGB4vgRqLkfHtxdfQ==", "programme"=>{"title"=>"STEM"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (0.6ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "STEM"], ["organisation_id", 1], ["created_at", "2019-03-17 17:48:31.117566"], ["updated_at", "2019-03-17 17:48:31.117566"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 6.4ms)
+
+
+  
+NoMethodError (undefined method `programme_path' for #<ProgrammesController:0x007fac11268580>
+Did you mean?  programme_params):
+  
+app/controllers/programmes_controller.rb:15:in `create'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-17 17:48:36 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 46.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 17:48:48 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 52ms (Views: 44.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:49:02 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+xJMq3Ev1qZ1T3vYDnaeZo8t3yng4bnig0O+Yh9OyGjzxxp4wtUD4tVf1LXMGIe4/IDJ4XdMSH92T2BN12yBQ==", "programme"=>{"title"=>"Heroes"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (0.8ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Heroes"], ["organisation_id", 1], ["created_at", "2019-03-17 17:49:02.967111"], ["updated_at", "2019-03-17 17:49:02.967111"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `programme_path' for #<ProgrammesController:0x007fac1126b690>
+Did you mean?  programme_params):
+  
+app/controllers/programmes_controller.rb:15:in `create'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:51:33 +0000
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+Completed 406 Not Acceptable in 367ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (ProgrammesController#index is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2.1) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2.1) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2.1) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2.1) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2.1) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2.1) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-17 17:51:48 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 369ms (Views: 343.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:51:54 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+xJMq3Ev1qZ1T3vYDnaeZo8t3yng4bnig0O+Yh9OyGjzxxp4wtUD4tVf1LXMGIe4/IDJ4XdMSH92T2BN12yBQ==", "programme"=>{"title"=>"Heroes"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (1.2ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Heroes"], ["organisation_id", 1], ["created_at", "2019-03-17 17:51:54.303707"], ["updated_at", "2019-03-17 17:51:54.303707"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: 10, title: "Heroes", organisation_id: 1, created_at: "2019-03-17 17:51:54", updated_at: "2019-03-17 17:51:54">}, missing required keys: [:id]):
+  
+app/controllers/programmes_controller.rb:15:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 17:52:25 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5+xJMq3Ev1qZ1T3vYDnaeZo8t3yng4bnig0O+Yh9OyGjzxxp4wtUD4tVf1LXMGIe4/IDJ4XdMSH92T2BN12yBQ==", "programme"=>{"title"=>"Heroes"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (1.6ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Heroes"], ["organisation_id", 1], ["created_at", "2019-03-17 17:52:25.526455"], ["updated_at", "2019-03-17 17:52:25.526455"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Redirected to http://localhost:3000/organisations/11/programmes/1
+Completed 302 Found in 54ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/organisations/11/programmes/1" for 127.0.0.1 at 2019-03-17 17:52:25 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"11", "id"=>"1"}
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 63.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 17:52:33 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 67ms (Views: 59.0ms | ActiveRecord: 0.6ms)
+
+
