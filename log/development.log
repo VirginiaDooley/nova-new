@@ -2002,3 +2002,761 @@ Processing by OrganisationsController#show as HTML
 Completed 200 OK in 171ms (Views: 162.7ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-03-17 13:12:27 +0000
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 620ms (Views: 588.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:12:30 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.8ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (354.0ms)
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `programme_path' for #<#<Class:0x007fa69625f898>:0x007fa695aa0080>):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, programme_path(p) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176726123860'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176726123860'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:12:59 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (11.5ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :id=>"1", :organisation_id=>#<Programme id: nil, title: nil, organisation_id: 1, created_at: nil, updated_at: nil>}, possible unmatched constraints: [:organisation_id]):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, organisation_programme_path(p) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176764708560'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176764708560'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:14:27 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.8ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 3.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :id=>"1", :organisation_id=>#<Programme id: nil, title: nil, organisation_id: 1, created_at: nil, updated_at: nil>}, possible unmatched constraints: [:organisation_id]):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, organisation_programme_path(p) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176764135800'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176764135800'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:14:39 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :id=>"1", :organisation_id=>#<Programme id: nil, title: nil, organisation_id: 1, created_at: nil, updated_at: nil>}, possible unmatched constraints: [:organisation_id]):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, organisation_programme_path(p) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176726686320'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176726686320'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:16:48 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (16.2ms)
+Completed 500 Internal Server Error in 147ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :id=>"1", :organisation_id=>#<Programme id: nil, title: nil, organisation_id: 1, created_at: nil, updated_at: nil>}, possible unmatched constraints: [:organisation_id]):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, organisation_programme_path(p) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176763827480'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176763827480'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:17:58 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (1.9ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (29.2ms)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `programme' for #<Organisation:0x007fa695c9ce38>
+Did you mean?  programmes
+               programmes=):
+    2: 
+    3: <% @organisation.programmes.each do |p| %>
+    4: <li>
+    5:   <%= link_to p.title, organisation_programme_path(@organisation.programme) %>
+    6: </li>
+    7: <% end %>
+    8: 
+  
+app/views/organisations/show.html.erb:5:in `block in _app_views_organisations_show_html_erb__759037405907685283_70176764052840'
+app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__759037405907685283_70176764052840'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:18:18 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 171ms (Views: 161.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/organisations/%23%3CProgramme::ActiveRecord_Associations_CollectionProxy:0x007fa69646ecb0%3E/programmes/1" for 127.0.0.1 at 2019-03-17 13:18:26 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"#<Programme::ActiveRecord_Associations_CollectionProxy:0x007fa69646ecb0>", "id"=>"1"}
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:4
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Programme:0x007fa6963fc3e0>):
+    1: <h2><%= @programme.name %></h2>
+    2: 
+    3: <%= link_to "Edit Programme", edit_programme_path(@programme) %>
+    4: 
+  
+app/views/programmes/show.html.erb:1:in `_app_views_programmes_show_html_erb__3822797765612551179_70176783890260'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:18:31 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 73ms (Views: 62.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:18:52 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 40ms (Views: 34.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:19:10 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DVuzoKvFMtviVRS3wRgzSp2tUYl8BXrEhqGuCthzSQJJeOb75QrZjvDVVgp2EYst5GPl0l5bzQLxdZ1yZ1PAJg==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+No template found for ProgrammesController#create, rendering head :no_content
+Completed 204 No Content in 173ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-17 13:28:12 +0000
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 389ms (Views: 362.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:28:15 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.9ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 112ms (Views: 55.8ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:28:19 +0000
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/controllers/programmes_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/programmes_controller.rb:18: syntax error, unexpected end-of-input, expecting keyword_end
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:28:32 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/FQA839VyBMS86aPVbbZA4B6ONV7akJeMO/rdgAyK1KjL+0zb+xvJIuRYZK5DqJVwXpQoWZDaXynE++2WZGlaA==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+No template found for ProgrammesController#create, rendering head :no_content
+Completed 204 No Content in 248ms (ActiveRecord: 2.6ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:28:37 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mv1XKsdmEbLS0zRv2QIdVyqRV5xTsub6q7zgWd2mjSne3gJxian658BTdtJuC6UwU1/jx3HsUTzcaNMhYoYEDQ==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+No template found for ProgrammesController#create, rendering head :no_content
+Completed 204 No Content in 255ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:28:59 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (1.8ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 176ms (Views: 96.1ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:29:03 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UGMXlrmQQ+O9IMF/WO1IEPMvbwj0oaFoSyeNGGkFu70UQELN91+otq+gg8Lv5PB3iuHbU9b/Fq48875g1iUymQ==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+Redirected to 
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `programmes_url' for #<ProgrammesController:0x007fa07f03fdc8>
+Did you mean?  programmes_create_url):
+  
+app/controllers/programmes_controller.rb:11:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:29:31 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UGMXlrmQQ+O9IMF/WO1IEPMvbwj0oaFoSyeNGGkFu70UQELN91+otq+gg8Lv5PB3iuHbU9b/Fq48875g1iUymQ==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: nil, title: "Social Cohesion", organisation_id: nil, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:organisation_id]):
+  
+app/controllers/programmes_controller.rb:11:in `create'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:29:35 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 65ms (Views: 54.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:29:38 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l4mAyIvsFwctk05yF2ncLhIYVxu68vjWKJlUu5e6Hg3TqtWTxSP8Uj8TDM+gYGRJa9bjQJisTxBfTWfDKJqXKQ==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: nil, title: "Social Cohesion", organisation_id: nil, created_at: nil, updated_at: nil>}, missing required keys: [:id], possible unmatched constraints: [:organisation_id]):
+  
+app/controllers/programmes_controller.rb:11:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:29:51 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l4mAyIvsFwctk05yF2ncLhIYVxu68vjWKJlUu5e6Hg3TqtWTxSP8Uj8TDM+gYGRJa9bjQJisTxBfTWfDKJqXKQ==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+Redirected to http://localhost:3000/organisations/1/programmes
+Completed 302 Found in 28ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:29:52 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.name, programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163627117120'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:30:01 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 53ms (Views: 44.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:30:05 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sk0GYuN67lFDF++jTT/hlq4SNmVGVmuAahDFgpaOJ0D2blM5rbUFBFGXrR76Nlnx19yCPmQI3EYdxPb6Ka6uZA==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:9
+Redirected to http://localhost:3000/organisations/1/programmes
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:30:05 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.name, programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163624487700'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:30:54 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @organisation.programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163651758440'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:31:36 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @organisation.programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163653787100'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:32:10 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @organisation.programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163624873040'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:32:16 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @organisation.programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163644314100'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:32:36 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 223ms (Views: 105.7ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:32:39 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D4RrKzvvXftl86soDwyxehz4DLpA61PxfTFW6FFjDXRLpz5wdSC2rndz6ZW4BQkdZTa44WK15DcK5WWQ7kOEUA==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:13
+Redirected to http://localhost:3000/organisations/1/programmes
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:32:39 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  Rendered programmes/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <h2>Programmes</h2>
+    2:   <% @organisation.programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+  
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163653134780'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:33:09 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: 1, title: "Maths", organisation_id: 1, created_at: "2019-03-17 12:23:35", updated_at: "2019-03-17 12:23:35">}, missing required keys: [:id]):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+    6: <% end %>
+  
+app/views/programmes/index.html.erb:4:in `block in _app_views_programmes_index_html_erb___3429235596194395374_70163653596900'
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163653596900'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:33:24 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (170.6ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `programme_path' for #<#<Class:0x007fa07bdf8d10>:0x007fa0810c4c10>
+Did you mean?  programmes_create_path):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, programme_path(p) %></li>
+    5:   </ul>
+    6: <% end %>
+  
+app/views/programmes/index.html.erb:4:in `block in _app_views_programmes_index_html_erb___3429235596194395374_70163668283180'
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___3429235596194395374_70163668283180'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:34:10 +0000
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (28.5ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: 1, title: "Maths", organisation_id: 1, created_at: "2019-03-17 12:23:35", updated_at: "2019-03-17 12:23:35">}, missing required keys: [:id]):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+    6: <% end %>
+  
+app/views/programmes/index.html.erb:4:in `block in _app_views_programmes_index_html_erb___927892966512401686_70351539678160'
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___927892966512401686_70351539678160'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:36:13 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.9ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"programmes", :organisation_id=>#<Programme id: 1, title: "Maths", organisation_id: 1, created_at: "2019-03-17 12:23:35", updated_at: "2019-03-17 12:23:35">}, missing required keys: [:id]):
+    1: <h2>Programmes</h2>
+    2:   <% @programmes.each do |p| %>
+    3:   <ul>
+    4:     <li><%= link_to p.title, organisation_programme_path(p) %></li>
+    5:   </ul>
+    6: <% end %>
+  
+app/views/programmes/index.html.erb:4:in `block in _app_views_programmes_index_html_erb___927892966512401686_70351555884820'
+app/views/programmes/index.html.erb:2:in `_app_views_programmes_index_html_erb___927892966512401686_70351555884820'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:38:41 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (43.9ms)
+Completed 200 OK in 618ms (Views: 503.7ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:38:45 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WKg7EmowL8fAtQF0O57WfX4Zev2GCp9vhQWjJXQjvVsci25JJP/EktI1Q8mMl24aB9fOpqRUKKny0ZBdywM0fw==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `list' for #<Organisation:0x007ff7fd4909b0>):
+  
+app/controllers/programmes_controller.rb:13:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:39:04 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WKg7EmowL8fAtQF0O57WfX4Zev2GCp9vhQWjJXQjvVsci25JJP/EktI1Q8mMl24aB9fOpqRUKKny0ZBdywM0fw==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `programme' for #<Organisation:0x007ff80147a788>
+Did you mean?  programmes
+               programmes=):
+  
+app/controllers/programmes_controller.rb:13:in `create'
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-17 13:39:30 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WKg7EmowL8fAtQF0O57WfX4Zev2GCp9vhQWjJXQjvVsci25JJP/EktI1Q8mMl24aB9fOpqRUKKny0ZBdywM0fw==", "programme"=>{"title"=>"Social Cohesion"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (1.6ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Social Cohesion"], ["organisation_id", 1], ["created_at", "2019-03-17 13:39:30.820865"], ["updated_at", "2019-03-17 13:39:30.820865"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Redirected to http://localhost:3000/organisations/1
+Completed 302 Found in 53ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:39:30 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 95ms (Views: 85.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mProgramme Load (2.8ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:41:42 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 421ms (Views: 338.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:42:04 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 60ms (Views: 47.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:42:07 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 52ms (Views: 44.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:42:23 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/show.html.erb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/organisations/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/organisations/show.html.erb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:42:28 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendered organisations/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/organisations/show.html.erb:27: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/organisations/show.html.erb:25: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/organisations/show.html.erb:27: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-17 13:42:33 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
