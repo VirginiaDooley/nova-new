@@ -1,5 +1,1 @@
-<%= form_for @organisation do |f| %>
-  <%= f.label "Name" %>
-  <%= f.text_field :name %><p>
-  <%= f.submit %></p>
-<% end %>
+<%= render 'form', organisation: organisation %>
