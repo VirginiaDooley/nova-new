@@ -1,8 +1,8 @@
 <h2><%= @organisation.name %></h2>
 
 <% @organisation.programmes.each do |programme| %>
-  <li><%= link_to programme.title, organisation_programme_path(programme.organisation_id) %>
-  </li>
+<li><%= programme.title %>
+</li>
 <% end %>
 
 <%= form_for ([@organisation, @programme]) do |f| %>
