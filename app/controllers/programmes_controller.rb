@@ -10,9 +10,7 @@ class ProgrammesController < ApplicationController
 
   def create
     @organisation = Organisation.find(params[:organisation_id])
-    # raise @organisation.inspect
     @programme = @organisation.programmes.build(programme_params)
-    # raise @programme.inspect
     if @programme.save
       redirect_to organisation_path(@organisation)
     else
