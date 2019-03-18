@@ -10176,3 +10176,222 @@ ActionView::Template::Error (No route matches {:action=>"show", :controller=>"pr
   
 app/views/organisations/show.html.erb:4:in `block in _app_views_organisations_show_html_erb__4215243703788432515_70325650894600'
 app/views/organisations/show.html.erb:3:in `_app_views_organisations_show_html_erb__4215243703788432515_70325650894600'
+Started GET "/organisations/2" for 127.0.0.1 at 2019-03-18 12:28:24 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrganisation Load (0.7ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.9ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 2]]
+  ↳ app/views/organisations/show.html.erb:3
+  Rendered organisations/show.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 470ms (Views: 372.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/organisations/2/programmes/1" for 127.0.0.1 at 2019-03-18 12:28:33 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"1"}
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Programme with 'id'=1):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/organisations/2/programmes/1" for 127.0.0.1 at 2019-03-18 12:28:51 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"1"}
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 85ms (Views: 56.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:29:00 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (2.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 350ms (Views: 282.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:29:16 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 118ms (Views: 54.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:29:23 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (13.6ms)
+  Rendered programmes/edit.html.erb within layouts/application (26.8ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `programmes' for nil:NilClass):
+    1: <%= form_for @organisation.programmes do |p| %>
+    2:   <%= p.label "Title" %>
+    3:   <%= p.text_field :title %><p>
+    4:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:1:in `_app_views_programmes__form_html_erb___4049235810321318596_70169171531040'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169171301760'
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:30:16 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (1.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (9.2ms)
+  Rendered programmes/edit.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @programmes do |p| %>
+    2:   <%= p.label "Title" %>
+    3:   <%= p.text_field :title %><p>
+    4:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:1:in `_app_views_programmes__form_html_erb___4049235810321318596_70169171266260'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169171365580'
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:31:24 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (364.5ms)
+  Rendered programmes/edit.html.erb within layouts/application (371.2ms)
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `programme_path' for #<#<Class:0x007fa30a94e6e8>:0x007fa30b7e14d0>
+Did you mean?  programmes_edit_path):
+    1: <%= form_for ([@organisation, @programme]) do |p| %>
+    2:   <%= p.label "Title" %>
+    3:   <%= p.text_field :title %><p>
+    4:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:1:in `_app_views_programmes__form_html_erb___4049235810321318596_70169117177320'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169124607820'
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:31:51 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (8.8ms)
+  Rendered programmes/edit.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @programmes do |p| %>
+    2:   <%= p.label "Title" %>
+    3:   <%= p.text_field :title %><p>
+    4:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:1:in `_app_views_programmes__form_html_erb___4049235810321318596_70169125021900'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169115878160'
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:32:43 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 79ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:32:46 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (15.1ms)
+  Rendered programmes/edit.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @programmes do |p| %>
+    2:   <%= p.label "Title" %>
+    3:   <%= p.text_field :title %><p>
+    4:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:1:in `_app_views_programmes__form_html_erb___4049235810321318596_70169171055640'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169171203320'
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:33:09 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 178ms (Views: 160.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:33:12 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 58ms (Views: 50.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/organisations/2/programmes/3/edit" for 127.0.0.1 at 2019-03-18 12:33:15 +0000
+Processing by ProgrammesController#edit as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:24
+  Rendering programmes/edit.html.erb within layouts/application
+  Rendered programmes/_form.html.erb (4.3ms)
+  Rendered programmes/edit.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h2>Edit <%= @programme.title %></h2>
+    2: 
+    3: <%= form_for @programmes do |p| %>
+    4:   <%= p.label "Title" %>
+    5:   <%= p.text_field :title %><p>
+    6:   <%= p.submit %>
+  
+app/views/programmes/_form.html.erb:3:in `_app_views_programmes__form_html_erb___4049235810321318596_70169171384480'
+app/views/programmes/edit.html.erb:2:in `_app_views_programmes_edit_html_erb__3003728289368651779_70169171495060'
+Started GET "/organisations/2/programmes/3" for 127.0.0.1 at 2019-03-18 12:36:44 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"3"}
+  [1m[36mProgramme Load (1.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  Rendered programmes/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 135ms (Views: 86.1ms | ActiveRecord: 3.0ms)
+
+
