@@ -1,7 +1,7 @@
 <h2><%= @organisation.name %></h2>
 
 <% @organisation.programmes.each do |programme| %>
-<li><%= programme.title %>
+<li><%= link_to programme.title, programme %>
 </li>
 <% end %>
 
