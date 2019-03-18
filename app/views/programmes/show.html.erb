@@ -1,4 +1,5 @@
 <h2><%= @programme.title %></h2>
 
- <%# list clients %>
-  and their achievements %>
+<% @programme.clients.each do |client| %>
+<p><%= client.first_name %> <%= client.last_name %></p>
+<% end %>
