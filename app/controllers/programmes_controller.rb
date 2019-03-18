@@ -20,21 +20,6 @@ class ProgrammesController < ApplicationController
     end
   end
 
-  def edit
-    @programme = Programme.find(params[:id])
-  end
-
-  def update
-    @programme = Programme.find(params[:id])
-    @programme.update(programme_params)
-    redirect_to organisation_programme_path(@organisation)
-  end
-
-  def destroy
-    @programme = Programme.find(params[:id]).destroy
-    redirect_to organisation_programmes_path
-  end
-
   private
 
     def programme_params
