@@ -1,12 +1,14 @@
 <h2><%= @organisation.name %></h2>
 
-<% @organisation.programmes.each do |programme| %>
-<li><%= link_to programme.title, programme %>
-</li>
-<% end %>
+  <ul>
+    <% @organisation.programmes.each do |programme| %>
+  <li><%= link_to programme.title, programme %>
+  </li>
+  <% end %>
+  </ul>
 
 <%= form_for ([@organisation, @programme]) do |f| %>
-  <%= f.label "Programme Title" %>
+  <%= f.label "New Programme Title" %>
   <%= f.text_field :title, :placeholder => (@programme.errors.full_messages_for(:title).first) %><p>
   <%= f.submit %>
 <% end %>
