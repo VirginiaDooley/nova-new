@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :programmes
   end
 
-  resources :programmes
+  resources :programmes do
+    resources :clients
+  end  
 
   root 'organisations#index'
 
