@@ -11867,3 +11867,371 @@ ActionView::Template::Error (undefined method `clients' for #<Programme:0x007ff1
     5: <% end %>
   
 app/views/programmes/show.html.erb:3:in `_app_views_programmes_show_html_erb___136332974767307360_70338189436400'
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClients (20190319094736)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190319094736_create_clients.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "clients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "city" varchar, "post_code" varchar, "address1" varchar, "address2" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190319094736_create_clients.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190319094736"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClientsProgrammesJoinTable (20190319113421)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:7
+  [1m[35m (6.4ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClientsProgrammesJoinTable (20190319113421)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:7
+  [1m[35m (1.8ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateOrganisations (20190317095508)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "organisations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190317095508_create_organisations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190317095508"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateProgrammes (20190317121913)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "programmes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "organisation_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190317121913_create_programmes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190317121913"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClients (20190319094736)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "clients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "city" varchar, "post_code" varchar, "address1" varchar, "address2" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190319094736_create_clients.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190319094736"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClientsProgrammesJoinTable (20190319113421)
+  [1m[35m (11.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:7
+  [1m[35m (0.9ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClientsProgrammesJoinTable (20190319113421)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:7
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+Migrating to CreateClientsProgrammesJoinTable (20190319113421)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("client_id" integer NOT NULL, "programme_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190319113421_create_clients_programmes_join_table.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190319113421"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (5.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-03-19 11:43:03.562532"], ["updated_at", "2019-03-19 11:43:03.562532"]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/bin/rake:23
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mClient Load (18.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-03-19 12:04:13 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 857ms (Views: 817.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organisations/new" for 127.0.0.1 at 2019-03-19 12:04:47 +0000
+Processing by OrganisationsController#new as HTML
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (167.1ms)
+  Rendered organisations/new.html.erb within layouts/application (187.7ms)
+Completed 200 OK in 557ms (Views: 305.6ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/organisations" for 127.0.0.1 at 2019-03-19 12:04:56 +0000
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ngmEDrxPVZzq42NRxK2KMj5Kz+eRoguUkyL65SBVzg3S3jYfaizF+WsZBEpO5LKRnZJxVIFCjuAoXI0joz2hEg==", "organisation"=>{"name"=>"Nova New Opportunities"}, "commit"=>"Create Organisation"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:17
+  [1m[36mOrganisation Create (2.3ms)[0m  [1m[32mINSERT INTO "organisations" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nova New Opportunities"], ["created_at", "2019-03-19 12:04:56.121626"], ["updated_at", "2019-03-19 12:04:56.121626"]]
+  ↳ app/controllers/organisations_controller.rb:17
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:17
+Redirected to http://localhost:3000/organisations/1
+Completed 302 Found in 28ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-19 12:04:56 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.7ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (1.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:4
+  Rendered organisations/show.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 269ms (Views: 103.9ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-19 12:05:07 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FsrOY4IxPjHoezoBw4NAmmbzNcVYcuTPLYjZ6Er6tPpS6Zs4zP7VZPr7eLx0ivj9Hz2BnnosUwlaXOqQ9do93g==", "programme"=>{"title"=>"English"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:12
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[36mProgramme Create (0.9ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "English"], ["organisation_id", 1], ["created_at", "2019-03-19 12:05:07.230179"], ["updated_at", "2019-03-19 12:05:07.230179"]]
+  ↳ app/controllers/programmes_controller.rb:14
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:14
+Redirected to http://localhost:3000/organisations/1
+Completed 302 Found in 14ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-19 12:05:07 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:4
+  Rendered organisations/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 98ms (Views: 92.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:05:10 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (89.9ms)
+Completed 200 OK in 171ms (Views: 150.4ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:07:02 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (2.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (57.9ms)
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    4: <p><%= client.first_name %> <%= client.last_name %></p>
+    5: <% end %>
+    6: 
+    7: <%= form_for ([@programme, @client]) do |f| %>
+    8:   <%= f.label "New Programme Client" %>
+    9:   <%= f.text_field :first_name %><p>
+   10:   <%= f.submit %>
+  
+app/views/programmes/show.html.erb:7:in `_app_views_programmes_show_html_erb__3480693538597004720_70265327020580'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Create (1.5ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "07961177777"], ["city", "London"], ["post_code", "W10 4NU"], ["address1", "100 Lancaster Road"], ["address2", "Flat 22"], ["country", "UK"], ["created_at", "2019-03-19 12:13:10.252725"], ["updated_at", "2019-03-19 12:13:10.252725"]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:13:22 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (1.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (31.8ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    4: <p><%= client.first_name %> <%= client.last_name %></p>
+    5: <% end %>
+    6: 
+    7: <%= form_for ([@programme, @client]) do |f| %>
+    8:   <%= f.label "New Programme Client" %>
+    9:   <%= f.text_field :first_name %><p>
+   10:   <%= f.submit %>
+  
+app/views/programmes/show.html.erb:7:in `_app_views_programmes_show_html_erb__3480693538597004720_70265284587880'
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:13:32 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 156ms (Views: 127.1ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mClient Load (3.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProgramme Load (1.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" ORDER BY "programmes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProgramme Load (2.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ? LIMIT ?[0m  [["client_id", 1], ["LIMIT", 11]]
+  [1m[36mProgramme Load (2.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ? LIMIT ?[0m  [["client_id", 1], ["LIMIT", 11]]
+  [1m[36mProgramme Load (1.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ? ORDER BY "programmes"."id" DESC LIMIT ?[0m  [["client_id", 1], ["LIMIT", 1]]
+  [1m[36mClient Destroy (3.0ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Create (1.1ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "07961177777"], ["city", "London"], ["post_code", "W10 4NU"], ["address1", "100 Lancaster Road"], ["address2", "Flat 22"], ["country", "UK"], ["created_at", "2019-03-19 12:18:47.989434"], ["updated_at", "2019-03-19 12:18:47.989434"]]
+  [1m[36mProgramme::HABTM_Clients Create (0.3ms)[0m  [1m[32mINSERT INTO "clients_programmes" ("client_id", "programme_id") VALUES (?, ?)[0m  [["client_id", 2], ["programme_id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:19:19 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (1.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 219ms (Views: 180.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:21:12 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (4.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (1.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 387ms (Views: 358.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:22:14 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (43.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (31.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (78.9ms)
+Completed 200 OK in 347ms (Views: 242.4ms | ActiveRecord: 75.2ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:22:49 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.8ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  Rendered programmes/show.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 150ms (Views: 127.5ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:23:39 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.8ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 140ms (Views: 130.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:24:07 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 170ms (Views: 147.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:24:24 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (1.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (1.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 119ms (Views: 109.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-19 12:24:36 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 0.7ms)
+
+
