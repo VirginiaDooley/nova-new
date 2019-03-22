@@ -1,11 +1,11 @@
 <h2><%= @organisation.name %></h2>
 
-  <ul>
-    <% @organisation.programmes.each do |programme| %>
-  <li><%= link_to programme.title, programme %>
-  </li>
-  <% end %>
-  </ul>
+<ul>
+  <% @organisation.programmes.each do |programme| %>
+<p><%= link_to programme.title, organisation_programme_path(@organisation, programme) %>
+</p>
+<% end %>
+</ul>
 
 <%= form_for ([@organisation, @programme]) do |f| %>
   <%= f.label "New Programme Title" %>
