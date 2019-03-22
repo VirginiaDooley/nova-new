@@ -5,16 +5,23 @@ class ProgrammesController < ApplicationController
   end
 
   def show
+    #build in conditional if org id exists
+    @organisation = Organisation.find(params[:id])
     @programme = Programme.find(params[:id])
   end
 
+  def new
+    @organisation = Organisation.find(params[:id])
+    @programme = @organisation.programmes.build
+  end
+
   def create
-    @organisation = Organisation.find(params[:organisation_id])
+    @organisation = Organisation.find(params[:id])
     @programme = @organisation.programmes.build(programme_params)
     if @programme.save
-      redirect_to organisation_path(@organisation)
+      redirect_to organisation_path(@organisation.id)
     else
-      render "organisations/show"
+      render "organisations"
     end
   end
 
