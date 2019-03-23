@@ -2,7 +2,7 @@
 
 <ul>
   <% @programme.clients.each do |client| %>
-    <li>Name: <%= client.first_name %> <%= client.last_name %>
+    <li>Name: <%= client.full_name %>
     <br>Email: <%= client.email %>
     <br>Phone: <%= client.phone %>
     <br>Address 1: <%= client.address1 %>
@@ -10,7 +10,6 @@
     <br>City: <%= client.city %>
     <br>Post Code: <%= client.post_code %>
     <br>Country: <%= client.country %>
-    </p>
   <% end %>
   </li>
 </ul>

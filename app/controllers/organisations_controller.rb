@@ -6,7 +6,7 @@ class OrganisationsController < ApplicationController
 
     def show
       @organisation = Organisation.find(params[:id])
-      @programme = @organisation.programmes.build
+      @programme = Programme.new
     end
 
     def new
@@ -14,9 +14,13 @@ class OrganisationsController < ApplicationController
     end
 
     def create
-      @organisation = Organisation.create(org_params)
-
-      redirect_to @organisation
+      @organisation = Organisation.new(org_params)
+      if @organisation.save
+        flash[:notice] = "Your Organisation was Created"
+        redirect_to organisation_path(@organisation)
+      else
+        render "/"
+      end
     end
 
     def edit
