@@ -1,11 +1,10 @@
 <h2><%= @client.full_name %></h2>
-    <li>Name: <%= client.full_name %>
-    <br>Email: <%= client.email %>
-    <br>Phone: <%= client.phone %>
-    <br>Address 1: <%= client.address1 %>
-    <br>Address 2: <%= client.address2 %>
-    <br>City: <%= client.city %>
-    <br>Post Code: <%= client.post_code %>
-    <br>Country: <%= client.country %>
+    <li>Name: <%= @client.full_name %>
+    <br>Email: <%= @client.email %>
+    <br>Phone: <%= @client.phone %>
+    <br>Address: <%= @client.full_address %>
+    <br>City: <%= @client.city %>
+    <br>Post Code: <%= @client.post_code %>
+    <br>Country: <%= @client.country %>
   </li>
 </ul>

@@ -7,6 +7,7 @@ class ProgrammesController < ApplicationController
   def show
     @organisation = Organisation.find(params[:organisation_id])
     @programme = Programme.find(params[:id])
+    @client = Client.new
   end
 
   def new

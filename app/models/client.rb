@@ -4,6 +4,10 @@ class Client < ApplicationRecord
   validates :last_name, presence: true
 
   def full_name
-    self.first_name + self.last_name
+    self.first_name + " " + self.last_name
+  end
+
+  def full_address
+    self.address1 + ", " + self.address2
   end
 end
