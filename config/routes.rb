@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :clients
+
   resources :organisations do
     resources :programmes
   end
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :clients
   end
 
-  root 'home#index'
+  resources :clients
+
+  root 'organisations#index'
 
 end
