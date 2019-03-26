@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     resources :clients
   end
 
-  root 'organisations#index'
+  root 'home#index'
 
 end

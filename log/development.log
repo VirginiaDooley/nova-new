@@ -23928,3 +23928,648 @@ Processing by ProgrammesController#show as HTML
 Completed 200 OK in 142ms (Views: 123.6ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 13:49:34 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (8.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 224ms (Views: 163.8ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/organisations/1/programmes" for 127.0.0.1 at 2019-03-23 13:49:38 +0000
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0eHMiNgDr5ezQKjx1CASV3zYsLJ3W80ShGOw7zaVohylEy8HvQ9wd5/QRzFOYPhBNAglVCpDdYwW1mqST8hmug==", "programme"=>{"title"=>"English"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mOrganisation Load (0.5ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:18
+  [1m[35m (3.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[36mProgramme Create (2.1ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "English"], ["organisation_id", 1], ["created_at", "2019-03-23 13:49:38.964942"], ["updated_at", "2019-03-23 13:49:38.964942"]]
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+Redirected to http://localhost:3000/organisations/1/programmes/2
+Completed 302 Found in 59ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-23 13:49:39 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 203ms (Views: 181.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-23 13:49:46 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 114ms (Views: 102.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-23 13:49:49 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 193ms (Views: 174.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-23 15:02:14 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (2.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (2.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (6.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (140.0ms)
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 23.7ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for @client do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297404269340'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-23 15:02:18 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 85ms (Views: 78.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:02:21 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-23 15:02:28 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (1.9ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 90ms (Views: 77.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/programmes/2" for 127.0.0.1 at 2019-03-23 15:02:30 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"2"}
+Completed 404 Not Found in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/organisations/1/programmes" for 127.0.0.1 at 2019-03-23 15:02:33 +0000
+Processing by ProgrammesController#index as HTML
+  Parameters: {"organisation_id"=>"1"}
+  Rendering programmes/index.html.erb within layouts/application
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes"[0m
+  ↳ app/views/programmes/index.html.erb:2
+  Rendered programmes/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 85ms (Views: 76.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:02:40 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for @client do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297372787120'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:03:25 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (1.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (42.3ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 2.5ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for ([@programme, @client]) do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297328218540'
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-23 15:03:43 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (10.8ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for ([@programme, @client]) do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297403366180'
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-23 15:05:06 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (65.3ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 5.2ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for ([@programme, @client]) do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297333058000'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-23 15:05:17 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 97ms (Views: 89.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:05:20 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for ([@programme, @client]) do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297369369640'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:06:04 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (47.9ms)
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     7:   <% end %>
+     8: </ul>
+     9: 
+    10: <%= form_for ([@programme, @client]) do |f| %>
+    11:   <%= f.label "First Name" %>
+    12:   <%= f.text_field :first_name %><p>
+    13:   <%= f.label "First Name" %>
+  
+app/views/programmes/show.html.erb:10:in `_app_views_programmes_show_html_erb__812637173673013614_70297343867860'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:06:28 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 171ms (Views: 58.6ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/programmes/1/clients" for 127.0.0.1 at 2019-03-23 15:07:11 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3qJk/yiQ787eC3hED4xeXI/BdstJD35AdGhA4GPVs3SoBGcGjq/OvJSqf3EB66pWrZ5oYSHE1BSWhqRs+GMX7w==", "client"=>{"first_name"=>"Jane", "last_name"=>"Austen", "email"=>"jane@gmail.com", "phone"=>"07866633333", "address1"=>"100 Lancaster Road", "address2"=>"Flat 2", "city"=>"London", "post_code"=>"W10 5XL", "country"=>"UK"}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:14
+  [1m[36mClient Create (14.2ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "07866633333"], ["city", "London"], ["post_code", "W10 5XL"], ["address1", "100 Lancaster Road"], ["address2", "Flat 2"], ["country", "UK"], ["created_at", "2019-03-23 15:07:11.934808"], ["updated_at", "2019-03-23 15:07:11.934808"]]
+  ↳ app/controllers/clients_controller.rb:14
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:14
+Redirected to http://localhost:3000/programmes/1
+Completed 302 Found in 59ms (ActiveRecord: 27.2ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:07:11 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:07:48 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:15:03 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 35ms (ActiveRecord: 3.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:15:10 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (34.5ms)
+Completed 200 OK in 241ms (Views: 91.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/programmes/1/clients" for 127.0.0.1 at 2019-03-23 15:15:14 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F9JVs1men0WlPONpUNIjt7Am/TqF1oAhAsmCTan+vgRhdFZK/6G+N++d5Fxetde9knnjkO0dKnXgJ2bBMkganw==", "client"=>{"first_name"=>"Jane", "last_name"=>"Austen", "email"=>"jane@gmail.com", "phone"=>"7866633333", "address1"=>"100 Lancaster Road, Flat 2", "address2"=>"Flat 2", "city"=>"London", "post_code"=>"W10 5XL", "country"=>"United Kingdom"}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[36mClient Create (0.7ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "7866633333"], ["city", "London"], ["post_code", "W10 5XL"], ["address1", "100 Lancaster Road, Flat 2"], ["address2", "Flat 2"], ["country", "United Kingdom"], ["created_at", "2019-03-23 15:15:14.516138"], ["updated_at", "2019-03-23 15:15:14.516138"]]
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+Redirected to http://localhost:3000/programmes/1
+Completed 302 Found in 115ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:15:14 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-23 15:16:10 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (2.0ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (1.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 272ms (Views: 219.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-23 15:16:13 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.5ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 151ms (Views: 133.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/programmes/1/clients" for 127.0.0.1 at 2019-03-23 15:16:16 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iYhHLCwzT0rQ7RFP00RRgSiEkKV3l3uZHFnktZJ57rBORMDdnFLegQ594qnZ32fT0DtS60TKDgU8FY0PKe1SgA==", "client"=>{"first_name"=>"Jane", "last_name"=>"Austen", "email"=>"jane@gmail.com", "phone"=>"7866633333", "address1"=>"100 Lancaster Road, Flat 2, Flat 2", "address2"=>"Flat 2", "city"=>"London", "post_code"=>"W10 5XL", "country"=>"United Kingdom"}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[36mClient Create (0.7ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "7866633333"], ["city", "London"], ["post_code", "W10 5XL"], ["address1", "100 Lancaster Road, Flat 2, Flat 2"], ["address2", "Flat 2"], ["country", "United Kingdom"], ["created_at", "2019-03-23 15:16:16.854569"], ["updated_at", "2019-03-23 15:16:16.854569"]]
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+Redirected to http://localhost:3000/programmes/1
+Completed 302 Found in 16ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/programmes/1" for 127.0.0.1 at 2019-03-23 15:16:16 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organisation without an ID):
+  
+app/controllers/programmes_controller.rb:8:in `show'
+Started POST "/programmes/1/clients" for 127.0.0.1 at 2019-03-23 15:17:05 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlCHB/o+wTpQco2KgsHEEWgGeEAaXUVDlOOcAxXTS5dY9oT+XAHgSBrTir+MpjAbSllm6nKW7xd2DXiPjmXvDA==", "client"=>{"first_name"=>"Jane", "last_name"=>"Austen", "email"=>"jane@gmail.com", "phone"=>"7866633333", "address1"=>"100 Lancaster Road, Flat 2, Flat 2", "address2"=>"Flat 2", "city"=>"London", "post_code"=>"W10 5XL", "country"=>"United Kingdom"}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mProgramme Load (1.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[36mClient Create (1.3ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "7866633333"], ["city", "London"], ["post_code", "W10 5XL"], ["address1", "100 Lancaster Road, Flat 2, Flat 2"], ["address2", "Flat 2"], ["country", "United Kingdom"], ["created_at", "2019-03-23 15:17:06.284090"], ["updated_at", "2019-03-23 15:17:06.284090"]]
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 14.6ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"clients", :programme_id=>#<Programme id: 1, title: "FGM Counseling", organisation_id: 1, created_at: "2019-03-23 13:36:36", updated_at: "2019-03-23 13:36:36">}, missing required keys: [:id]):
+  
+app/controllers/clients_controller.rb:20:in `create'
+Started POST "/programmes/1/clients" for 127.0.0.1 at 2019-03-23 15:17:28 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlCHB/o+wTpQco2KgsHEEWgGeEAaXUVDlOOcAxXTS5dY9oT+XAHgSBrTir+MpjAbSllm6nKW7xd2DXiPjmXvDA==", "client"=>{"first_name"=>"Jane", "last_name"=>"Austen", "email"=>"jane@gmail.com", "phone"=>"7866633333", "address1"=>"100 Lancaster Road, Flat 2, Flat 2", "address2"=>"Flat 2", "city"=>"London", "post_code"=>"W10 5XL", "country"=>"United Kingdom"}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[36mClient Create (0.8ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jane"], ["last_name", "Austen"], ["email", "jane@gmail.com"], ["phone", "7866633333"], ["city", "London"], ["post_code", "W10 5XL"], ["address1", "100 Lancaster Road, Flat 2, Flat 2"], ["address2", "Flat 2"], ["country", "United Kingdom"], ["created_at", "2019-03-23 15:17:28.807387"], ["updated_at", "2019-03-23 15:17:28.807387"]]
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+Redirected to http://localhost:3000/programmes/1/clients/5
+Completed 302 Found in 142ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:17:28 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (964.7ms)
+Completed 500 Internal Server Error in 989ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `client' for #<#<Class:0x007fdec635d598>:0x007fdec6417b28>
+Did you mean?  @client):
+    1: <h2><%= @client.full_name %></h2>
+    2:     <li>Name: <%= client.full_name %>
+    3:     <br>Email: <%= client.email %>
+    4:     <br>Phone: <%= client.phone %>
+    5:     <br>Address 1: <%= client.address1 %>
+  
+app/views/clients/show.html.erb:2:in `_app_views_clients_show_html_erb__2198244089641559418_70297392443160'
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:18:26 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (2.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 172ms (Views: 141.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:18:57 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 241ms (Views: 135.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:19:04 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 239ms (Views: 139.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:20:04 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 135ms (Views: 70.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/programmes/1/clients/5" for 127.0.0.1 at 2019-03-23 15:20:26 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"5"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 75ms (Views: 68.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 19:33:05 +0000
+Started GET "/" for 127.0.0.1 at 2019-03-26 19:33:06 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by OrganisationsController#index as HTML
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (63.1ms)
+  Rendered organisations/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 1892ms (Views: 1842.2ms | ActiveRecord: 0.8ms)
+
+
+Completed 200 OK in 1991ms (Views: 1927.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/organisations/1" for 127.0.0.1 at 2019-03-26 19:33:21 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (3.8ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (263.1ms)
+Completed 200 OK in 531ms (Views: 340.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/organisations/1/programmes/1" for 127.0.0.1 at 2019-03-26 19:33:26 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (189.0ms)
+Completed 200 OK in 440ms (Views: 296.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/organisations/1/programmes/2" for 127.0.0.1 at 2019-03-26 19:33:31 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"2"}
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:4
+  Rendered programmes/show.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 118ms (Views: 105.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/programmes/2/clients" for 127.0.0.1 at 2019-03-26 19:33:45 +0000
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1+X68nUnsOvdCOaA8LsKV0+pI0EHQhehR5If3FUNj9EACpAOJlb8zM7I9gSlv1CjvaDukTJejDCpKfkpJoN9og==", "client"=>{"first_name"=>"Crosby", "last_name"=>"Hyler", "email"=>"klkjas;dlkfja;", "phone"=>"kjsa;dlkfj", "address1"=>"lkjasdf;lkj", "address2"=>"laksjdf;lk", "city"=>"sdklfj", "post_code"=>"sdf", "country"=>"sdf"}, "commit"=>"Create Client", "programme_id"=>"2"}
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:17
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[36mClient Create (1.3ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Crosby"], ["last_name", "Hyler"], ["email", "klkjas;dlkfja;"], ["phone", "kjsa;dlkfj"], ["city", "sdklfj"], ["post_code", "sdf"], ["address1", "lkjasdf;lkj"], ["address2", "laksjdf;lk"], ["country", "sdf"], ["created_at", "2019-03-26 19:33:45.128303"], ["updated_at", "2019-03-26 19:33:45.128303"]]
+  ↳ app/controllers/clients_controller.rb:19
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:19
+Redirected to http://localhost:3000/programmes/2/clients/6
+Completed 302 Found in 46ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/programmes/2/clients/6" for 127.0.0.1 at 2019-03-26 19:33:45 +0000
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"2", "id"=>"6"}
+  [1m[36mClient Load (2.0ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:8
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 92ms (Views: 74.6ms | ActiveRecord: 2.0ms)
+
+
