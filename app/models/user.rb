@@ -4,4 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :organisation
+
+  def email_domain
+    self.email_field.split("@").last
+  end
 end
