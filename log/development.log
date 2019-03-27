@@ -25155,3 +25155,46 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 229ms (Views: 196.1ms | ActiveRecord: 1.6ms)
 
 
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mClient Destroy (13.1ms)[0m  [1m[31mDELETE FROM "clients" WHERE "clients"."id" = ?[0m  [["id", 6]]
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" ORDER BY "organisations"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mOrganisation Load (1.5ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mClient Load (2.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/users/sign_in" for ::1 at 2019-03-27 08:45:46 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (68.1ms)
+Completed 200 OK in 568ms (Views: 531.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-27 08:45:50 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.6ms)
+  Rendered devise/shared/_links.html.erb (7.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 148ms (Views: 142.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-27 08:46:04 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"A22BfhphLE7ckgCDzuPGOeLW3Q+/+efqPeMFJaaw5lBMx3ejOKiBD2erVgY7A88nfYvtSow1/CE1oSK2U2Hn2A==", "user"=>{"email"=>"ginnie@midaye.org.uk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ginnie@midaye.org.uk"], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 346ms (Views: 47.2ms | ActiveRecord: 0.5ms)
+
+
