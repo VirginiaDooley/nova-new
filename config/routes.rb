@@ -9,8 +9,10 @@ Rails.application.routes.draw do
     resources :clients
   end
 
-  resources :clients
+  resources :clients, only: [:show]
 
-  root 'organisations#index'
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 
 end
