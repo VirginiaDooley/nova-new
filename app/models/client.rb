@@ -7,7 +7,7 @@ class Client < ApplicationRecord
     self.first_name + " " + self.last_name
   end
 
-  def full_address
-    self.address1 + ", " + self.address2
-  end
+  # def full_address
+  #   self.address1 + ", " + self.address2
+  # end
 end

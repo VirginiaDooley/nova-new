@@ -1,7 +1,8 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
+    @programme = Programme.find(params[:programme_id])
+    @clients = @programme.clients
   end
 
   def show
@@ -9,17 +10,17 @@ class ClientsController < ApplicationController
   end
 
   def new
-    @programme = Programme.find(params[:programme_id])
     @client = @programme.clients.new
   end
 
   def create
     @programme = Programme.find(params[:programme_id])
-    @client = @programme.clients.build(client_params)
+    @client = @programme.clients.create(client_params)
     if @client.save
+      flash[:notice] = "Your Client was Created"
       redirect_to programme_client_path(@programme, @client)
     else
-      render "programmes/show"
+      render "programmes"
     end
   end
 

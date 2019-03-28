@@ -1,10 +1,15 @@
 <h2><%= @client.full_name %></h2>
-    <li>Name: <%= @client.full_name %>
+  <ul>
+    <br>Name: <%= @client.full_name %>
     <br>Email: <%= @client.email %>
     <br>Phone: <%= @client.phone %>
-    <br>Address: <%= @client.full_address %>
+    <br>Address: <%= @client.address1 %>
     <br>City: <%= @client.city %>
     <br>Post Code: <%= @client.post_code %>
     <br>Country: <%= @client.country %>
-  </li>
-</ul>
+  </ul>
+
+<p><b><%= @client.first_name %></b> is participating in the following Programmes:</p>
+  <% @client.programmes.each do |programme| %>
+    <%= link_to programme.title, programme_path(programme) %>
+  <% end %>
