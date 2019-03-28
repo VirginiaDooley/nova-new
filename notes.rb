@@ -37,18 +37,8 @@ check if org_id is empty
 scan org website where domains match email domain
 present create a new org (i think this fulfills writable attribute?)
 
-
-ideas for ...
-def create 
-  @user = User.new(user_params)
-  @organisation.id = @user.organisation_id
-  domain = regex split after @ of email address
-  @user.email.scan.includes?
-
-  Organisation.all.detect{ |o| o.website.includes?(@user.email)}
-
-  SELECT * FROM organisations WHERE (organisations.website.includes == @user.email)
-
-end
-
-Docker & Wordpress??
+How can I add an existing client to a programme
+Lookup or if client doesn't exist, then add
+And this could be an added validation to prevent duplicates
+Add lookup/search in all db
+if client does not exist then add
