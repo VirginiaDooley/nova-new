@@ -1,0 +1,6 @@
+<h2>New Programme</h2>
+<%= form_for ([@organisation, @programme]) do |f| %>
+  <%= f.label "New Programme Title" %>
+  <%= f.text_field :title %><p>
+  <%= f.submit %>
+<% end %>
