@@ -10,6 +10,7 @@ class ProgrammesController < ApplicationController
   end
 
   def new
+    @organisation = Organisation.find(params[:organisation_id])
     @programme = @organisation.programmes.new
   end
 
