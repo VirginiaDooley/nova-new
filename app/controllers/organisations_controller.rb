@@ -6,6 +6,7 @@ class OrganisationsController < ApplicationController
 
     def show
       @organisation = Organisation.find(params[:id])
+      #this gets passed into the new programme form
       @programme = Programme.new
     end
 
