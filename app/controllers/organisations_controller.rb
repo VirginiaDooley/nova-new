@@ -1,4 +1,6 @@
 class OrganisationsController < ApplicationController
+    validates :name, uniqueness :true
+    validates :website, uniqueness :true
 
     def index
       @organisations = Organisation.all
