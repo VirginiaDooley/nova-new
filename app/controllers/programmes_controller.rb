@@ -5,13 +5,11 @@ class ProgrammesController < ApplicationController
   end
 
   def show
-    @organisation = Organisation.find(params[:organisation_id])
     @programme = Programme.find(params[:id])
     @client = Client.new
   end
 
   def new
-    @organisation = Organisation.find(params[:organisation_id])
     @programme = @organisation.programmes.new
   end
 

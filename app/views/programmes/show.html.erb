@@ -1,16 +1,19 @@
-<h2><%= @programme.title %></h2>
+<h2>Programme Title: <%= @programme.title %></h2>
 
+<h4>Programme Clients</h4>
 <ul>
   <% @programme.clients.each do |client| %>
-  <li>Name: <%= link_to client.full_name, client_path(client) %>
+  <li>Name: <%= link_to client.first_name, programme_client_path(@programme, client) %>
   </li>
   <% end %>
 </ul>
 
+<h4>Add a new Client</h4>
+
 <%= form_for ([@programme, @client]) do |f| %>
   <%= f.label "First Name" %>
   <%= f.text_field :first_name %><p>
-  <%= f.label "First Name" %>
+  <%= f.label "Last Name" %>
   <%= f.text_field :last_name %><p>
   <%= f.label "Email" %>
   <%= f.text_field :email %><p>
