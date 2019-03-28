@@ -31,3 +31,5 @@
   <%= f.text_field :country %><p>
   <%= f.submit %>
 <% end %>
+
+<p><b><%= @programme.title %></b> is a programme offered by <b><%= link_to @programme.organisation.name, organisation_path(@programme.organisation) %></b>.</p>
