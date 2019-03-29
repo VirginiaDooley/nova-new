@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :outcomes
   devise_for :users
 
   resources :organisations do
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
 
   resources :programmes do
     resources :clients
+  end
+
+  resources :clients do
+    resources :outcomes
   end
 
   resources :clients, only: [:show]
