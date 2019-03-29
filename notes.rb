@@ -36,13 +36,19 @@ check if org_id is empty
 scan org website where domains match email domain
 present create a new org (i think this fulfills writable attribute?)
 
-How can I add an existing client to a programme
-Lookup or if client doesn't exist, then add
-And this could be an added validation to prevent duplicates
-Add lookup/search in all db
-if client does not exist then add
-
-  class level method called 'most clients'
+class level method called 'most clients'
 
 Limiting Access to Organisations
 After successful sign up, a user can choose from a list or be associated with an Org of the same domain
+
+add devise navigation
+
+questions:
+after login, error message
+how to validate uniqueness of a client full name
+
+How can I add an existing client to a programme in a secure way
+Lookup or if client doesn't exist, then create
+And this could be an added validation to prevent duplicates
+Add lookup/search in all db
+if client does not exist then add
