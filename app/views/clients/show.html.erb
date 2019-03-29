@@ -9,7 +9,24 @@
     <br>Country: <%= @client.country %>
   </ul>
 
+  <p>Add a new Outcome for <b><%= @client.full_name %></b> in <b><%= @programme.title %></b>.</p>
+
+  <%= form_for ([@client, @outcome]) do |f| %>
+    <%= f.label "Grade" %>
+    <%= f.text_field :grade %><p>
+    <%= f.label "Description" %>
+    <%= f.text_field :description %><p>
+    <%= f.submit %>
+  <% end %>
+
 <p><b><%= @client.first_name %></b> is participating in the following Programmes:</p>
   <% @client.programmes.each do |programme| %>
     <%= link_to programme.title, programme_path(programme) %>
+
+      <p><b><%= @client.first_name %>'s</b> Outcomes in <b><%= @programme.title %></b> include:</p>
+
+      <% @client.outcomes.each do |outcome| %>
+        <p>Grade: <%= outcome.grade %></p>
+        <p>Description: <%= outcome.description %></p>
+      <% end %>
   <% end %>
