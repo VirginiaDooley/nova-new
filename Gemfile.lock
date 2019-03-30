@@ -240,8 +240,7 @@ DEPENDENCIES
   dotenv-rails
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  omniauth
-  omniauth-google-oauth2 (~> 0.2.2)
+  omniauth-google-oauth2
   puma (~> 3.11)
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
