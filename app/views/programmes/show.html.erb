@@ -1,5 +1,7 @@
 <h2>Programme Title: <%= @programme.title %></h2>
 
+<p><b><%= @programme.title %></b> is a programme offered by <b><%= link_to @programme.organisation.name, organisation_path(@programme.organisation) %></b>.</p>
+
 <h4>Programme Clients</h4>
 <ul>
   <% @programme.clients.each do |client| %>
@@ -8,27 +10,4 @@
   <% end %>
 </ul>
 
-<h4>Add a new Client</h4>
-<%= form_for ([@programme, @client]) do |f| %>
-  <%= f.label "First Name" %>
-  <%= f.text_field :first_name %><p>
-  <%= f.label "Last Name" %>
-  <%= f.text_field :last_name %><p>
-  <%= f.label "Email" %>
-  <%= f.text_field :email %><p>
-  <%= f.label "Phone" %>
-  <%= f.text_field :phone %><p>
-  <%= f.label "Address 1" %>
-  <%= f.text_field :address1 %><p>
-  <%= f.label "Address 2" %>
-  <%= f.text_field :address2 %><p>
-  <%= f.label "City" %>
-  <%= f.text_field :city %><p>
-  <%= f.label "Post Code" %>
-  <%= f.text_field :post_code %><p>
-  <%= f.label "Country" %>
-  <%= f.text_field :country %><p>
-  <%= f.submit %>
-<% end %>
-
-<p><b><%= @programme.title %></b> is a programme offered by <b><%= link_to @programme.organisation.name, organisation_path(@programme.organisation) %></b>.</p>
+<p><%= link_to "Add a new Client", new_programme_client_path(@programme, @client) %> to <b><%= @programme.title %>.
