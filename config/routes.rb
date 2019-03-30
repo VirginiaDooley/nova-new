@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "organisations#index"
 
   devise_for :users
-  
+
   resources :organisations do
     resources :programmes
   end
@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   resources :clients
 
   resources :outcomes
-  #
-  # devise_scope :user do
-  #   root to: "devise/sessions#new"
-  # end
+
+  # Routes for Google authentication
+  get 'auth/:provider/callback', to: 'sessions#googleAuth'
+  get 'auth/failure', to: redirect('/')
 
 end
