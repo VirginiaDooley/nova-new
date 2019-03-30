@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :outcomes
   devise_for :users
 
   resources :organisations do
@@ -14,7 +13,9 @@ Rails.application.routes.draw do
     resources :outcomes
   end
 
-  resources :clients, only: [:show]
+  resources :clients
+
+  resources :outcomes
 
   devise_scope :user do
     root to: "devise/sessions#new"
