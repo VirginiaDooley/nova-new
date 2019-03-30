@@ -30,7 +30,7 @@ gem 'devise'
 # gem 'bcrypt', '~> 3.1.7'
 # third-party login
 gem 'omniauth'
-gem 'omniauth-google'
+gem 'omniauth-google-oauth2', '~> 0.2.2'
 # ensure that environment variables are correctly loaded
 # into the ENV hash in a secure manner
 gem 'dotenv-rails'
