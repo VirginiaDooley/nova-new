@@ -1,7 +1,7 @@
 class OutcomesController < ApplicationController
 
   def index
-    @client = Client.find(params[:id])
+    @client = Client.find(params[:client_id])
     @outcomes = @client.outcomes
   end
 
@@ -19,7 +19,7 @@ class OutcomesController < ApplicationController
     @outcome = @client.outcomes.build(outcome_params)
     if @outcome.save!
       flash[:notice] = "Your Outcome was Created."
-      redirect_to client_outcome_path(@client, @outcome)
+      redirect_to client_outcomes_path
     else
       flash[:notice] = "Please try again."
       render "index"
