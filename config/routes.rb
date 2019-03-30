@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
 
+  root to: "organisations#index"
+
+  devise_for :users
+  
   resources :organisations do
     resources :programmes
   end
@@ -16,9 +19,9 @@ Rails.application.routes.draw do
   resources :clients
 
   resources :outcomes
-
-  devise_scope :user do
-    root to: "devise/sessions#new"
-  end
+  #
+  # devise_scope :user do
+  #   root to: "devise/sessions#new"
+  # end
 
 end
