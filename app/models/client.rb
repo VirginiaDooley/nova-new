@@ -1,5 +1,6 @@
 class Client < ApplicationRecord
-  has_and_belongs_to_many :programmes
+  has_many :clients_programmes
+  has_many :programmes, through: :clients_programmes
   has_many :outcomes
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -9,7 +10,7 @@ class Client < ApplicationRecord
     self.first_name + " " + self.last_name
   end
 
-  # def full_address
-  #   self.address1 + ", " + self.address2
-  # end
+  def full_address
+    self.address1 + ", " + self.address2
+  end
 end
