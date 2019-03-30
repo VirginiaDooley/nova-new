@@ -31,6 +31,9 @@ gem 'devise'
 # third-party login
 gem 'omniauth'
 gem 'omniauth-google'
+# ensure that environment variables are correctly loaded
+# into the ENV hash in a secure manner
+gem 'dotenv-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
