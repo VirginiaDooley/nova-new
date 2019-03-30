@@ -1,0 +1,5 @@
+<h2>Outcomes</h2>
+<% @client.outcomes.each do |outcome| %>
+  <p>Grade: <%= outcome.grade %></p>
+  <p>Description: <%= outcome.description %></p>
+<% end %>
