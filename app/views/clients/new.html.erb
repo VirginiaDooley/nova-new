@@ -1,0 +1,22 @@
+<h4>Add a new Client</h4>
+<%= form_for ([@programme, @client]) do |f| %>
+  <%= f.label "First Name" %>
+  <%= f.text_field :first_name %><p>
+  <%= f.label "Last Name" %>
+  <%= f.text_field :last_name %><p>
+  <%= f.label "Email" %>
+  <%= f.text_field :email %><p>
+  <%= f.label "Phone" %>
+  <%= f.text_field :phone %><p>
+  <%= f.label "Address 1" %>
+  <%= f.text_field :address1 %><p>
+  <%= f.label "Address 2" %>
+  <%= f.text_field :address2 %><p>
+  <%= f.label "City" %>
+  <%= f.text_field :city %><p>
+  <%= f.label "Post Code" %>
+  <%= f.text_field :post_code %><p>
+  <%= f.label "Country" %>
+  <%= f.text_field :country %><p>
+  <%= f.submit %>
+<% end %>
