@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# third-party login
+gem 'omniauth'
+gem 'omniauth-google'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
