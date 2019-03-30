@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# third-party login
+# third-party login with Google
 gem 'omniauth-google-oauth2'
 # ensure that environment variables are correctly loaded
 # into the ENV hash in a secure manner
