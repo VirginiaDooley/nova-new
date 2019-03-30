@@ -7330,3 +7330,2641 @@ Processing by ProgrammesController#show as HTML
 Completed 200 OK in 2015ms (Views: 1651.9ms | ActiveRecord: 40.7ms)
 
 
+Started GET "/programmes/3" for ::1 at 2019-03-30 16:36:37 +0000
+Started GET "/login" for ::1 at 2019-03-30 16:36:43 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProgramme Load (18.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.9ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (4.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 3]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (690.7ms)
+Completed 200 OK in 8019ms (Views: 6884.6ms | ActiveRecord: 154.6ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-03-30 16:37:00 +0000
+  
+  
+ActionController::RoutingError (No route matches [GET] "/sign_in"):
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2019-03-30 16:37:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 403ms (ActiveRecord: 32.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 96ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 77ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 89ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 86ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 93ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 125ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (10.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (9.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 181ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 110ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 84ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 86ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:55 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 161ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:55 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:55 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:55 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 122ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 72ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 80ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (31.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 159ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:37:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:03 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:04 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:04 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 89ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:04 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 89ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:04 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:05 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:05 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 130ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:05 +0000
+Started GET "/users/sign_up" for ::1 at 2019-03-30 16:38:05 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 127ms (ActiveRecord: 3.2ms)
+
+
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 119ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 83ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:06 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 88ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 83ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:07 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 82ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 88ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:08 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 88ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 89ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 101ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:09 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 84ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 92ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:10 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:37 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (4.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (332.9ms)
+Completed 200 OK in 2783ms (Views: 2537.5ms | ActiveRecord: 35.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-30 16:38:55 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 403ms (ActiveRecord: 29.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:38:56 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 1976ms (Views: 1939.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/sign_out" for ::1 at 2019-03-30 16:39:27 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:39:31 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/user/sign_out" for ::1 at 2019-03-30 16:39:43 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:40:05 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:40:49 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2019-03-30 16:40:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 94ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:40:58 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (45.6ms)
+Completed 200 OK in 1382ms (Views: 1352.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:43:44 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (4.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (64.3ms)
+Completed 200 OK in 1382ms (Views: 1339.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:43:48 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:45:05 +0000
+Started GET "/" for ::1 at 2019-03-30 16:45:11 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (3.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (217.4ms)
+Completed 200 OK in 1652ms (Views: 1529.3ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:45:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:46:22 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-03-30 16:46:23 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (13.4ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered devise/shared/_links.html.erb (9251.6ms)
+  Rendered organisations/index.html.erb within layouts/application (9967.3ms)
+Completed 500 Internal Server Error in 10154ms (ActiveRecord: 18.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0x00007f8fdac46528>:0x00007f8fd6dd0780>
+Did you mean?  resolve_asset):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Log in", new_session_path(resource_name) %><br />
+    3: <% end %>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/devise/shared/_links.html.erb:2:in `_app_views_devise_shared__links_html_erb__2016802898917781696_70127881814280'
+app/views/organisations/index.html.erb:10:in `_app_views_organisations_index_html_erb__2241055038843001952_70127912856340'
+Started GET "/" for ::1 at 2019-03-30 16:47:34 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.9ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered devise/shared/_links.html.erb (6909.0ms)
+  Rendered organisations/index.html.erb within layouts/application (6964.6ms)
+Completed 500 Internal Server Error in 7047ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0x00007f8fdac46528>:0x00007f8fdad0d6c8>
+Did you mean?  resolve_asset):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Log in", new_session_path(resource_name) %><br />
+    3: <% end %>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/devise/shared/_links.html.erb:2:in `_app_views_devise_shared__links_html_erb__2016802898917781696_70127881949160'
+app/views/organisations/index.html.erb:10:in `_app_views_organisations_index_html_erb__2241055038843001952_70127904960200'
+Started GET "/" for ::1 at 2019-03-30 16:48:07 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (11.2ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered devise/shared/_links.html.erb (5224.8ms)
+  Rendered organisations/index.html.erb within layouts/application (5272.8ms)
+Completed 500 Internal Server Error in 5328ms (ActiveRecord: 11.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource_name' for #<#<Class:0x00007f8fdac46528>:0x00007f8fdcdfc1b8>
+Did you mean?  resolve_asset):
+    1: <%- if controller_name != 'sessions' %>
+    2:   <%= link_to "Log in", new_session_path(resource_name) %><br />
+    3: <% end %>
+    4: 
+    5: <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  
+app/views/devise/shared/_links.html.erb:2:in `_app_views_devise_shared__links_html_erb__2016802898917781696_70127907056340'
+app/views/organisations/index.html.erb:10:in `_app_views_organisations_index_html_erb__2241055038843001952_70127933166160'
+Started GET "/" for ::1 at 2019-03-30 16:48:25 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (3.2ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3353.0ms)
+Completed 500 Internal Server Error in 3421ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `devise' for #<#<Class:0x00007f8fdac46528>:0x00007f8fd9dde3a0>):
+     7: 
+     8: <%= link_to "Create a New Organisation", new_organisation_path(@organisation) %>
+     9: 
+    10: <%= link_to "Sign Out", destroy_user_session_path(devise) %>
+  
+app/views/organisations/index.html.erb:10:in `_app_views_organisations_index_html_erb__2241055038843001952_70127912554560'
+Started GET "/" for ::1 at 2019-03-30 16:48:47 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.9ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (3098.6ms)
+Completed 500 Internal Server Error in 3159ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007f8fdac46528>:0x00007f8fdace9930>):
+     7: 
+     8: <%= link_to "Create a New Organisation", new_organisation_path(@organisation) %>
+     9: 
+    10: <%= link_to "Sign Out", destroy_user_session_path(user) %>
+  
+app/views/organisations/index.html.erb:10:in `_app_views_organisations_index_html_erb__2241055038843001952_70127914835640'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:50:27 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:50:40 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 16:50:43 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-03-30 16:50:45 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (70.0ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (183.8ms)
+Completed 200 OK in 1812ms (Views: 1721.3ms | ActiveRecord: 70.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:41 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 325ms (ActiveRecord: 23.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:46 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 76ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 66ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 58ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:47 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 60ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 55ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:48 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 85ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 63ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 75ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 61ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 75ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 64ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 59ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 59ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 83ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 88ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 79ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 60ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (10.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:54 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:52:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 72ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 58ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 62ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 66ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 66ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 60ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 74ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 60ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:03 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:03 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 86ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:53:03 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 228ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:44 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 308ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:49 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 64ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 59ms (ActiveRecord: 11.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 88ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 72ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 64ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 103ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:51 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 64ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 66ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 77ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:52 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 70ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 57ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:53 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (11.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 11.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 67ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 65ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:57 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 125ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 56ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 89ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 98ms (ActiveRecord: 17.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:58 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 69ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 78ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 66ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 109ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:56:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 106ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:57:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 81ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:57:00 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 71ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 16:57:08 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (11.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (191.4ms)
+Completed 500 Internal Server Error in 1219ms (ActiveRecord: 26.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial application/_error_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/virginiadooley/Development/code/projects/nova-new/app/views"
+  * "/Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/views"
+):
+    13:     <p class="notice"><%= notice %></p>
+    14:     <p class="alert"><%= alert %></p>
+    15:     
+    16:     <% render 'application/error_messages' %>
+    17:     <% render 'application/links' %>
+    18: 
+    19:     <%= yield %>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3007965543099711158_70127912179400'
+Started GET "/" for ::1 at 2019-03-30 16:59:59 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (4.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (39.4ms)
+Completed 500 Internal Server Error in 1024ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial application/shared/_error_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/virginiadooley/Development/code/projects/nova-new/app/views"
+  * "/Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/views"
+):
+    13:     <p class="notice"><%= notice %></p>
+    14:     <p class="alert"><%= alert %></p>
+    15: 
+    16:     <% render 'application/shared/error_messages' %>
+    17:     <% render 'application/shared/links' %>
+    18: 
+    19:     <%= yield %>
+  
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3007965543099711158_70127914098820'
+Started GET "/" for ::1 at 2019-03-30 17:00:36 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.0ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (35.7ms)
+  Rendered devise/shared/_error_messages.html.erb (4294.6ms)
+Completed 500 Internal Server Error in 5384ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource' for #<#<Class:0x00007f8fdcf2daa0>:0x00007f8fda92fa38>):
+    1: <% if resource.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <h2>
+    4:       <%= I18n.t("errors.messages.not_saved",
+  
+app/views/devise/shared/_error_messages.html.erb:1:in `_app_views_devise_shared__error_messages_html_erb___366392515180585809_70127929273520'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3007965543099711158_70127933362260'
+Started GET "/" for ::1 at 2019-03-30 17:01:34 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.0ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (33.2ms)
+  Rendered devise/shared/_error_messages.html.erb (4023.0ms)
+Completed 500 Internal Server Error in 4974ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource' for #<#<Class:0x00007f8fdcf2daa0>:0x00007f8fd6401060>):
+    1: <% if resource.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <h2>
+    4:       <%= I18n.t("errors.messages.not_saved",
+  
+app/views/devise/shared/_error_messages.html.erb:1:in `_app_views_devise_shared__error_messages_html_erb___366392515180585809_70127930991320'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3007965543099711158_70127930304480'
+Started GET "/" for ::1 at 2019-03-30 17:07:47 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (74.5ms)
+  Rendered devise/shared/_error_messages.html.erb (5479.5ms)
+Completed 500 Internal Server Error in 6775ms (ActiveRecord: 7.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `resource' for #<#<Class:0x00007f8fdcf2daa0>:0x00007f8fdce94418>):
+    1: <% if resource.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <h2>
+    4:       <%= I18n.t("errors.messages.not_saved",
+  
+app/views/devise/shared/_error_messages.html.erb:1:in `_app_views_devise_shared__error_messages_html_erb___366392515180585809_70127929533380'
+app/views/layouts/application.html.erb:16:in `_app_views_layouts_application_html_erb__3007965543099711158_70127912882980'
+Started GET "/" for ::1 at 2019-03-30 17:07:57 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (3.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 2142ms (Views: 2092.4ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:14:40 +0000
+Started GET "/organisations/1" for ::1 at 2019-03-30 17:14:44 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (4.1ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (185.7ms)
+Completed 200 OK in 1715ms (Views: 1595.9ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-03-30 17:14:51 +0000
+Processing by OrganisationsController#show as HTML
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganisation Load (10.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  [1m[36mOrganisation Load (2.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (10.9ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  [1m[36mProgramme Load (4.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (478.4ms)
+  Rendered organisations/show.html.erb within layouts/application (393.9ms)
+Completed 200 OK in 2833ms (Views: 2251.6ms | ActiveRecord: 36.9ms)
+
+
+Completed 200 OK in 2854ms (Views: 2165.8ms | ActiveRecord: 41.2ms)
+
+
+Started GET "/organisations/1/programmes/1" for ::1 at 2019-03-30 17:17:06 +0000
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mProgramme Load (3.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (12.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (285.4ms)
+Completed 200 OK in 1698ms (Views: 1235.8ms | ActiveRecord: 40.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-30 17:19:59 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 294ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:19:59 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.1ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 1069ms (Views: 1040.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-03-30 17:21:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/sign_out" for ::1 at 2019-03-30 17:25:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-03-30 17:25:21 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (93.1ms)
+Completed 200 OK in 1724ms (Views: 1690.9ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/users/sign_out" for ::1 at 2019-03-30 17:25:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-03-30 17:29:03 +0000
+Processing by OrganisationsController#index as HTML
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (44.4ms)
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+Completed 200 OK in 1187ms (Views: 1143.8ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:30:10 +0000
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.1ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (202.7ms)
+Completed 200 OK in 1769ms (Views: 1319.7ms | ActiveRecord: 37.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-03-30 17:31:48 +0000
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WJ2WHniIwfn3btHoyQu9txga1/5sK8gKglLfbS14+TUmV2QRD1+pPGtM5mHGJfdjQS7qpL7At2TObH73nVHIYQ=="}
+  [1m[36mUser Load (8.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/lib/devise/models/rememberable.rb:62
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "remember_created_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_created_at", nil], ["updated_at", "2019-03-30 17:31:49.408990"], ["id", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/lib/devise/models/rememberable.rb:62
+  [1m[35m (42.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/lib/devise/models/rememberable.rb:62
+Redirected to http://localhost:3000/
+Completed 302 Found in 552ms (ActiveRecord: 54.3ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:31:49 +0000
+Processing by OrganisationsController#index as HTML
+Completed 401 Unauthorized in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-30 17:31:50 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (50.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (190.7ms)
+Completed 200 OK in 1306ms (Views: 1216.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-03-30 17:32:48 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (4.8ms)
+  Rendered devise/shared/_links.html.erb (13.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (133.2ms)
+Completed 200 OK in 1141ms (Views: 1109.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-03-30 17:32:56 +0000
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YRHC8tDL1Juio3sDZ/otkZPs0SIeQr2tv6QvHGU6htVXrxUWHmoLSXrbDVc+tn+0mBA4wyCzZToJcL0v4ST/hg==", "user"=>{"email"=>"ginnie@midaye.org.uk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ginnie@midaye.org.uk"], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/controllers/devise/registrations_controller.rb:19
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (32.6ms)
+  Rendered devise/shared/_links.html.erb (23.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (162.7ms)
+Completed 200 OK in 1641ms (Views: 1129.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-30 17:33:02 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (21.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (135.2ms)
+Completed 200 OK in 1304ms (Views: 1265.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/organisations" for ::1 at 2019-03-30 17:33:11 +0000
+Processing by OrganisationsController#index as HTML
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-03-30 17:33:11 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (28.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 1246ms (Views: 1210.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2019-03-30 17:33:21 +0000
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X5Y2MBGmDqlv1kLnbhwVuJYSeak+/jD0R4U7w8beEojBH/V8jhKrPeDH6WF9PzO1mqhGI93lpzUbrUTyEULC5g==", "user"=>{"email"=>"ginnie@midaye.org.uk", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ginnie@midaye.org.uk"], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:22
+Redirected to http://localhost:3000/organisations
+Completed 302 Found in 359ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/organisations" for ::1 at 2019-03-30 17:33:22 +0000
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.9ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 1089ms (Views: 1022.0ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:33:25 +0000
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.9ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 1122ms (Views: 985.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-03-30 17:38:36 +0000
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (12.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  [1m[36mOrganisation Load (2.7ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (2.6ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (305.9ms)
+Completed 200 OK in 2315ms (Views: 1393.3ms | ActiveRecord: 68.9ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 17:53:56 +0000
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (67.4ms)
+Started GET "/auth/google_oauth2" for ::1 at 2019-03-30 17:53:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Completed 200 OK in 2366ms (Views: 2248.7ms | ActiveRecord: 18.0ms)
+
+
+Started GET "/" for ::1 at 2019-03-30 18:02:35 +0000
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (20.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:2
+  Rendered organisations/index.html.erb within layouts/application (219.3ms)
+Completed 200 OK in 1991ms (Views: 1436.8ms | ActiveRecord: 78.9ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthToUsers (20190330180249)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthToUsers (20190330180249)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "token" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "expires_at" integer[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "expires" boolean[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "refresh_token" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190330180249"]]
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (13.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
