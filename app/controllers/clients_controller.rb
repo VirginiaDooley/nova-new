@@ -18,8 +18,10 @@ class ClientsController < ApplicationController
 
   def create
     @programme = Programme.find(params[:programme_id])
-    @client = @programme.clients.create(client_params)
-    if @client.save
+    @client = Client.new(client_params)
+    @client.programmes << @programme
+    if @client.save!
+      @client.clients_programmes
       flash[:notice] = "Your Client was Created"
       redirect_to programme_client_path(@programme, @client)
     else
