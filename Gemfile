@@ -32,6 +32,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 # ensure that environment variables are correctly loaded
 # into the ENV hash in a secure manner
+gem 'google-api-client', '~> 0.13.6'
 gem 'dotenv-rails'
 
 # Use ActiveStorage variant

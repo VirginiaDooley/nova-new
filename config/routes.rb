@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: "organisations#index"
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :organisations do
     resources :programmes

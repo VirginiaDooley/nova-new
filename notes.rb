@@ -53,7 +53,5 @@ And this could be an added validation to prevent duplicates
 Add lookup/search in all db
 if client does not exist then add
 
-
-
-Move new client form to programmes/:programme_id/clients/new with link from programme
+x Move new client form to programmes/:programme_id/clients/new with link from programme
 Add some attribute to the join table related to clients_programmes
