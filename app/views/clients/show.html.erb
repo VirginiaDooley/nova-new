@@ -19,14 +19,38 @@
     <%= f.submit %>
   <% end %>
 
-<p><b><%= @client.first_name %></b> is participating in the following Programmes:</p>
+<p><b><%= @client.first_name %></b> is registered to participate in the following Programmes:</p>
   <% @client.programmes.each do |programme| %>
     <%= link_to programme.title, programme_path(programme) %>
-
-      <p><b><%= @client.first_name %>'s</b> Outcomes in <b><%= @programme.title %></b> include:</p>
-
-      <% @client.outcomes.each do |outcome| %>
-        <p>Grade: <%= outcome.grade %></p>
-        <p>Description: <%= outcome.description %></p>
-      <% end %>
   <% end %>
+
+  <h4>Enter enrolment details for <%= @client.full_name %></h4>
+
+  <%= form_for(@clients_programme) do |f| %>
+    <%= f.label "Term" %>
+    <%= f.text_field :programme_term %>
+
+    <%= f.label "Year" %>
+    <%= f.text_field :programme_year%>
+
+    <%= f.label "Status" %>
+    <%= f.text_field :client_status %>
+
+
+    <%= f.hidden_field :client_id, value: @client.id %>
+    <%= f.hidden_field :programme_id, value: @programme.id %>
+
+    <%= f.submit %>
+
+  <% end %>
+
+    <p>Status: <%= @clients_programme.client_status %></p>
+    <p>Term: <%= @clients_programme.programme_term %></p>
+    <p>Year: <%= @clients_programme.programme_year %></p>
+
+<p><b><%= @client.first_name %>'s</b> Outcomes in <b><%= @programme.title %></b> include:</p>
+
+<p><% @client.outcomes.each do |outcome| %>
+  <p>Grade: <%= outcome.grade %></p>
+  <p>Description: <%= outcome.description %></p>
+<% end %>
