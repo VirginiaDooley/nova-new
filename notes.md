@@ -44,7 +44,8 @@ After successful sign up, a user can choose from a list or be associated with an
 x add devise navigation
 
 questions:
-How to render join table attributes?
+Where should I put the writable attribute form ofr ClientsProgramme?
+
 Does Omniauth class method count towards spec?
 
 x Move new client form to programmes/:programme_id/clients/new with link from programme
@@ -52,3 +53,7 @@ X Add some attribute to the join table related to clients_programmes
 Fix redirect after outcome creation
 Render join table options // data with a check selection box / form
 Create a Nav Bar of App Functions
+Add MIT License
+Add README
+Add contributions
+Add usage
