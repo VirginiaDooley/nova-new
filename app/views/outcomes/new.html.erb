@@ -1,0 +1,9 @@
+<p>Add a new Outcome for <b><%= @client.full_name %></b>.</p>
+
+<%= form_for ([@client, @outcome]) do |f| %>
+  <%= f.label "Grade" %>
+  <%= f.text_field :grade %><p>
+  <%= f.label "Description" %>
+  <%= f.text_field :description %><p>
+  <%= f.submit %>
+<% end %>
