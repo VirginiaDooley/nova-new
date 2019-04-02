@@ -3,3 +3,5 @@
   <p>Grade: <%= outcome.grade %></p>
   <p>Description: <%= outcome.description %></p>
 <% end %>
+
+<p><%= link_to "Create a New Outcome", new_client_outcome_path(@client, @outcome) %></p>
