@@ -13,7 +13,7 @@
 <p><%= link_to "Edit Status", edit_clients_programme_path %></p>
 
 <% @client.clients_programmes.each do |clients_programme| %>
-  <p>Status: <%= clients_programme.client_status %></p>
+  <p>Enrolled?: <%= clients_programme.client_status %></p>
   <p>Term: <%= clients_programme.programme_term %></p>
   <p>Year: <%= clients_programme.programme_year %></p>
 <% end %>
