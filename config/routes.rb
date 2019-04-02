@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     resources :outcomes
   end
 
-  resources :clients
+  resources :clients_programmes, only: :create
+
+  resources :clients do
+    # resources :clients_programme, only: :update
+  end
 
   resources :outcomes
 
