@@ -5,7 +5,7 @@
 <h4>Programme Clients</h4>
 <ul>
   <% @programme.clients.each do |client| %>
-  <li>Name: <%= link_to client.first_name, programme_client_path(@programme, client) %>
+  <li>Name: <%= link_to client.full_name, programme_client_path(@programme, client) %>
   </li>
   <% end %>
 </ul>

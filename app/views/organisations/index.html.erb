@@ -1,4 +1,10 @@
-<h2>Organisations</h2>
+<p>Welcome, <%= current_user.email %></p>
+
+<p>Nova CRM manages your programmes,
+   clients and their outcomes. Choose
+   or create your organisation below.</p>
+
+  <h2>Organisations</h2>
   <% @organisations.each do |org| %>
   <ul>
     <li><%= link_to org.name, organisation_path(org) %></li>

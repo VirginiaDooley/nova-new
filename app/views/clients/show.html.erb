@@ -9,48 +9,15 @@
     <br>Country: <%= @client.country %>
   </ul>
 
-  <p>Add a new Outcome for <b><%= @client.full_name %></b> in <b><%= @programme.title %></b>.</p>
+<p><%= link_to "Add #{@client.first_name}'s Programme Term and Year", new_clients_programme_path %></p>
+<p><%= link_to "Edit Status", edit_clients_programme_path %></p>
 
-  <%= form_for ([@client, @outcome]) do |f| %>
-    <%= f.label "Grade" %>
-    <%= f.text_field :grade %><p>
-    <%= f.label "Description" %>
-    <%= f.text_field :description %><p>
-    <%= f.submit %>
-  <% end %>
-
-<p><b><%= @client.first_name %></b> is registered to participate in the following Programmes:</p>
-  <% @client.programmes.each do |programme| %>
-    <%= link_to programme.title, programme_path(programme) %>
-  <% end %>
-
-  <h4>Enter enrolment details for <%= @client.full_name %></h4>
-
-  <%= form_for(@clients_programme) do |f| %>
-    <%= f.label "Term" %>
-    <%= f.text_field :programme_term %>
-
-    <%= f.label "Year" %>
-    <%= f.text_field :programme_year%>
-
-    <%= f.label "Status" %>
-    <%= f.text_field :client_status %>
-
-
-    <%= f.hidden_field :client_id, value: @client.id %>
-    <%= f.hidden_field :programme_id, value: @programme.id %>
-
-    <%= f.submit %>
-
-  <% end %>
-
-    <p>Status: <%= @clients_programme.client_status %></p>
-    <p>Term: <%= @clients_programme.programme_term %></p>
-    <p>Year: <%= @clients_programme.programme_year %></p>
-
-<p><b><%= @client.first_name %>'s</b> Outcomes in <b><%= @programme.title %></b> include:</p>
-
-<p><% @client.outcomes.each do |outcome| %>
-  <p>Grade: <%= outcome.grade %></p>
-  <p>Description: <%= outcome.description %></p>
+<% @client.clients_programmes.each do |clients_programme| %>
+  <p>Status: <%= clients_programme.client_status %></p>
+  <p>Term: <%= clients_programme.programme_term %></p>
+  <p>Year: <%= clients_programme.programme_year %></p>
 <% end %>
+
+<p><%= link_to "Add a new Outcome", new_client_outcome_path(@client) %> for <b><%= @client.full_name %></b> in <b><%= @programme.title %></b>.</p>
+
+<p><%= link_to "View Client Outcomes", client_outcomes_path(@client) %></p>

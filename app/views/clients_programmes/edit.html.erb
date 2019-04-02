@@ -1,0 +1,12 @@
+<h2>Update Status</h2>
+
+<%= form_for(@clients_programme) do |f| %>
+
+  <%= f.label "Enrolled?" %>
+  <p><%= f.radio_button(:client_status, "false") %></p>
+  <%= f.label "Graduated?" %>
+  <p><%= f.radio_button(:client_status, "true") %></p>
+
+  <%= f.submit %>
+
+<% end %>
