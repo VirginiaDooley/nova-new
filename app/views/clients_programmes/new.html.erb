@@ -1,5 +1,4 @@
-<h4>Enter enrolment details for <%= @client.full_name %></h4>
-<%= form_for(@clients_programme, url: client_clients_programmes_path(@client)) do |f| %>
+<%= form_for(@clients_programme) do |f| %>
   <%= f.label "Term" %>
   <%= f.text_field :programme_term %>
 
@@ -7,7 +6,12 @@
   <%= f.text_field :programme_year%>
 
   <%= f.label "Status" %>
-  <%= f.text_field :client_status %>
+  
+  <%= f.radio_button("clients_programme", "graduated", "yes") %>
+  <%= f.radio_button("clients_programme", "enroled", "no") %>
+
+  <%= f.hidden_field :client_id, value: @client.id %>
+  <%= f.hidden_field :programme_id, value: @programme.id %>
 
   <%= f.submit %>
 
