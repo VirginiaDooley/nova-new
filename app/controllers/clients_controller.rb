@@ -8,6 +8,7 @@ class ClientsController < ApplicationController
   def show
     @programme = Programme.find(params[:programme_id])
     @client = Client.find(params[:id])
+    @clients_programme = ClientsProgramme.new
     @outcome = Outcome.new
   end
 
