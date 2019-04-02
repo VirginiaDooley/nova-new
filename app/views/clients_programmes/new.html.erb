@@ -1,0 +1,14 @@
+<h4>Enter enrolment details for <%= @client.full_name %></h4>
+<%= form_for(@clients_programme, url: client_clients_programmes_path(@client)) do |f| %>
+  <%= f.label "Term" %>
+  <%= f.text_field :programme_term %>
+
+  <%= f.label "Year" %>
+  <%= f.text_field :programme_year%>
+
+  <%= f.label "Status" %>
+  <%= f.text_field :client_status %>
+
+  <%= f.submit %>
+
+<% end %>
