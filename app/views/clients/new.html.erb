@@ -18,6 +18,19 @@
   <%= f.text_field :post_code %><p>
   <%= f.label "Country" %>
   <%= f.text_field :country %><p>
-  <%= f.submit %>
 
+<!-- Insert info about ClientsProgramme including status, term and year %> -->
+    <%= f.fields_for(ClientsProgramme.new) do |cp| %>
+
+      <%= cp.label "Term" %>
+      <%= cp.text_field :programme_term %>
+
+      <%= cp.label "Year" %>
+      <%= cp.text_field :programme_year%>
+
+      <%= cp.label "Enrolled?" %>
+      <p>False: <%= cp.radio_button(:client_status, "false") %></p>
+      <p>True: <%= cp.radio_button(:client_status, "true") %></p>
+    <% end %>
+  <%= f.submit %>
 <% end %>

@@ -5,10 +5,9 @@
   <%= f.label "Year" %>
   <%= f.text_field :programme_year%>
 
-  <%= f.label "Status" %>
-  
-  <%= f.radio_button("clients_programme", "graduated", "yes") %>
-  <%= f.radio_button("clients_programme", "enroled", "no") %>
+  <%= f.label "Enrolled?" %>
+  <p>False: <%= f.radio_button(:client_status, "false") %></p>
+  <p>True: <%= f.radio_button(:client_status, "true") %></p>
 
   <%= f.hidden_field :client_id, value: @client.id %>
   <%= f.hidden_field :programme_id, value: @programme.id %>

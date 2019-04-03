@@ -5,13 +5,11 @@ class ClientsProgrammesController < ApplicationController
   end
 
   def new
-    @client = Client.find(params[:client_id])
     @clients_programme = ClientsProgramme.new
   end
 
   def create
     @clients_programme = ClientsProgramme.new(clients_programme_params)
-    # byebug
     @clients_programme.save
     redirect_to programme_client_path
   end

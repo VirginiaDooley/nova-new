@@ -13,4 +13,12 @@ class Client < ApplicationRecord
   def full_address
     self.address1 + ", " + self.address2
   end
+
+  def clients_programme_object(programme)
+    self.clients_programmes.where(:programme_id => programme.id)
+  end
+
+  def currently_enrolled
+    ClientsProgramme.clients_currently_enrolled(self)
+  end
 end

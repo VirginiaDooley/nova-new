@@ -2,8 +2,7 @@ class ClientsProgramme < ApplicationRecord
   belongs_to :client
   belongs_to :programme
 
-  # def status_options
-  #   s = ["interviewed", "enroled", "due for assessment", "graduated", "volunteering", "employed"]
-  # end
-
+  def clients_currently_enrolled(client)
+    self.where(:client_status => true, client_id: client.id)
+  end
 end

@@ -6,4 +6,4 @@
 
 <p><%= link_to "Create a New Outcome", new_client_outcome_path(@client, @outcome) %></p>
 
-<p><%= link_to "Return to Client Page", client_path(@client) %></p>
+<p><%= link_to "Return to Client Page", programme_client_path(@client.programme_ids, @client.id) %></p>

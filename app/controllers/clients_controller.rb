@@ -7,10 +7,7 @@ class ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
-    @programmes = @client.programmes
-    @programme = Programme.find(params[:id])
-    @clients_programme = ClientsProgramme.new
-    @outcome = Outcome.new
+    @programme = @client.clients_programmes.find_by(programme_id: params[:programme_id])
   end
 
   def new
@@ -21,9 +18,9 @@ class ClientsController < ApplicationController
   def create
     @programme = Programme.find(params[:programme_id])
     @client = Client.new(client_params)
-    @client.programmes << @programme
     if @client.save!
-      @client.clients_programmes
+      @client.programmes << @programme
+      ClientsProgramme.last.update(client_status_params)
       flash[:notice] = "Your Client was Created"
       redirect_to programme_client_path(@programme, @client)
     else
@@ -35,6 +32,10 @@ class ClientsController < ApplicationController
 
     def client_params
       params.require(:client).permit(:first_name, :last_name, :email, :phone, :address1, :address2, :city, :post_code, :country)
+    end
+
+    def client_status_params
+      params.require(:client).require(:clients_programme).permit(:client_status, :client_id, :programme_id)
     end
 
 end
