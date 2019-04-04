@@ -1,7 +1,7 @@
 class ClientsProgrammesController < ApplicationController
 
   def show
-    @clients_programme = ClientsProgramme.find(params[:id])
+    @clients_programme = ClientsProgramme.find_by(params[:id])
   end
 
   def new
@@ -15,12 +15,12 @@ class ClientsProgrammesController < ApplicationController
   end
 
   def edit
-    @clients_programme = ClientsProgramme.find(params[:id])
+    @clients_programme = ClientsProgramme.find_by(params[:id])
   end
 
   def update
     @clients_programme = ClientsProgramme.find(params[:id])
-    @clients_programme.update(client_status_params)
+    @clients_programme.update(clients_programme_params)
     redirect_to clients_programme_path
   end
 

@@ -33311,3 +33311,1947 @@ app/controllers/clients_controller.rb:17:in `show'
 Completed 200 OK in 129965ms (Views: 127515.5ms | ActiveRecord: 195.9ms)
 
 
+Started GET "/programmes/1/clients/2" for ::1 at 2019-04-03 21:27:29 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (9.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (3.1ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 2], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (9.7ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (87.1ms)
+Completed 200 OK in 3132ms (Views: 1842.4ms | ActiveRecord: 71.4ms)
+
+
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-03 21:30:33 +0100
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (3.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:14
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (380.6ms)
+Completed 200 OK in 3437ms (Views: 2681.0ms | ActiveRecord: 27.4ms)
+
+
+Started POST "/programmes/1/clients" for ::1 at 2019-04-03 21:30:47 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QMBc1o7g75PCku7tQemftH4H+TFkPMnPWs3qmKROJffbukyiCga1TzIv/Hjqi9qTvLYGe1VqbAFTFPASD6xb8A==", "client"=>{"first_name"=>"Ida", "last_name"=>"Peterson", "email"=>"sembof@example.com", "phone"=>"8116816050", "address1"=>"689 Leco Parkway", "address2"=>"1808 Rezob Path", "city"=>"Dedawit", "post_code"=>"kokal", "country"=>"21", "clients_programme"=>{"programme_term"=>"FALL", "programme_year"=>"2020", "client_status"=>"true"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (3.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:19
+Unpermitted parameter: :clients_programme
+  [1m[35m (2.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:21
+  [1m[36mClient Exists (5.8ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", "sembof@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:21
+  [1m[36mClient Create (4.6ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Ida"], ["last_name", "Peterson"], ["email", "sembof@example.com"], ["phone", "8116816050"], ["city", "Dedawit"], ["post_code", "kokal"], ["address1", "689 Leco Parkway"], ["address2", "1808 Rezob Path"], ["country", "21"], ["created_at", "2019-04-03 20:30:48.277540"], ["updated_at", "2019-04-03 20:30:48.277540"]]
+  ↳ app/controllers/clients_controller.rb:21
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:21
+  [1m[35m (1.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClientsProgramme Create (8.4ms)[0m  [1m[32mINSERT INTO "clients_programmes" ("client_id", "programme_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 3], ["programme_id", 1], ["created_at", "2019-04-03 20:30:48.862824"], ["updated_at", "2019-04-03 20:30:48.862824"]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClientsProgramme Load (4.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" ORDER BY "clients_programmes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+Unpermitted parameters: :programme_term, :programme_year
+  [1m[35m (2.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClient Load (3.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mProgramme Load (1.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Update (3.2ms)[0m  [1m[33mUPDATE "clients_programmes" SET "client_status" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["client_status", 1], ["updated_at", "2019-04-03 20:30:49.510522"], ["id", 2]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+Redirected to http://localhost:3000/programmes/1/clients/3
+Completed 302 Found in 1731ms (ActiveRecord: 59.9ms)
+
+
+Started GET "/programmes/1/clients/3" for ::1 at 2019-04-03 21:30:49 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (2.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (10.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 3], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.0ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (68.7ms)
+Completed 200 OK in 2481ms (Views: 2238.5ms | ActiveRecord: 16.3ms)
+
+
+Started GET "/clients_programmes/3/edit" for ::1 at 2019-04-03 21:30:54 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (3.7ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+Completed 404 Not Found in 104ms (ActiveRecord: 5.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'=3):
+  
+app/controllers/clients_programmes_controller.rb:18:in `edit'
+Started GET "/programmes/1/clients/3" for ::1 at 2019-04-03 21:31:01 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (3.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (4.7ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 3], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (13.8ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (128.3ms)
+Completed 200 OK in 4207ms (Views: 3849.6ms | ActiveRecord: 28.2ms)
+
+
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-03 21:32:05 +0100
+Started GET "/programmes/1/clients/3" for ::1 at 2019-04-03 21:32:13 +0100
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (10.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.8ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:15
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (435.2ms)
+Completed 200 OK in 3440ms (Views: 1950.9ms | ActiveRecord: 133.6ms)
+
+
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"3"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (2.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (9.9ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 3], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 3]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 2775ms (Views: 1647.3ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/clients_programmes/3/edit" for ::1 at 2019-04-03 21:32:26 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.1ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+Completed 404 Not Found in 62ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'=3):
+  
+app/controllers/clients_programmes_controller.rb:18:in `edit'
+Started GET "/clients_programmes/3/edit" for ::1 at 2019-04-03 21:32:45 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+Completed 404 Not Found in 460ms (ActiveRecord: 24.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme without an ID):
+  
+app/controllers/clients_programmes_controller.rb:18:in `edit'
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-03 21:32:57 +0100
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:15
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (991.8ms)
+Completed 200 OK in 3790ms (Views: 2728.6ms | ActiveRecord: 37.8ms)
+
+
+Started POST "/programmes/1/clients" for ::1 at 2019-04-03 21:33:17 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yOUpAviK7v+qvY6rXMMx2T4MmpHoqHGPRa8quQ7Pa+a/jB3dv+drCEAiPuB1E8VMeUHbnmdH4nnF/f4HomZoCg==", "client"=>{"first_name"=>"Roy", "last_name"=>"Sutton", "email"=>"jouwa@host.invalid", "phone"=>"7103831204", "address1"=>"1235 Udedi Avenue", "address2"=>"1166 Jofud Highway", "city"=>"Sofjilej", "post_code"=>"lodzet", "country"=>"55", "clients_programme"=>{"programme_term"=>"Autum", "programme_year"=>"2019", "client_status"=>"false"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (12.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (2.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:20
+Unpermitted parameter: :clients_programme
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", "jouwa@host.invalid"], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Create (2.6ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Roy"], ["last_name", "Sutton"], ["email", "jouwa@host.invalid"], ["phone", "7103831204"], ["city", "Sofjilej"], ["post_code", "lodzet"], ["address1", "1235 Udedi Avenue"], ["address2", "1166 Jofud Highway"], ["country", "55"], ["created_at", "2019-04-03 20:33:22.924218"], ["updated_at", "2019-04-03 20:33:22.924218"]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Create (2.4ms)[0m  [1m[32mINSERT INTO "clients_programmes" ("client_id", "programme_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 4], ["programme_id", 1], ["created_at", "2019-04-03 20:33:23.450388"], ["updated_at", "2019-04-03 20:33:23.450388"]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Load (2.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" ORDER BY "clients_programmes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+Unpermitted parameters: :programme_term, :programme_year
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mClient Load (3.0ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mProgramme Load (1.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mClientsProgramme Update (2.1ms)[0m  [1m[33mUPDATE "clients_programmes" SET "client_status" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["client_status", 0], ["updated_at", "2019-04-03 20:33:23.804157"], ["id", 3]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[35m (24.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:24
+Redirected to http://localhost:3000/programmes/1/clients/4
+Completed 302 Found in 2063ms (ActiveRecord: 142.8ms)
+
+
+Started GET "/programmes/1/clients/4" for ::1 at 2019-04-03 21:33:24 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (3.0ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 4], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 4]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (69.9ms)
+Completed 200 OK in 1682ms (Views: 1484.0ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/clients_programmes/4/edit" for ::1 at 2019-04-03 21:34:25 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+Completed 404 Not Found in 132ms (ActiveRecord: 4.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'=4):
+  
+app/controllers/clients_programmes_controller.rb:18:in `edit'
+Started GET "/clients_programmes/4/edit" for ::1 at 2019-04-03 21:35:42 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+Completed 404 Not Found in 545ms (ActiveRecord: 43.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'={:id=>"4"}):
+  
+app/controllers/clients_programmes_controller.rb:18:in `edit'
+Started GET "/clients_programmes/4" for ::1 at 2019-04-03 21:35:53 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.0ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+Completed 404 Not Found in 79ms (ActiveRecord: 5.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'=4):
+  
+app/controllers/clients_programmes_controller.rb:4:in `show'
+Started GET "/clients_programmes/4" for ::1 at 2019-04-03 21:36:22 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.5ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+Completed 404 Not Found in 576ms (ActiveRecord: 30.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find ClientsProgramme with 'id'=4):
+  
+app/controllers/clients_programmes_controller.rb:4:in `show'
+Started GET "/clients_programmes/4" for ::1 at 2019-04-03 21:36:58 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 2238ms (Views: 1547.4ms | ActiveRecord: 37.1ms)
+
+
+Started GET "/clients_programmes/4/edit" for ::1 at 2019-04-03 21:38:12 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (4) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendered clients_programmes/edit.html.erb within layouts/application (121.9ms)
+Completed 200 OK in 2271ms (Views: 2098.6ms | ActiveRecord: 4.7ms)
+
+
+Started PATCH "/clients_programmes/1" for ::1 at 2019-04-03 21:38:58 +0100
+Processing by ClientsProgrammesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rk0HUba2UFZFoo0pKUPoDSW02daMduYh/NXkhNgW+TIO3YKUpacrpt+iP2+2Jh1k/idT2gwT8q6WMo22zcCPOA==", "clients_programme"=>{"client_status"=>"false", "programme_term"=>"Spring", "programme_year"=>"2020"}, "commit"=>"Update Clients programme", "id"=>"1"}
+  [1m[36mUser Load (10.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:22
+Unpermitted parameters: :programme_term, :programme_year
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClient Load (2.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mProgramme Load (2.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClientsProgramme Update (11.9ms)[0m  [1m[33mUPDATE "clients_programmes" SET "client_status" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["client_status", 0], ["updated_at", "2019-04-03 20:38:59.095176"], ["id", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+Redirected to http://localhost:3000/clients_programmes/1
+Completed 302 Found in 1023ms (ActiveRecord: 51.5ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-03 21:38:59 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.0ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 1794ms (Views: 1660.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/clients_programmes/1/edit" for ::1 at 2019-04-03 21:39:49 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (12.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendered clients_programmes/edit.html.erb within layouts/application (103.7ms)
+Completed 200 OK in 2583ms (Views: 1864.1ms | ActiveRecord: 43.8ms)
+
+
+Started PATCH "/clients_programmes/1" for ::1 at 2019-04-03 21:40:55 +0100
+Processing by ClientsProgrammesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nfOXO+q4V84tUaIEx7yPFg/M5bYek6eDMSvD8Sex3Rs9YxL++aksPrdREEJY2Xp/1F9vup72swxbzKrDMmerEQ==", "clients_programme"=>{"client_status"=>"true", "programme_term"=>"Spring", "programme_year"=>"2019"}, "commit"=>"Update Clients programme", "id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (3.0ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:22
+Unpermitted parameters: :programme_term, :programme_year
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClient Load (2.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mProgramme Load (2.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClientsProgramme Update (14.3ms)[0m  [1m[33mUPDATE "clients_programmes" SET "client_status" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["client_status", 1], ["updated_at", "2019-04-03 20:40:56.775254"], ["id", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:24
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:24
+Redirected to http://localhost:3000/clients_programmes/1
+Completed 302 Found in 1351ms (ActiveRecord: 65.8ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-03 21:40:56 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (3.1ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 1589ms (Views: 1438.4ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-03 21:41:28 +0100
+Started GET "/clients_programmes/1/edit" for ::1 at 2019-04-03 21:41:32 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 2152ms (Views: 1510.3ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/clients_programmes/1/edit" for ::1 at 2019-04-03 21:41:39 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"1"}
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mUser Load (20.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.0ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  [1m[36mClientsProgramme Load (28.7ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendered clients_programmes/edit.html.erb within layouts/application (88.3ms)
+  Rendered clients_programmes/edit.html.erb within layouts/application (78.9ms)
+Completed 200 OK in 3563ms (Views: 2807.1ms | ActiveRecord: 44.9ms)
+
+
+Completed 200 OK in 3785ms (Views: 3016.3ms | ActiveRecord: 37.2ms)
+
+
+Started PATCH "/clients_programmes/1" for ::1 at 2019-04-03 21:41:53 +0100
+Processing by ClientsProgrammesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/o9uGaGIb092s34mWH4PZ85MKZy1DRsuxj6tXBDTWpVeH+vcspkUv+yzzGDHG/oOFd+jkDVoD6Gs2cRuBQUsnw==", "clients_programme"=>{"client_status"=>"true", "programme_term"=>"Spring", "programme_year"=>"2019"}, "commit"=>"Update Clients programme", "id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (2.5ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:22
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClient Load (2.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mProgramme Load (2.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClientsProgramme Update (2.2ms)[0m  [1m[33mUPDATE "clients_programmes" SET "programme_term" = ?, "programme_year" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["programme_term", "Spring"], ["programme_year", 2019], ["updated_at", "2019-04-03 20:41:54.886026"], ["id", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+Redirected to http://localhost:3000/clients_programmes/1
+Completed 302 Found in 921ms (ActiveRecord: 49.7ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-03 21:41:55 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (1.9ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 1727ms (Views: 1598.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/programmes/1/clients/2" for ::1 at 2019-04-03 21:41:59 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (2.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 2], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.1ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (68.7ms)
+Completed 200 OK in 1668ms (Views: 1494.8ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/clients/2/outcomes/new" for ::1 at 2019-04-03 21:42:06 +0100
+Processing by OutcomesController#new as HTML
+  Parameters: {"client_id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (2.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:14
+  Rendering outcomes/new.html.erb within layouts/application
+  Rendered outcomes/new.html.erb within layouts/application (90.0ms)
+Completed 200 OK in 1951ms (Views: 1598.3ms | ActiveRecord: 12.0ms)
+
+
+Started POST "/clients/2/outcomes" for ::1 at 2019-04-03 21:42:34 +0100
+Processing by OutcomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7wt0zmMu6t3mA4Qxz7Km0dzDskluikX33JK/tGv9/ycWd8vhpKTF+kdEZdw+V7cA8R4wb/g/IpE2GtEg1lhFKA==", "outcome"=>{"grade"=>"98", "description"=>"Improved Self Esteem"}, "commit"=>"Create Outcome", "client_id"=>"2"}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (4.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:20
+  [1m[35m (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[36mOutcome Create (3.2ms)[0m  [1m[32mINSERT INTO "outcomes" ("description", "grade", "created_at", "updated_at", "client_id") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Improved Self Esteem"], ["grade", 98], ["created_at", "2019-04-03 20:42:35.331004"], ["updated_at", "2019-04-03 20:42:35.331004"], ["client_id", 2]]
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+Redirected to http://localhost:3000/clients/2/outcomes
+Completed 302 Found in 366ms (ActiveRecord: 25.9ms)
+
+
+Started GET "/clients/2/outcomes" for ::1 at 2019-04-03 21:42:35 +0100
+Processing by OutcomesController#index as HTML
+  Parameters: {"client_id"=>"2"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (2.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:4
+  Rendering outcomes/index.html.erb within layouts/application
+  [1m[36mOutcome Load (2.6ms)[0m  [1m[34mSELECT "outcomes".* FROM "outcomes" WHERE "outcomes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/outcomes/index.html.erb:2
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "programmes"."id" FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/outcomes/index.html.erb:9
+  Rendered outcomes/index.html.erb within layouts/application (186.2ms)
+Completed 200 OK in 2221ms (Views: 1904.7ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/programmes/1/clients/2" for ::1 at 2019-04-03 21:42:56 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (2.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 2], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.0ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (64.8ms)
+Completed 200 OK in 1848ms (Views: 1696.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/programmes/1" for ::1 at 2019-04-03 21:43:07 +0100
+Processing by ProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (15.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (2.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (2.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (465.9ms)
+Completed 200 OK in 2088ms (Views: 1970.7ms | ActiveRecord: 41.9ms)
+
+
+Started GET "/programmes/1/clients/2" for ::1 at 2019-04-03 21:43:25 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.6ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (1.6ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 2], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (2.3ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (116.4ms)
+Completed 200 OK in 2173ms (Views: 2024.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:43:29 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (3.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (1669.6ms)
+Completed 500 Internal Server Error in 1792ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a30b9530>):
+    6: <% end %>
+    7: 
+    8: 
+    9: <% @clients.currently_enrolled %>
+  
+app/views/clients/index.html.erb:9:in `_app_views_clients_index_html_erb___276299392424322177_70232691329480'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:44:28 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (3.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.0ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (1636.8ms)
+Completed 500 Internal Server Error in 1826ms (ActiveRecord: 10.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a48d1c08>):
+    6: <% end %>
+    7: 
+    8: 
+    9: <%= @clients.currently_enrolled %>
+  
+app/views/clients/index.html.erb:9:in `_app_views_clients_index_html_erb___276299392424322177_70232654211260'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:45:36 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (10.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (1.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (1611.1ms)
+Completed 500 Internal Server Error in 1755ms (ActiveRecord: 14.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a218a780>):
+     5:   </ul>
+     6: <% end %>
+     7: 
+     8: <%= @clients.currently_enrolled.each do |client| %>
+     9:   <ul>
+    10:     <li><%= link_to client.full_name, client_path(client) %></li>
+    11:   </ul>
+  
+app/views/clients/index.html.erb:8:in `_app_views_clients_index_html_erb___276299392424322177_70232655433760'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:45:52 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (11.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (1697.3ms)
+Completed 500 Internal Server Error in 1826ms (ActiveRecord: 15.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a52a1a80>):
+     5:   </ul>
+     6: <% end %>
+     7: 
+     8: <% @clients.currently_enrolled.each do |client| %>
+     9:   <ul>
+    10:     <li><%= link_to client.full_name, client_path(client) %></li>
+    11:   </ul>
+  
+app/views/clients/index.html.erb:8:in `_app_views_clients_index_html_erb___276299392424322177_70232689136120'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:46:36 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (2.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+Completed 500 Internal Server Error in 747ms (ActiveRecord: 56.1ms)
+
+
+  
+NameError (uninitialized constant ClientsController::Clients):
+  
+app/controllers/clients_controller.rb:5:in `index'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:48:02 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (12.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (12.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (2182.4ms)
+Completed 500 Internal Server Error in 3209ms (ActiveRecord: 99.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a091eae8>):
+    5:   </ul>
+    6: <% end %>
+    7: 
+    8: <%= @clients.currently_enrolled %>
+    9:   
+  
+app/views/clients/index.html.erb:8:in `_app_views_clients_index_html_erb___276299392424322177_70232687860660'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:48:45 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (2.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (1917.3ms)
+Completed 500 Internal Server Error in 2878ms (ActiveRecord: 56.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a3299eb8>):
+    5:   </ul>
+    6: <% end %>
+    7: 
+    8: <%= @clients.currently_enrolled %>
+    9:   
+  
+app/views/clients/index.html.erb:8:in `_app_views_clients_index_html_erb___276299392424322177_70232672751100'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:49:53 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (2.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (4881.6ms)
+Completed 500 Internal Server Error in 5829ms (ActiveRecord: 83.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Class:0x00007fc0a48d0970>
+Did you mean?  current_scope):
+    5:   </ul>
+    6: <% end %>
+    7: 
+    8: <%= Client.currently_enrolled %>
+  
+app/views/clients/index.html.erb:8:in `_app_views_clients_index_html_erb___276299392424322177_70232685779200'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:51:06 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (10.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  Rendered clients/index.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 12.5ms)
+
+
+  
+SyntaxError (/Users/virginiadooley/Development/code/projects/nova-new/app/views/clients/index.html.erb:2: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...f @clients.currently_enrolled );@output_buffer.safe_append='
+...                              ^
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/clients/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+          ^~~
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/clients/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/virginiadooley/Development/code/projects/nova-new/app/views/clients/index.html.erb:15: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/clients/index.html.erb:2: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+app/views/clients/index.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+app/views/clients/index.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/clients/index.html.erb:15: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:52:02 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (11.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (1610.0ms)
+Completed 500 Internal Server Error in 1762ms (ActiveRecord: 16.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a4b1a3e8>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___276299392424322177_70232685220080'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:52:57 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (1.7ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (1.9ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (1608.4ms)
+Completed 500 Internal Server Error in 1735ms (ActiveRecord: 5.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a30164e8>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___276299392424322177_70232673979140'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:53:42 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (2.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (2.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (2104.7ms)
+Completed 500 Internal Server Error in 3150ms (ActiveRecord: 65.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a29f99e8>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___276299392424322177_70232653119420'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-03 21:54:24 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (5.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (3.8ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (3080.4ms)
+Completed 500 Internal Server Error in 3292ms (ActiveRecord: 11.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled?' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a2a82018>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled? %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___276299392424322177_70232673620620'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:14:56 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (3.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (4.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (2604.6ms)
+Completed 500 Internal Server Error in 2910ms (ActiveRecord: 14.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled?' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fc0a4f027f8>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled? %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___276299392424322177_70232686975400'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:16:34 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["programme_id", 1], ["LIMIT", 11]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  Rendered clients/index.html.erb within layouts/application (75.9ms)
+Completed 500 Internal Server Error in 319ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `currently_enrolled' for #<Client::ActiveRecord_Associations_CollectionProxy:0x00007fdd3965fbf8>):
+    1: <h2>Enrolled Clients</h2>
+    2:   <% if @clients.currently_enrolled %>
+    3:     <% @clients.each do |client| %>
+    4:     <ul>
+    5:       <li><%= link_to client.full_name, client_path(client) %></li>
+  
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___689265156579773567_70294063737040'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:19:10 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 861ms (Views: 814.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:20:13 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (63.5ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `clients_currently_enrolled' for #<Class:0x00007fdd379cdb70>):
+    3:   <ul>
+    4:     <li><%= link_to client.full_name, client_path(client) %></li>
+    5: 
+    6:     <li><%= client.currently_enrolled %></li>
+    7:   </ul>
+    8: 
+    9: <% end %>
+  
+app/models/client.rb:22:in `currently_enrolled'
+app/views/clients/index.html.erb:6:in `block in _app_views_clients_index_html_erb___689265156579773567_70294058882440'
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___689265156579773567_70294058882440'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:20:53 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (77.1ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `clients_currently_enrolled' for #<Client:0x00007fdd38a5c220>):
+    3:   <ul>
+    4:     <li><%= link_to client.full_name, client_path(client) %></li>
+    5: 
+    6:     <li><%= client.clients_currently_enrolled %></li>
+    7:   </ul>
+    8: 
+    9: <% end %>
+  
+app/views/clients/index.html.erb:6:in `block in _app_views_clients_index_html_erb___689265156579773567_70294096316460'
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___689265156579773567_70294096316460'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:21:15 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (499.2ms)
+Completed 500 Internal Server Error in 518ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `clients_currently_enrolled' for #<#<Class:0x00007fdd3964f910>:0x00007fdd3c53aa68>
+Did you mean?  clients_programme_url):
+    3:   <ul>
+    4:     <li><%= link_to client.full_name, client_path(client) %></li>
+    5: 
+    6:     <li><%= clients_currently_enrolled %></li>
+    7:   </ul>
+    8: 
+    9: <% end %>
+  
+app/views/clients/index.html.erb:6:in `block in _app_views_clients_index_html_erb___689265156579773567_70294088309240'
+app/views/clients/index.html.erb:2:in `_app_views_clients_index_html_erb___689265156579773567_70294088309240'
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:22:02 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 189ms (Views: 110.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/clients/2" for ::1 at 2019-04-04 11:22:48 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (3.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.8ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 189ms (Views: 167.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/clients_programmes/new" for ::1 at 2019-04-04 11:22:51 +0100
+Processing by ClientsProgrammesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering clients_programmes/new.html.erb within layouts/application
+  Rendered clients_programmes/new.html.erb within layouts/application (192.2ms)
+Completed 500 Internal Server Error in 217ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     9:   <p>False: <%= f.radio_button(:client_status, "false") %></p>
+    10:   <p>True: <%= f.radio_button(:client_status, "true") %></p>
+    11: 
+    12:   <%= f.hidden_field :client_id, value: @client.id %>
+    13:   <%= f.hidden_field :programme_id, value: @programme.id %>
+    14: 
+    15:   <%= f.submit %>
+  
+app/views/clients_programmes/new.html.erb:12:in `block in _app_views_clients_programmes_new_html_erb___4448892810358069118_70294095531020'
+app/views/clients_programmes/new.html.erb:1:in `_app_views_clients_programmes_new_html_erb___4448892810358069118_70294095531020'
+Started GET "/clients/2" for ::1 at 2019-04-04 11:22:55 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 91ms (Views: 80.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients_programmes/new" for ::1 at 2019-04-04 11:23:01 +0100
+Processing by ClientsProgrammesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering clients_programmes/new.html.erb within layouts/application
+  Rendered clients_programmes/new.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     9:   <p>False: <%= f.radio_button(:client_status, "false") %></p>
+    10:   <p>True: <%= f.radio_button(:client_status, "true") %></p>
+    11: 
+    12:   <%= f.hidden_field :client_id, value: @client.id %>
+    13:   <%= f.hidden_field :programme_id, value: @programme.id %>
+    14: 
+    15:   <%= f.submit %>
+  
+app/views/clients_programmes/new.html.erb:12:in `block in _app_views_clients_programmes_new_html_erb___4448892810358069118_70294102729780'
+app/views/clients_programmes/new.html.erb:1:in `_app_views_clients_programmes_new_html_erb___4448892810358069118_70294102729780'
+Started GET "/clients/2" for ::1 at 2019-04-04 11:23:05 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 64.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/programmes/1/clients" for ::1 at 2019-04-04 11:23:06 +0100
+Processing by ClientsController#index as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:4
+  Rendering clients/index.html.erb within layouts/application
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/clients/index.html.erb:2
+  Rendered clients/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 86ms (Views: 72.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:23:07 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 91ms (Views: 77.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clients_programmes/new" for ::1 at 2019-04-04 11:23:08 +0100
+Processing by ClientsProgrammesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering clients_programmes/new.html.erb within layouts/application
+  Rendered clients_programmes/new.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+     9:   <p>False: <%= f.radio_button(:client_status, "false") %></p>
+    10:   <p>True: <%= f.radio_button(:client_status, "true") %></p>
+    11: 
+    12:   <%= f.hidden_field :client_id, value: @client.id %>
+    13:   <%= f.hidden_field :programme_id, value: @programme.id %>
+    14: 
+    15:   <%= f.submit %>
+  
+app/views/clients_programmes/new.html.erb:12:in `block in _app_views_clients_programmes_new_html_erb___4448892810358069118_70294103513140'
+app/views/clients_programmes/new.html.erb:1:in `_app_views_clients_programmes_new_html_erb___4448892810358069118_70294103513140'
+Started GET "/clients/3" for ::1 at 2019-04-04 11:23:10 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.9ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 113ms (Views: 99.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:23:36 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 114ms (Views: 87.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:24:19 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (1.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 219ms (Views: 199.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:27:19 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" IS NULL LIMIT ?[0m  [["client_id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  Rendered clients/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 243ms (Views: 186.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:27:54 +0100
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateOrganisations (20190317095508)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "organisations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190317095508_create_organisations.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190317095508"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProgrammes (20190317121913)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "programmes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "organisation_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190317121913_create_programmes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190317121913"]]
+  ↳ bin/rails:9
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateClients (20190319094736)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "clients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "email" varchar, "phone" varchar, "city" varchar, "post_code" varchar, "address1" varchar, "address2" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190319094736_create_clients.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190319094736"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190326223852)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "organisation_id" varchar, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190326223852_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190326223852_devise_create_users.rb:40
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190326223852_devise_create_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190326223852"]]
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddWebsiteToOrganisation (20190326224652)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "organisations" ADD "website" varchar[0m
+  ↳ db/migrate/20190326224652_add_website_to_organisation.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190326224652"]]
+  ↳ bin/rails:9
+  [1m[35m (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOutcomes (20190329082159)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "outcomes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "grade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190329082159_create_outcomes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329082159"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddClientIdToOutcome (20190329094237)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "outcomes" ADD "client_id" integer[0m
+  ↳ db/migrate/20190329094237_add_client_id_to_outcome.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190329094237"]]
+  ↳ bin/rails:9
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddOmniauthToUsers (20190330180249)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "token" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "expires_at" integer[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:5
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "expires" boolean[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:6
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "refresh_token" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20190330180249_add_omniauth_to_users.rb:8
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190330180249"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateClientsProgrammesJoinTable (20190401114934)
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "clients_programmes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "programme_term" varchar, "programme_year" integer, "client_status" boolean, "client_id" integer, "programme_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190401114934_create_clients_programmes_join_table.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190401114934"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-04 10:28:11.083177"], ["updated_at", "2019-04-04 10:28:11.083177"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/clients/3" for ::1 at 2019-04-04 11:28:54 +0100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+Completed 401 Unauthorized in 32ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-04 11:28:55 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 529ms (Views: 513.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-04-04 11:29:07 +0100
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-04-04 11:29:07 +0100
+Started GET "/users/sign_up" for ::1 at 2019-04-04 11:29:33 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 132ms (Views: 130.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-04-04 11:29:41 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ziwdd7qfrpCnGOPi8EI5tqXc7tzQGRa4uqneoBXlwggZSy+1SYyHV+XCskQcSsmxDK2l7pom6IFWz9rgDBoV0A==", "user"=>{"email"=>"ginnie@midaye.org.uk", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ginnie@midaye.org.uk"], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "ginnie@midaye.org.uk"], ["encrypted_password", "$2a$11$de9Fqzm85MbGoYpKZutBMeoRT8dB/DuAyeQnqT3JbaYvtm56zR0La"], ["created_at", "2019-04-04 10:29:41.683525"], ["updated_at", "2019-04-04 10:29:41.683525"]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+Redirected to http://localhost:3000/clients/3
+Completed 302 Found in 323ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/clients/3" for ::1 at 2019-04-04 11:29:41 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+Completed 404 Not Found in 21ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=3):
+  
+app/controllers/clients_controller.rb:9:in `show'
+Started GET "/" for ::1 at 2019-04-04 11:29:56 +0100
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 102ms (Views: 67.8ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-04 11:29:59 +0100
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (3.6ms)
+  Rendered organisations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 65ms (Views: 51.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-04 11:30:03 +0100
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+EdwnXWevEC4M8AY7I4nzKieQ6m+w4kxT3COrXHph50zPg8mY0++lrQ3kFTROVVGbZkhYMD9Vx7+ytG1NX8t/g==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>"www.novanew.org.uk"}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", "www.novanew.org.uk"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Create (0.7ms)[0m  [1m[32mINSERT INTO "organisations" ("name", "created_at", "updated_at", "website") VALUES (?, ?, ?, ?)[0m  [["name", "Nova New Opportunities"], ["created_at", "2019-04-04 10:30:03.132383"], ["updated_at", "2019-04-04 10:30:03.132383"], ["website", "www.novanew.org.uk"]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Redirected to http://localhost:3000/organisations/1
+Completed 302 Found in 16ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-04-04 11:30:03 +0100
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 246ms (Views: 163.5ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/organisations/1/programmes" for ::1 at 2019-04-04 11:30:06 +0100
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7qQenfSSqIWG/mTDrJZGrqYbbE+vaOd3Rue7GOeYnmKZzSpCs/8tcmxh1IiFRrI74VYtQCCHdIHGtW+mSzGdjg==", "programme"=>{"title"=>"Computers"}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[36mProgramme Create (0.7ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Computers"], ["organisation_id", 1], ["created_at", "2019-04-04 10:30:06.039382"], ["updated_at", "2019-04-04 10:30:06.039382"]]
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+Redirected to http://localhost:3000/organisations/1/programmes/1
+Completed 302 Found in 20ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/organisations/1/programmes/1" for ::1 at 2019-04-04 11:30:06 +0100
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 168ms (Views: 136.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-04 11:30:07 +0100
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:15
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (124.3ms)
+Completed 200 OK in 246ms (Views: 170.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/programmes/1/clients" for ::1 at 2019-04-04 11:30:31 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ne0MabdrII6Dg0FGWn+1XVJTc2TLbfjPjq6yNFsizQCulxwdM416UnM+U9PxHfB6kOKMLvo7XQGHd6i+8MCzBw==", "client"=>{"first_name"=>"Jeanette", "last_name"=>"Gill", "email"=>"jogafem@example.com", "phone"=>"07317852633", "address1"=>"1266 Zelem Turnpike", "address2"=>"", "city"=>"London", "post_code"=>"W10", "country"=>"UK", "clients_programme"=>{"programme_term"=>"Fall", "programme_year"=>"2019", "client_status"=>"true"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:20
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", "jogafem@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Create (4.3ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Jeanette"], ["last_name", "Gill"], ["email", "jogafem@example.com"], ["phone", "07317852633"], ["city", "London"], ["post_code", "W10"], ["address1", "1266 Zelem Turnpike"], ["address2", ""], ["country", "UK"], ["created_at", "2019-04-04 10:30:31.760199"], ["updated_at", "2019-04-04 10:30:31.760199"]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Create (0.8ms)[0m  [1m[32mINSERT INTO "clients_programmes" ("client_id", "programme_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 1], ["programme_id", 1], ["created_at", "2019-04-04 10:30:31.798719"], ["updated_at", "2019-04-04 10:30:31.798719"]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Load (0.7ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" ORDER BY "clients_programmes"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+Unpermitted parameters: :programme_term, :programme_year
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[36mClientsProgramme Update (0.6ms)[0m  [1m[33mUPDATE "clients_programmes" SET "client_status" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["client_status", 1], ["updated_at", "2019-04-04 10:30:31.816156"], ["id", 1]]
+  ↳ app/controllers/clients_controller.rb:24
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:24
+Redirected to http://localhost:3000/programmes/1/clients/1
+Completed 302 Found in 104ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-04 11:30:31 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.5ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 220ms (Views: 157.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clients_programmes/1/edit" for ::1 at 2019-04-04 11:31:24 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendered clients_programmes/edit.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 152ms (Views: 87.5ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/clients_programmes/1" for ::1 at 2019-04-04 11:31:30 +0100
+Processing by ClientsProgrammesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9SzuCOi67JjkqLlPaIdVGxM0EAgTDDBZJyDiT+s//bNVvGvN+6uXaH6oCwn34qByyKeaBJNpJNZNx4t9/umLuQ==", "clients_programme"=>{"client_status"=>"true", "programme_term"=>"Fall", "programme_year"=>"2019"}, "commit"=>"Update Clients programme", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.5ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClientsProgramme Update (0.6ms)[0m  [1m[33mUPDATE "clients_programmes" SET "programme_term" = ?, "programme_year" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["programme_term", "Fall"], ["programme_year", 2019], ["updated_at", "2019-04-04 10:31:30.428415"], ["id", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+Redirected to http://localhost:3000/clients_programmes/1
+Completed 302 Found in 74ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-04 11:31:30 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 117ms (Views: 105.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-04 11:31:32 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 137ms (Views: 119.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/clients/1/outcomes/new" for ::1 at 2019-04-04 11:31:37 +0100
+Processing by OutcomesController#new as HTML
+  Parameters: {"client_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:14
+  Rendering outcomes/new.html.erb within layouts/application
+  Rendered outcomes/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 95ms (Views: 52.8ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/clients/1/outcomes" for ::1 at 2019-04-04 11:31:43 +0100
+Processing by OutcomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O4NKgXbHaRB7Vv2EfMH/OGgYEh2ph1rkUmjItrZe2zukLzXyBEkiiam7FbD5U30WKec/jK1Q2YyBKkV2FRrOSw==", "outcome"=>{"grade"=>"75", "description"=>"Improved Self Esteem"}, "commit"=>"Create Outcome", "client_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[36mOutcome Create (1.0ms)[0m  [1m[32mINSERT INTO "outcomes" ("description", "grade", "created_at", "updated_at", "client_id") VALUES (?, ?, ?, ?, ?)[0m  [["description", "Improved Self Esteem"], ["grade", 75], ["created_at", "2019-04-04 10:31:43.362976"], ["updated_at", "2019-04-04 10:31:43.362976"], ["client_id", 1]]
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+Redirected to http://localhost:3000/clients/1/outcomes
+Completed 302 Found in 15ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/clients/1/outcomes" for ::1 at 2019-04-04 11:31:43 +0100
+Processing by OutcomesController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:4
+  Rendering outcomes/index.html.erb within layouts/application
+  [1m[36mOutcome Load (0.4ms)[0m  [1m[34mSELECT "outcomes".* FROM "outcomes" WHERE "outcomes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/outcomes/index.html.erb:2
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "programmes"."id" FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/outcomes/index.html.erb:9
+  Rendered outcomes/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 114ms (Views: 103.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-04 11:31:45 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 81ms (Views: 68.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients/1/outcomes" for ::1 at 2019-04-04 11:32:28 +0100
+Processing by OutcomesController#index as HTML
+  Parameters: {"client_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:4
+  Rendering outcomes/index.html.erb within layouts/application
+  [1m[36mOutcome Load (0.3ms)[0m  [1m[34mSELECT "outcomes".* FROM "outcomes" WHERE "outcomes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/outcomes/index.html.erb:2
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "programmes"."id" FROM "programmes" INNER JOIN "clients_programmes" ON "programmes"."id" = "clients_programmes"."programme_id" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/outcomes/index.html.erb:9
+  Rendered outcomes/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 135ms (Views: 112.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-04 11:32:37 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.5ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 103ms (Views: 83.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-04 11:32:41 +0100
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 238ms (Views: 199.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-04 11:32:47 +0100
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (5.0ms)
+  Rendered organisations/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 74ms (Views: 65.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-04 11:33:01 +0100
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b8vABHNINZbu95Bj3O7BLZ1t1eVXOnLWe/W2qXIa5HKksr+/ZZk3QOLzwC/hWbOnWGq3LCkErPnKT+mxNoxOEQ==", "organisation"=>{"name"=>"Midaye Somali Development Organisation", "website"=>"www.midaye.org.uk"}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Midaye Somali Development Organisation"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", "www.midaye.org.uk"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Create (0.9ms)[0m  [1m[32mINSERT INTO "organisations" ("name", "created_at", "updated_at", "website") VALUES (?, ?, ?, ?)[0m  [["name", "Midaye Somali Development Organisation"], ["created_at", "2019-04-04 10:33:01.634294"], ["updated_at", "2019-04-04 10:33:01.634294"], ["website", "www.midaye.org.uk"]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Redirected to http://localhost:3000/organisations/2
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/organisations/2" for ::1 at 2019-04-04 11:33:01 +0100
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 2]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 101ms (Views: 92.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/organisations/2/programmes" for ::1 at 2019-04-04 11:33:14 +0100
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LFT3G2qa0SGn8uAzv/jKCsrw4bVqgUuHJ/sjYJ3Gvj9bPcPELfdU1k1tUHiWKD6fjb2guuVu2HGnqffeMW+90w==", "programme"=>{"title"=>"Homework Help"}, "commit"=>"Create Programme", "organisation_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[36mProgramme Create (1.2ms)[0m  [1m[32mINSERT INTO "programmes" ("title", "organisation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Homework Help"], ["organisation_id", 2], ["created_at", "2019-04-04 10:33:14.721090"], ["updated_at", "2019-04-04 10:33:14.721090"]]
+  ↳ app/controllers/programmes_controller.rb:20
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/programmes_controller.rb:20
+Redirected to http://localhost:3000/organisations/2/programmes/2
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/organisations/2/programmes/2" for ::1 at 2019-04-04 11:33:14 +0100
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:8
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 2]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 118ms (Views: 110.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/programmes/2/clients/new" for ::1 at 2019-04-04 11:33:16 +0100
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.3ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:15
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 79ms (Views: 67.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/programmes/2/clients" for ::1 at 2019-04-04 11:33:43 +0100
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RVqgDVYiT+kGQgw9HterqzcnF1i8XfwbdUUQS5NZKeB9vVlIeOgDhtWxpMrj38srpVYSoRr5JzFZRfZt7r42Kw==", "client"=>{"first_name"=>"Christopher", "last_name"=>"Reed", "email"=>"cusuze@host.com", "phone"=>"07539694731", "address1"=>"765 Apojo Place", "address2"=>"", "city"=>"London", "post_code"=>"W10", "country"=>"Uk", "clients_programme"=>{"programme_term"=>"Spring", "programme_year"=>"2020", "client_status"=>"true"}}, "commit"=>"Create Client", "programme_id"=>"2"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:20
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", "cusuze@host.com"], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[36mClient Create (1.1ms)[0m  [1m[32mINSERT INTO "clients" ("first_name", "last_name", "email", "phone", "city", "post_code", "address1", "address2", "country", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Christopher"], ["last_name", "Reed"], ["email", "cusuze@host.com"], ["phone", "07539694731"], ["city", "London"], ["post_code", "W10"], ["address1", "765 Apojo Place"], ["address2", ""], ["country", "Uk"], ["created_at", "2019-04-04 10:33:43.629807"], ["updated_at", "2019-04-04 10:33:43.629807"]]
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClientsProgramme Create (0.9ms)[0m  [1m[32mINSERT INTO "clients_programmes" ("client_id", "programme_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["client_id", 2], ["programme_id", 2], ["created_at", "2019-04-04 10:33:43.645171"], ["updated_at", "2019-04-04 10:33:43.645171"]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+Redirected to http://localhost:3000/programmes/2/clients/2
+Completed 302 Found in 276ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/programmes/2/clients/2" for ::1 at 2019-04-04 11:33:43 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"2", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 2], ["programme_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 2]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 194ms (Views: 127.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients_programmes/2/edit" for ::1 at 2019-04-04 11:33:46 +0100
+Processing by ClientsProgrammesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:18
+  Rendering clients_programmes/edit.html.erb within layouts/application
+  Rendered clients_programmes/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 118ms (Views: 104.0ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/clients_programmes/1" for ::1 at 2019-04-04 11:33:57 +0100
+Processing by ClientsProgrammesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MMCvvg1qUoILSKhbuEhX1sDYhm2d/cXKknDlSSFU5Q6QUCp7HnspcpFIGh0nLaK/G0sMYR2Y0UX4l4x7NIKTBA==", "clients_programme"=>{"client_status"=>"true", "programme_term"=>"Autumn", "programme_year"=>"2019"}, "commit"=>"Update Clients programme", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.3ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[36mClientsProgramme Update (0.8ms)[0m  [1m[33mUPDATE "clients_programmes" SET "programme_term" = ?, "updated_at" = ? WHERE "clients_programmes"."id" = ?[0m  [["programme_term", "Autumn"], ["updated_at", "2019-04-04 10:33:57.795092"], ["id", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:23
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_programmes_controller.rb:23
+Redirected to http://localhost:3000/clients_programmes/1
+Completed 302 Found in 20ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/clients_programmes/1" for ::1 at 2019-04-04 11:33:57 +0100
+Processing by ClientsProgrammesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/clients_programmes_controller.rb:4
+  Rendering clients_programmes/show.html.erb within layouts/application
+  Rendered clients_programmes/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 100ms (Views: 89.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-04 11:33:59 +0100
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:9
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.2ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 78ms (Views: 62.6ms | ActiveRecord: 0.9ms)
+
+
