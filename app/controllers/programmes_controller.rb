@@ -1,7 +1,8 @@
 class ProgrammesController < ApplicationController
 
   def index
-    @programmes = Programme.all
+    @organisation = Organisation.find(params[:organisation_id])
+    @programmes = @organisation.programmes
   end
 
   def show
@@ -21,7 +22,7 @@ class ProgrammesController < ApplicationController
       flash[:notice] = "Your Programme was Created"
       redirect_to organisation_programme_path(@organisation.id, @programme)
     else
-      flash[:notice] = "Please try again."
+      @programme.errors.full_messages
       render "organisations"
     end
   end

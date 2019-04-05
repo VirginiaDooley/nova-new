@@ -1,6 +1,5 @@
 <h2>Programmes</h2>
   <% @programmes.each do |programme| %>
-  <ul>
-    <li><%= link_to programme.title, programme_path(programme) %></li>
-  </ul>
+    <%= link_to programme.title, programme_path(programme) %>
+    <p>Total Clients: <%= programme.clients.count %></p>
 <% end %>

@@ -5,4 +5,5 @@ class ClientsProgramme < ApplicationRecord
   def clients_currently_enrolled(client)
     self.where(:client_status => true, client_id: client.id)
   end
+
 end

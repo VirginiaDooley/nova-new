@@ -21,4 +21,10 @@ class Client < ApplicationRecord
   def currently_enrolled
     ClientsProgramme.clients_currently_enrolled(self)
   end
+
+  def self.london
+    where(city: "London").count
+  end
+
+
 end

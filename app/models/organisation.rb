@@ -3,10 +3,9 @@ class Organisation < ApplicationRecord
   validates :name, presence: true
   validates :website, presence: true
   validates :name, uniqueness: true
-  validates :website, uniqueness: true 
+  validates :website, uniqueness: true
 
   def website_domain
     self.website.split("www.").last
   end
-
-end
+end 

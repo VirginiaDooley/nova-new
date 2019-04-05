@@ -23,7 +23,7 @@ class OutcomesController < ApplicationController
       flash[:notice] = "Your Outcome was Created."
       redirect_to client_outcomes_path
     else
-      flash[:notice] = "Please try again."
+      @outcome.errors.full_messages
       render "index"
     end
   end

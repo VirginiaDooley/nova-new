@@ -3,6 +3,8 @@ class ClientsController < ApplicationController
   def index
     @programme = Programme.find(params[:programme_id])
     @clients = @programme.clients
+    # @client = Client.find(params[:id])
+    @clients_programmes = @programme.clients_programmes
   end
 
   def show
@@ -25,6 +27,7 @@ class ClientsController < ApplicationController
       flash[:notice] = "Your Client was Created"
       redirect_to programme_client_path(@programme, @client)
     else
+      @client.errors.full_messages
       render "programmes"
     end
   end
@@ -36,7 +39,7 @@ class ClientsController < ApplicationController
     end
 
     def client_status_params
-      params.require(:client).require(:clients_programme).permit(:client_status, :client_id, :programme_id)
+      params.require(:client).require(:clients_programme).permit(:client_status, :programme_term, :programme_year, :client_id, :programme_id)
     end
 
 end
