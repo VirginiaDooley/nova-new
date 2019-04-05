@@ -19,7 +19,6 @@ class OrganisationsController < ApplicationController
         flash[:notice] = "Your Organisation was Created."
         redirect_to organisation_path(@organisation)
       else
-        @organisation.errors.full_messages
         render "/"
       end
     end

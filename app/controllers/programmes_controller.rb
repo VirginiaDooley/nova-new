@@ -22,7 +22,6 @@ class ProgrammesController < ApplicationController
       flash[:notice] = "Your Programme was Created"
       redirect_to organisation_programme_path(@organisation.id, @programme)
     else
-      @programme.errors.full_messages
       render "organisations"
     end
   end

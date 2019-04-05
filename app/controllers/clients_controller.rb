@@ -3,7 +3,6 @@ class ClientsController < ApplicationController
   def index
     @programme = Programme.find(params[:programme_id])
     @clients = @programme.clients
-    # @client = Client.find(params[:id])
     @clients_programmes = @programme.clients_programmes
   end
 
@@ -27,7 +26,6 @@ class ClientsController < ApplicationController
       flash[:notice] = "Your Client was Created"
       redirect_to programme_client_path(@programme, @client)
     else
-      @client.errors.full_messages
       render "programmes"
     end
   end
