@@ -18,11 +18,11 @@ class ProgrammesController < ApplicationController
   def create
     @organisation = Organisation.find(params[:organisation_id])
     @programme = @organisation.programmes.build(programme_params)
-    if @programme.save!
+    if @programme.save
       flash[:notice] = "Your Programme was Created"
       redirect_to organisation_programme_path(@organisation.id, @programme)
     else
-      render "organisations"
+      render :new
     end
   end
 

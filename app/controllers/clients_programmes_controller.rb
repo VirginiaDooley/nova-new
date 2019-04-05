@@ -14,8 +14,11 @@ class ClientsProgrammesController < ApplicationController
 
   def create
     @clients_programme = ClientsProgramme.new(clients_programme_params)
-    @clients_programme.save!
-    redirect_to programme_client_path
+    if @clients_programme.save
+      redirect_to programme_client_path
+    else
+      render :new
+    end
   end
 
   def edit

@@ -42117,3 +42117,765 @@ Processing by OutcomesController#index as HTML
 Completed 200 OK in 316ms (Views: 298.7ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2019-04-05 12:44:53 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 470ms (Views: 362.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:44:57 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (7.6ms)
+  Rendered organisations/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 239ms (Views: 223.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 12:45:23 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"izv6eIoG3tgwRaCUrKc2bOpw1F140bKnVdeuCeDVDxcR5RY/YecNTAM1Q4Py1/WfEwnaLdZXLOHztepBt49t6A==", "organisation"=>{"name"=>"", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 483ms (ActiveRecord: 4.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:22:in `create'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:45:48 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (8.1ms)
+  Rendered organisations/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 321ms (Views: 224.9ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 12:46:08 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9e8eVK21yCZKsVZNGwyosMFJkybG+FVLSs/cCXYLbTlkG2K5RIG9Lx9sa8g9hci9xSLVpOT5vC4hjWMHnoSXMA==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 422 Unprocessable Entity in 25ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Website can't be blank, Name has already been taken):
+  
+app/controllers/organisations_controller.rb:18:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 12:47:00 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9e8eVK21yCZKsVZNGwyosMFJkybG+FVLSs/cCXYLbTlkG2K5RIG9Lx9sa8g9hci9xSLVpOT5vC4hjWMHnoSXMA==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 422 Unprocessable Entity in 83ms (ActiveRecord: 5.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Website can't be blank, Name has already been taken):
+  
+app/controllers/organisations_controller.rb:18:in `create'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:47:06 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (14.3ms)
+  Rendered organisations/new.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 518ms (Views: 506.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 12:47:10 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjapMcVHnQERX2WAfdA+TG4K7Z8tG+HhN+CIoSR5T0SXwtXcLHPoCESCWAVbWV5BamGrHQ8aCIRcojevzPa1TQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 422 Unprocessable Entity in 22ms (ActiveRecord: 1.7ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Website can't be blank, Name has already been taken):
+  
+app/controllers/organisations_controller.rb:18:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 12:48:12 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BjapMcVHnQERX2WAfdA+TG4K7Z8tG+HhN+CIoSR5T0SXwtXcLHPoCESCWAVbWV5BamGrHQ8aCIRcojevzPa1TQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.7ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 422 Unprocessable Entity in 100ms (ActiveRecord: 6.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Website can't be blank, Name has already been taken):
+  
+app/controllers/organisations_controller.rb:18:in `create'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:48:18 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (8.9ms)
+  Rendered organisations/new.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 210ms (Views: 199.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 12:48:21 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Yu2QazebWaBxEZDvV2Ozpoctez27mFWmFJctR5x4Qd7zGeyG3q8sqSTMrWpx6tOrg0Y9v5mZvMN/1ZJJdPe71w==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 422 Unprocessable Entity in 21ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Website can't be blank, Name has already been taken):
+  
+app/controllers/organisations_controller.rb:18:in `create'
+Started GET "/organisations" for ::1 at 2019-04-05 12:48:36 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.6ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 172ms (Views: 107.1ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:48:39 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (12.2ms)
+  Rendered organisations/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 194ms (Views: 179.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 12:48:42 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g7+0XlWTS1oiiuZLAi5O75aa9bCIaKunZ2u4SqqAKcIZYVgZvnKYzhH6BVxcXo0cb+P7wCbuNeHBCfwC/dpLPQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:22:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 12:49:12 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g7+0XlWTS1oiiuZLAi5O75aa9bCIaKunZ2u4SqqAKcIZYVgZvnKYzhH6BVxcXo0cb+P7wCbuNeHBCfwC/dpLPQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (4.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 20.0ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:23:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 12:49:33 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g7+0XlWTS1oiiuZLAi5O75aa9bCIaKunZ2u4SqqAKcIZYVgZvnKYzhH6BVxcXo0cb+P7wCbuNeHBCfwC/dpLPQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (7.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 11.5ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:23:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 12:54:44 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"g7+0XlWTS1oiiuZLAi5O75aa9bCIaKunZ2u4SqqAKcIZYVgZvnKYzhH6BVxcXo0cb+P7wCbuNeHBCfwC/dpLPQ==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 4.5ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:22:in `create'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:54:52 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (15.4ms)
+  Rendered organisations/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 564ms (Views: 550.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:55:34 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (831.9ms)
+  Rendered organisations/new.html.erb within layouts/application (869.3ms)
+Completed 500 Internal Server Error in 1074ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `label_tag' for #<ActionView::Helpers::FormBuilder:0x00007fbca99555e8>
+Did you mean?  label):
+    14:   <% end %>
+    15: 
+    16:   <div class="field<%= ' field_with_errors' if @organisation.errors[:name].any? %>">
+    17:     <%= f.label_tag "name", "Name" %>
+    18:     <%= f.text_field_tag "name", @organisation.name %>
+    19:   </div>
+    20: 
+  
+app/views/organisations/_form.html.erb:17:in `block in _app_views_organisations__form_html_erb___1121507445877253357_70224146149660'
+app/views/organisations/_form.html.erb:2:in `_app_views_organisations__form_html_erb___1121507445877253357_70224146149660'
+app/views/organisations/new.html.erb:14:in `_app_views_organisations_new_html_erb___1195073860782442789_70224146180860'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:55:55 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (557.0ms)
+  Rendered organisations/new.html.erb within layouts/application (564.5ms)
+Completed 500 Internal Server Error in 595ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_field_tag' for #<ActionView::Helpers::FormBuilder:0x00007fbca3fde258>
+Did you mean?  text_field):
+    15: 
+    16:   <div class="field<%= ' field_with_errors' if @organisation.errors[:name].any? %>">
+    17:     <%= f.label "name", "Name" %>
+    18:     <%= f.text_field_tag "name", @organisation.name %>
+    19:   </div>
+    20: 
+    21:   <div class="field<%= ' field_with_errors' if @organisation.errors[:website].any? %>">
+  
+app/views/organisations/_form.html.erb:18:in `block in _app_views_organisations__form_html_erb___1121507445877253357_70224090969100'
+app/views/organisations/_form.html.erb:2:in `_app_views_organisations__form_html_erb___1121507445877253357_70224090969100'
+app/views/organisations/new.html.erb:14:in `_app_views_organisations_new_html_erb___1195073860782442789_70224129264080'
+Started GET "/organisations/new" for ::1 at 2019-04-05 12:56:14 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (40.9ms)
+  Rendered organisations/new.html.erb within layouts/application (57.6ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for nil:NilClass):
+    15: 
+    16:   <div class="field<%= ' field_with_errors' if @organisation.errors[:name].any? %>">
+    17:     <%= f.label "name", "Name" %>
+    18:     <%= f.text_field "name", @organisation.name %>
+    19:   </div>
+    20: 
+    21:   <div class="field<%= ' field_with_errors' if @organisation.errors[:website].any? %>">
+  
+app/views/organisations/_form.html.erb:18:in `block in _app_views_organisations__form_html_erb___1121507445877253357_70224142577800'
+app/views/organisations/_form.html.erb:2:in `_app_views_organisations__form_html_erb___1121507445877253357_70224142577800'
+app/views/organisations/new.html.erb:14:in `_app_views_organisations_new_html_erb___1195073860782442789_70224142656780'
+Started GET "/organisations/new" for ::1 at 2019-04-05 13:02:00 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (42.3ms)
+  Rendered organisations/new.html.erb within layouts/application (54.4ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for nil:NilClass):
+    15: 
+    16:   <div class="field<%= ' field_with_errors' if @organisation.errors[:name].any? %>">
+    17:     <%= f.label "name", "Name" %>
+    18:     <%= f.text_field "name", @organisation.name %>
+    19:   </div>
+    20: 
+    21:   <div class="field<%= ' field_with_errors' if @organisation.errors[:website].any? %>">
+  
+app/views/organisations/_form.html.erb:18:in `block in _app_views_organisations__form_html_erb___1121507445877253357_70224142196240'
+app/views/organisations/_form.html.erb:2:in `_app_views_organisations__form_html_erb___1121507445877253357_70224142196240'
+app/views/organisations/new.html.erb:16:in `_app_views_organisations_new_html_erb___1195073860782442789_70224142244400'
+Started GET "/organisations/new" for ::1 at 2019-04-05 13:02:13 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (11.0ms)
+  Rendered organisations/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 329ms (Views: 315.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 13:02:17 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3yAwPsBb0zRVOq/DJbSsqQ62SkmSd1L+Lcv6xPxKD/1O1EzTKW+mPQDnkkYDPcykCt0My7B2u5tGiUXKFMX19A==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `empty?' for nil:NilClass):
+  
+app/controllers/organisations_controller.rb:22:in `create'
+Started POST "/organisations" for ::1 at 2019-04-05 13:02:35 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3yAwPsBb0zRVOq/DJbSsqQ62SkmSd1L+Lcv6xPxKD/1O1EzTKW+mPQDnkkYDPcykCt0My7B2u5tGiUXKFMX19A==", "organisation"=>{"name"=>"Nova New Opportunities", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", "Nova New Opportunities"], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (5.9ms)
+  Rendered organisations/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 374ms (Views: 226.5ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/organisations" for ::1 at 2019-04-05 13:08:27 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 221ms (Views: 134.0ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/organisations/new" for ::1 at 2019-04-05 13:08:29 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (9.3ms)
+  Rendered organisations/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 122ms (Views: 111.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-05 13:08:31 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cb2S06ORTGclrC87dDtbXxFal2igweATwH6fdnxV61mTY36USHCf8xbczCwqS5is6COZGA5HflVmHNs+Kw+Jpg==", "organisation"=>{"name"=>"", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (3.9ms)
+  Rendered organisations/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 104ms (Views: 89.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2019-04-05 13:09:07 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.5ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 994ms (Views: 871.6ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-04-05 13:09:09 +0200
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.6ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 300ms (Views: 201.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/organisations/1/programmes/1" for ::1 at 2019-04-05 13:09:12 +0200
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.6ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (5.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 533ms (Views: 347.8ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-05 13:09:14 +0200
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.2ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:16
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (231.9ms)
+Completed 200 OK in 544ms (Views: 442.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/programmes/1/clients" for ::1 at 2019-04-05 13:09:27 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZHsZP72yqFDHRZaeteuWqTh+rNficwbI9JXy4gs8IAOTfTS5vwrd7gyu2es5rqcLN64cH7yJeXJkGIb4+Cvj6w==", "client"=>{"first_name"=>"Jim", "last_name"=>"Lowe", "email"=>"", "phone"=>"6128413474", "address1"=>"716 Nehut Road", "address2"=>"1270 Odoozi Place", "city"=>"Otujeljam", "post_code"=>"ugu", "country"=>"88", "clients_programme"=>{"programme_term"=>"wuon", "programme_year"=>"2045", "client_status"=>"false"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:21
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email can't be blank):
+  
+app/controllers/clients_controller.rb:23:in `create'
+Started POST "/programmes/1/clients" for ::1 at 2019-04-05 13:11:03 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZHsZP72yqFDHRZaeteuWqTh+rNficwbI9JXy4gs8IAOTfTS5vwrd7gyu2es5rqcLN64cH7yJeXJkGIb4+Cvj6w==", "client"=>{"first_name"=>"Jim", "last_name"=>"Lowe", "email"=>"", "phone"=>"6128413474", "address1"=>"716 Nehut Road", "address2"=>"1270 Odoozi Place", "city"=>"Otujeljam", "post_code"=>"ugu", "country"=>"88", "clients_programme"=>{"programme_term"=>"wuon", "programme_year"=>"2045", "client_status"=>"false"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.9ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:21
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 4.7ms)
+
+
+  
+ActionView::MissingTemplate (Missing template clients/client, application/client with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/virginiadooley/Development/code/projects/nova-new/app/views"
+  * "/Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/views"
+):
+  
+app/controllers/clients_controller.rb:29:in `create'
+Started GET "/programmes/1/clients/new" for ::1 at 2019-04-05 13:11:08 +0200
+Processing by ClientsController#new as HTML
+  Parameters: {"programme_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.1ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:16
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 144ms (Views: 121.0ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/programmes/1/clients" for ::1 at 2019-04-05 13:11:15 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+wDfzXkjMy3sySmDvisuxLBil6+PD/E0FJs20alae46GH+S3ND5xeJuGSMoccy2FqrM3Jw91qG7ENPVriqT5w==", "client"=>{"first_name"=>"Nellie", "last_name"=>"Christensen", "email"=>"", "phone"=>"3535467750", "address1"=>"462 Jewve Path", "address2"=>"1587 Kages Parkway", "city"=>"Mepjoghu", "post_code"=>"mizooja", "country"=>"20", "clients_programme"=>{"programme_term"=>"alopa", "programme_year"=>"2110", "client_status"=>"false"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.5ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:21
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClient Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::MissingTemplate (Missing template clients/client, application/client with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/virginiadooley/Development/code/projects/nova-new/app/views"
+  * "/Users/virginiadooley/.rvm/gems/ruby-2.5.5/gems/devise-4.6.2/app/views"
+):
+  
+app/controllers/clients_controller.rb:29:in `create'
+Started POST "/programmes/1/clients" for ::1 at 2019-04-05 13:12:26 +0200
+Processing by ClientsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q+wDfzXkjMy3sySmDvisuxLBil6+PD/E0FJs20alae46GH+S3ND5xeJuGSMoccy2FqrM3Jw91qG7ENPVriqT5w==", "client"=>{"first_name"=>"Nellie", "last_name"=>"Christensen", "email"=>"", "phone"=>"3535467750", "address1"=>"462 Jewve Path", "address2"=>"1587 Kages Parkway", "city"=>"Mepjoghu", "post_code"=>"mizooja", "country"=>"20", "clients_programme"=>{"programme_term"=>"alopa", "programme_year"=>"2110", "client_status"=>"false"}}, "commit"=>"Create Client", "programme_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (5.0ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:21
+Unpermitted parameter: :clients_programme
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[36mClient Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "clients" WHERE "clients"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/clients_controller.rb:23
+  Rendering clients/new.html.erb within layouts/application
+  Rendered clients/new.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 340ms (Views: 156.9ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-05 13:12:56 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (1.7ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 584ms (Views: 485.0ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-04-05 13:12:58 +0200
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (2.3ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 296ms (Views: 278.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/organisations/1/programmes" for ::1 at 2019-04-05 13:13:01 +0200
+Processing by ProgrammesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1CbZ3ZAQIWHX53TqXjrS1tNy2eEK5HZ0h4sETw+fyj/t9F/7SK4/RAr/WAY0Qa+FvI40lrZOkPJWedOtQnjpnw==", "programme"=>{"title"=>""}, "commit"=>"Create Programme", "organisation_id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (2.1ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:19
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/programmes_controller.rb:21
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/programmes_controller.rb:21
+  Rendering programmes/new.html.erb within layouts/application
+  Rendered programmes/new.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 591ms (Views: 491.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2019-04-05 13:13:05 +0200
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.3ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 130ms (Views: 118.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-04-05 13:13:07 +0200
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 117ms (Views: 104.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organisations/1/programmes/1" for ::1 at 2019-04-05 13:13:07 +0200
+Processing by ProgrammesController#show as HTML
+  Parameters: {"organisation_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mProgramme Load (0.4ms)[0m  [1m[34mSELECT  "programmes".* FROM "programmes" WHERE "programmes"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/programmes_controller.rb:9
+  Rendering programmes/show.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.2ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/programmes/show.html.erb:3
+  [1m[36mClient Load (1.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients" INNER JOIN "clients_programmes" ON "clients"."id" = "clients_programmes"."client_id" WHERE "clients_programmes"."programme_id" = ?[0m  [["programme_id", 1]]
+  ↳ app/views/programmes/show.html.erb:7
+  Rendered programmes/show.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 230ms (Views: 214.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/programmes/1/clients/1" for ::1 at 2019-04-05 13:13:08 +0200
+Processing by ClientsController#show as HTML
+  Parameters: {"programme_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:10
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT  "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ? AND "clients_programmes"."programme_id" = ? LIMIT ?[0m  [["client_id", 1], ["programme_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+  Rendering clients/show.html.erb within layouts/application
+  [1m[36mClientsProgramme Load (0.4ms)[0m  [1m[34mSELECT "clients_programmes".* FROM "clients_programmes" WHERE "clients_programmes"."client_id" = ?[0m  [["client_id", 1]]
+  ↳ app/views/clients/show.html.erb:14
+  Rendered clients/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 111ms (Views: 82.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/clients/1/outcomes/new" for ::1 at 2019-04-05 13:13:10 +0200
+Processing by OutcomesController#new as HTML
+  Parameters: {"client_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:14
+  Rendering outcomes/new.html.erb within layouts/application
+  Rendered outcomes/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 138ms (Views: 71.5ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/clients/1/outcomes" for ::1 at 2019-04-05 13:13:11 +0200
+Processing by OutcomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F4lEpw/lYkpeJrZYIdBfAsYpJXvJa/Dg2pvezNDvhtGZp6ud1RZoU+1oKW9TMdM3rIF5f2mq5FUd++Zxr/gOmw==", "outcome"=>{"grade"=>"", "description"=>""}, "commit"=>"Create Outcome", "client_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+Completed 422 Unprocessable Entity in 13ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Grade can't be blank, Description can't be blank):
+  
+app/controllers/outcomes_controller.rb:22:in `create'
+Started POST "/clients/1/outcomes" for ::1 at 2019-04-05 13:13:24 +0200
+Processing by OutcomesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F4lEpw/lYkpeJrZYIdBfAsYpJXvJa/Dg2pvezNDvhtGZp6ud1RZoU+1oKW9TMdM3rIF5f2mq5FUd++Zxr/gOmw==", "outcome"=>{"grade"=>"", "description"=>""}, "commit"=>"Create Outcome", "client_id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/outcomes_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/outcomes_controller.rb:22
+  Rendering outcomes/new.html.erb within layouts/application
+  Rendered outcomes/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 174ms (Views: 82.0ms | ActiveRecord: 4.7ms)
+
+

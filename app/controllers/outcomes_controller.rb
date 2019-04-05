@@ -19,11 +19,11 @@ class OutcomesController < ApplicationController
   def create
     @client = Client.find(params[:client_id])
     @outcome = @client.outcomes.build(outcome_params)
-    if @outcome.save!
+    if @outcome.save
       flash[:notice] = "Your Outcome was Created."
       redirect_to client_outcomes_path
     else
-      render "index"
+      render :new
     end
   end
 

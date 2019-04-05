@@ -1,2 +1,16 @@
+<% if @organisation.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@organisation.errors.count, "error") %>
+      prohibited this organisation from being saved:
+    </h2>
+
+    <ul>
+    <% @organisation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <h2>New Organisation</h2>
 <%= render 'form', organisation: @organisation %>
