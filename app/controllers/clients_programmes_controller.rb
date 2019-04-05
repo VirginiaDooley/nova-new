@@ -2,6 +2,9 @@ class ClientsProgrammesController < ApplicationController
 
   def index
     @clients_programmes = ClientsProgramme.all
+    @client = @clients_programmes.client
+    byebug
+    @enrolled = ClientsProgramme.currently_enrolled(@client)
   end
 
     def show
@@ -27,8 +30,11 @@ class ClientsProgrammesController < ApplicationController
 
   def update
     @clients_programme = ClientsProgramme.find(params[:id])
-    @clients_programme.update!(clients_programme_params)
-    redirect_to clients_programme_path(@clients_programme)
+    if @clients_programme.update(clients_programme_params)
+      redirect_to clients_programme_path
+    else
+      render :edit
+    end
   end
 
   private
