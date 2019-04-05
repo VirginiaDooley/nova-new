@@ -29,7 +29,7 @@ class OrganisationsController < ApplicationController
 
     def update
       @organisation = Organisation.find(params[:id])
-      @organisation.update(org_params)
+      @organisation.update!(org_params)
       redirect_to organisation_path(@organisation)
     end
 

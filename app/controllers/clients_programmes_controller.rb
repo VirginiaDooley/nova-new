@@ -14,7 +14,7 @@ class ClientsProgrammesController < ApplicationController
 
   def create
     @clients_programme = ClientsProgramme.new(clients_programme_params)
-    @clients_programme.save
+    @clients_programme.save!
     redirect_to programme_client_path
   end
 
@@ -24,7 +24,7 @@ class ClientsProgrammesController < ApplicationController
 
   def update
     @clients_programme = ClientsProgramme.find(params[:id])
-    @clients_programme.update(clients_programme_params)
+    @clients_programme.update!(clients_programme_params)
     redirect_to clients_programme_path(@clients_programme)
   end
 
