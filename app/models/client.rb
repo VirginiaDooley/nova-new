@@ -17,8 +17,4 @@ class Client < ApplicationRecord
     self.clients_programmes.where(:programme_id => programme.id)
   end
 
-  # def currently_enrolled
-  #   ClientsProgramme.clients_currently_enrolled(self)
-  # end
-
 end

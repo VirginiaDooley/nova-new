@@ -1,10 +1,7 @@
 class ClientsProgrammesController < ApplicationController
 
   def index
-    @clients_programmes = ClientsProgramme.all
-    @client = @clients_programmes.client
-    byebug
-    @enrolled = ClientsProgramme.currently_enrolled(@client)
+    @clients_programmes = ClientsProgramme.currently_enrolled
   end
 
     def show
