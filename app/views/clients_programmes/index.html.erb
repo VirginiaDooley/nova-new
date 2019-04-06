@@ -1,5 +1,7 @@
 <h2>Currently Enrolled Clients</h2>
 
-<p><%= @clients_programmes.each {|cp| puts cp.client_id } %></p>
-
-<p>Number: <%= @clients_programmes.size %></p>
+<% @clients_programmes.each do |cp| %>
+<p><%= cp.client.full_name %></p>
+<p><%= cp.programme_term %></p>
+<p><%= cp.programme_year %></p>
+<% end %>

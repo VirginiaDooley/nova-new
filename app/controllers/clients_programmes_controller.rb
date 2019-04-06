@@ -4,7 +4,7 @@ class ClientsProgrammesController < ApplicationController
     @clients_programmes = ClientsProgramme.currently_enrolled
   end
 
-    def show
+  def show
     @clients_programme = ClientsProgramme.find_by(params[:id])
   end
 
