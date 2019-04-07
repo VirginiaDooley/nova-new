@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :clients_programmes, only: [:index, :new, :create, :show, :edit, :update]
 
   resources :clients do
-    # resources :clients_programme, only: :update
+
   end
 
   resources :outcomes
