@@ -1,52 +1,26 @@
-<% if @client.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@client.errors.count, "error") %>
-      prohibited this client from being saved:
-    </h2>
-
-    <ul>
-    <% @client.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <h4>Add a new Client</h4>
 
-<%= form_for([@programme, @client]) do |f| %>
-  <%= f.label "First Name" %>
+<%= bootstrap_form_for([@programme, @client]) do |f| %>
   <%= f.text_field :first_name %><p>
-  <%= f.label "Last Name" %>
   <%= f.text_field :last_name %><p>
-  <%= f.label "Email" %>
   <%= f.text_field :email %><p>
-  <%= f.label "Phone" %>
   <%= f.text_field :phone %><p>
-  <%= f.label "Address 1" %>
   <%= f.text_field :address1 %><p>
-  <%= f.label "Address 2" %>
   <%= f.text_field :address2 %><p>
-  <%= f.label "City" %>
   <%= f.text_field :city %><p>
-  <%= f.label "Post Code" %>
   <%= f.text_field :post_code %><p>
-  <%= f.label "Country" %>
   <%= f.text_field :country %><p>
 
 <!-- Insert info about ClientsProgramme including status, term and year %> -->
     <%= f.fields_for(ClientsProgramme.new) do |cp| %>
 
-      <%= cp.label "Term" %>
       <%= cp.text_field :programme_term %>
 
-      <%= cp.label "Year" %>
       <%= cp.text_field :programme_year%>
 
       <%= cp.label "Enrolled?" %>
-      <p>False: <%= cp.radio_button(:client_status, "false") %></p>
-      <p>True: <%= cp.radio_button(:client_status, "true") %></p>
+      <%= cp.radio_button(:client_status, "false") %></p>
+      <%= cp.radio_button(:client_status, "true") %></p>
 
     <% end %>
   <%= f.submit %>

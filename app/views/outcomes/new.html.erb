@@ -1,24 +1,7 @@
-<% if @outcome.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@outcome.errors.count, "error") %>
-      prohibited this outcome from being saved:
-    </h2>
-
-    <ul>
-    <% @outcome.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <p>Add a new Outcome for <b><%= @client.full_name %></b>.</p>
 
-<%= form_for ([@client, @outcome]) do |f| %>
-  <%= f.label "Grade" %>
+<%= bootstrap_form_for ([@client, @outcome]) do |f| %>
   <%= f.text_field :grade %><p>
-  <%= f.label "Description" %>
   <%= f.text_field :description %><p>
   <%= f.submit %>
 <% end %>

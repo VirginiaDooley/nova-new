@@ -1,11 +1,11 @@
-<h2><%= @organisation.name %></h2>
+<h3><%= @organisation.name %></h3>
 
-<%= form_for ([@organisation, @programme]) do |f| %>
-  <%= f.label "New Programme Title" %>
-  <%= f.text_field :title %><p>
+<%= bootstrap_form_for ([@organisation, @programme]) do |f| %>
+  <%= f.text_field :title, label: "New Programme Title" %><p>
   <%= f.submit %>
 <% end %>
 
+<h4>Current Programmes</h4>
   <% @organisation.programmes.each do |programme| %>
     <ul>
       <li><%= link_to programme.title, organisation_programme_path(@organisation, programme) %></li>
