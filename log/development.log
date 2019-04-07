@@ -46270,3 +46270,32 @@ Processing by OrganisationsController#index as HTML
 Completed 200 OK in 128ms (Views: 84.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/organisations/new" for ::1 at 2019-04-07 05:58:49 +0200
+Processing by OrganisationsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (22.8ms)
+  Rendered organisations/new.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 489ms (Views: 410.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/organisations" for ::1 at 2019-04-07 05:58:50 +0200
+Processing by OrganisationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WRojGp+UY0C+6wEhwv6z+Z6CF1816u4PmBtOLW5DPTPDxM9ddHWw1I2b4jacjnAKZ/sZL5tscEk+eQplORlfzA==", "organisation"=>{"name"=>"", "website"=>""}, "commit"=>"Create Organisation"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[36mOrganisation Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "organisations" WHERE "organisations"."website" = ? LIMIT ?[0m  [["website", ""], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:18
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/organisations_controller.rb:18
+  Rendering organisations/new.html.erb within layouts/application
+  Rendered organisations/_form.html.erb (4.7ms)
+  Rendered organisations/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 200ms (Views: 173.1ms | ActiveRecord: 1.8ms)
+
+
