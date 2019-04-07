@@ -1,4 +1,4 @@
-# Save the Earth App
+# Nova CRM
 
 # Usage
 A CRM for community organisations to evaluate the client outcomes and programme impact.
