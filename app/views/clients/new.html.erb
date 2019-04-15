@@ -1,8 +1,9 @@
-<h4>Add a new Client</h4>
+<h4>Add or Create a new Client</h4>
 
 <%= bootstrap_form_for([@programme, @client]) do |f| %>
-  <%= f.text_field :first_name %><p>
-  <%= f.text_field :last_name %><p>
+  <%= collection_select @client, :client_id, Client.all, :id, :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
   <%= f.text_field :email %><p>
   <%= f.text_field :phone %><p>
   <%= f.text_field :address1 %><p>
