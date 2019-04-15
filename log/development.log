@@ -48475,3 +48475,84 @@ Processing by ClientsController#show as HTML
 Completed 200 OK in 93ms (Views: 75.2ms | ActiveRecord: 5.6ms)
 
 
+Started GET "/" for ::1 at 2019-04-08 11:15:46 +0200
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by OrganisationsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  Rendering organisations/index.html.erb within layouts/application
+  [1m[36mOrganisation Load (0.8ms)[0m  [1m[34mSELECT "organisations".* FROM "organisations"[0m
+  ↳ app/views/organisations/index.html.erb:8
+  Rendered organisations/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 771ms (Views: 705.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/organisations/1" for ::1 at 2019-04-08 11:15:50 +0200
+Processing by OrganisationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[36mOrganisation Load (0.4ms)[0m  [1m[34mSELECT  "organisations".* FROM "organisations" WHERE "organisations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/organisations_controller.rb:8
+  Rendering organisations/show.html.erb within layouts/application
+  [1m[36mProgramme Load (0.7ms)[0m  [1m[34mSELECT "programmes".* FROM "programmes" WHERE "programmes"."organisation_id" = ?[0m  [["organisation_id", 1]]
+  ↳ app/views/organisations/show.html.erb:9
+  Rendered organisations/show.html.erb within layouts/application (163.5ms)
+Completed 200 OK in 277ms (Views: 235.0ms | ActiveRecord: 3.2ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2019-04-08 11:15:52 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cGmUsPETnktsqdbmKIwJB0wzsLAh/trY6C/kfw/bblR78rMZ/PaP3VPvr7W1D2fm7YOuj/B3pjtHR9JGWdBnzw=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/rack-2.0.6/lib/rack/tempfile_reaper.rb:15
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-04-08 11:15:52 +0200
+Processing by OrganisationsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-08 11:15:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 111ms (Views: 108.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-04-15 13:08:48 +0100
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/virginiadooley/.rvm/rubies/ruby-2.5.5/lib/ruby/gems/2.5.0/gems/sprockets-rails-3.2.1/lib/sprockets/rails/quiet_assets.rb:13
+Processing by OrganisationsController#index as HTML
+Completed 401 Unauthorized in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-15 13:08:48 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (54.9ms)
+Completed 200 OK in 1047ms (Views: 981.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-04-15 13:08:54 +0100
+Processing by OrganisationsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-04-15 13:08:54 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 82ms (Views: 80.1ms | ActiveRecord: 0.0ms)
+
+
