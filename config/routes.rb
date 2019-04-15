@@ -8,11 +8,11 @@ Rails.application.routes.draw do
     resources :programmes
   end
 
-  resources :programmes do
+  resources :programmes, only: :show do
     resources :clients
   end
 
-  resources :clients do
+  resources :clients, only: :show do
     resources :outcomes
   end
 
