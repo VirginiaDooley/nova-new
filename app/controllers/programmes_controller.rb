@@ -26,10 +26,30 @@ class ProgrammesController < ApplicationController
     end
   end
 
+  def edit
+    @programme = Programme.find(params[:id])
+  end
+
+  def update
+    @client = Client.find(params[:client_id])
+    @programme = Programme.find(params[:id])
+    if @client.update(client_params)
+      @client.programmes << @programme
+      redirect_to @client
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @programme = Programme.find(params[:id]).destroy
+    redirect_to organisation_programme_path
+  end
+
   private
 
     def programme_params
-      params.require(:programme).permit(:title)
+      params.require(:programme).permit(:title, :clients_attributes => [:first_name, :last_name, :email, :phone, :address1, :address2, :city, :post_code, :country])
     end
 
 end

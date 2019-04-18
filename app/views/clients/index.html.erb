@@ -1,6 +1,8 @@
-<h2>Clients</h2>
+<h2>Clients in <%= @programme.title %></h2>
   <% @clients.each do |client| %>
   <ul>
     <li><%= link_to client.full_name, programme_client_path(@programme, client) %></li>
   </ul>
 <% end %>
+
+<p><%= link_to "Add a Client", new_programme_client_path(@programme, @client) %> to <b><%= @programme.title %>.

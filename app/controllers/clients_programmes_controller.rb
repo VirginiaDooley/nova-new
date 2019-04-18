@@ -27,11 +27,8 @@ class ClientsProgrammesController < ApplicationController
 
   def update
     @clients_programme = ClientsProgramme.find(params[:id])
-    if @clients_programme.update(clients_programme_params)
-      redirect_to clients_programme_path
-    else
-      render :edit
-    end
+    @clients_programme.update(clients_programme_params)
+    redirect_to clients_programmes_path
   end
 
   private

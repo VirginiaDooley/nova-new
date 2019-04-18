@@ -3,10 +3,10 @@ class Client < ApplicationRecord
   has_many :programmes, through: :clients_programmes
   has_many :outcomes
   validates :first_name, :last_name, :email, presence: true
-  validates :email, uniqueness: true
+  validates :first_name, :last_name, :email, uniqueness: true
 
   def full_name
-    self.first_name + " " + self.last_name
+    "#{self.first_name} #{self.last_name}"
   end
 
   def full_address

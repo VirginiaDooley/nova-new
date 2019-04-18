@@ -3,3 +3,4 @@
 <p>Year: <%= @clients_programme.programme_year %></p>
 <p><%= link_to "Edit Status", edit_clients_programme_path %></p>
 <p><%= link_to "Return to Client Page", programme_client_path(@clients_programme.programme_id, @clients_programme.client_id) %></p>
+<p><%= link_to "All Enrolled Clients", clients_programmes_path %></p>

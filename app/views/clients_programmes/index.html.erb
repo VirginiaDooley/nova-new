@@ -1,7 +1,7 @@
 <h2>Currently Enrolled Clients</h2>
 
 <% @clients_programmes.each do |cp| %>
-<p><%= cp.client.full_name %></p>
-<p><%= cp.programme_term %></p>
-<p><%= cp.programme_year %></p>
+Client: <%= cp.client.full_name %><br>
+Term: <%= cp.programme_term %><br>
+<p>Year: <%= cp.programme_year %></p>
 <% end %>

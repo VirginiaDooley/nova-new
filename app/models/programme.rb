@@ -4,4 +4,5 @@ class Programme < ApplicationRecord
   has_many :clients, through: :clients_programmes
   has_many :outcomes, through: :clients
   validates :title, presence: true
+
 end
