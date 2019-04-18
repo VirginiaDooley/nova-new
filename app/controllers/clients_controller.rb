@@ -19,21 +19,34 @@ class ClientsController < ApplicationController
 
   def create
     @programme = Programme.find(params[:programme_id])
-    @client = Client.new(client_params)
-    if @client.save
-      @client.programmes << @programme
-      ClientsProgramme.last.update(client_status_params)
+    # raise params.inspect
+    @client = Client.find_by(id: client_params[:id]) || Client.new(client_params)
+    if @client.id
+      flash[:notice] = "Your Client has been added to #{@programme.title}"
+      val =  "Your Client has been added to #{@programme.title}"
+    elsif @client.save
       flash[:notice] = "Your Client was Created"
-      redirect_to programme_client_path(@programme, @client)
+      val =  "Your Client was Created"
     else
       render :new
+      val =  'in else block'
     end
+    # byebug
+    @client.programmes << @programme
+    ClientsProgramme.last.update(client_status_params)
+    redirect_to programme_client_path(@programme, @client)
+  end
+
+  def edit
+  end
+
+  def update
   end
 
   private
 
     def client_params
-      params.require(:client).permit(:first_name, :last_name, :email, :phone, :address1, :address2, :city, :post_code, :country)
+      params.require(:client).permit(:first_name, :last_name, :email, :phone, :address1, :address2, :city, :post_code, :country, :id)
     end
 
     def client_status_params

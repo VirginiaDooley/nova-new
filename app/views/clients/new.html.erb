@@ -1,7 +1,10 @@
-<h4>Add existing Client or Create a new Client</h4>
+<h4>Add a Client to <%= @programme.title %></h4>
 
 <%= bootstrap_form_for([@programme, @client]) do |f| %>
-  <%= collection_select @client, :client_id, Client.all, :id, :first_name %>
+  <%= f.collection_select(:full_name, Client.all, :id, :full_name, {prompt: true}, {name: 'client[id]'}) %>
+  <%= f.hidden_field :client_id, value: @client.id %>
+<p>or create one:</p>
+
   <%= f.text_field :first_name %>
   <%= f.text_field :last_name %>
   <%= f.text_field :email %><p>
@@ -13,16 +16,13 @@
   <%= f.text_field :country %><p>
 
 <!-- Insert info about ClientsProgramme including status, term and year %> -->
-    <%= f.fields_for(ClientsProgramme.new) do |cp| %>
 
-      <%= cp.text_field :programme_term %>
-
-      <%= cp.text_field :programme_year%>
-
-      <%= cp.label "Enrolled?" %>
-      <%= cp.radio_button(:client_status, "false") %></p>
-      <%= cp.radio_button(:client_status, "true") %></p>
-
-    <% end %>
-  <%= f.submit %>
+  <%= f.fields_for(ClientsProgramme.new) do |cp| %>
+    <%= cp.text_field :programme_term %>
+    <%= cp.text_field :programme_year%>
+    <%= cp.label "Enrolled?" %>
+    <%= cp.radio_button(:client_status, "false") %></p>
+    <%= cp.radio_button(:client_status, "true") %></p>
+  <% end %>
+  <%= f.submit "Add Client"%>
 <% end %>
