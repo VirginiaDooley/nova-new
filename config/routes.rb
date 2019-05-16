@@ -5,24 +5,20 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :organisations do
-    resources :programmes
+    resources :programmes, only: [:index, :new, :create, :show]
   end
 
-  resources :programmes, only: :show do
-    resources :clients
+  resources :programmes do
+    resources :clients, only: [:index, :new, :create, :show]
   end
 
-  resources :clients, only: :show do
-    resources :outcomes
+  resources :clients do
+    resources :outcomes, only: [:index, :new, :create, :show]
   end
 
   resources :clients_programmes, only: [:index, :new, :create, :show, :edit, :update]
 
-  resources :clients do
-
-  end
-
-  resources :outcomes
+  # resources :outcomes
 
   # Routes for Google authentication
   get 'auth/:provider/callback', to: 'sessions#googleAuth'
