@@ -8,7 +8,7 @@ Associate a programme with outcomes for Outcomes index.
 Planning for Rails w JS project
 
 Get rid of turbo links gem?
-
+If I'm rendering some objects with JSON, what happens to tables etc created for rails?
 
 
 * Must translate JSON responses from your Rails app into JavaScript Model Objects using either ES6 class or constructor syntax. The Model Objects must have at least one method on the prototype. (Formatters work really well for this.)

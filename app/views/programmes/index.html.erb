@@ -1,5 +1,6 @@
 <h2>Programmes</h2>
   <% @programmes.each do |programme| %>
-    <%= link_to programme.title, programme_path(programme) %>
-    <p>Total Clients: <%= programme.clients.count %></p>
+    <%= link_to programme.title, programme_path(programme)%>
+    <br>Total Clients: <%= programme.clients.count %>
+    <br><a href="programmes/<%= programme.id %>", data-confirm="Are you sure?" data-method="delete"> delete </a>
 <% end %>
