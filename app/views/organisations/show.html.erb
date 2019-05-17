@@ -7,9 +7,9 @@
     </ul>
   <% end %>
 
-<%= link_to "Create a New Programme", new_organisation_programme_path(@organisation) %><br>
+<p><%= link_to "Add a new Programme", new_organisation_programme_path(@organisation) %></p>
 
-<%= link_to "Edit Organisation", edit_organisation_path(@organisation) %>
+<p><%= link_to "Edit Organisation", edit_organisation_path(@organisation), id: "edit_organisation_link", remote: true %></p> 
 
 <%= form_tag organisation_path(@organisation.id), method: "delete" do %>
   <%= submit_tag "Delete #{@organisation.name}" %>
