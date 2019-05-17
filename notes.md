@@ -8,10 +8,7 @@ Associate a programme with outcomes for Outcomes index.
 Planning for Rails w JS project
 
 Get rid of turbo links gem?
-Add p div li tags throughout views; you can do this directly in views or create a related css file to with a selector for the section
-Create new javascript file start with document ready syntax
-Write an event handler
-Stop the auto triggering of a form with preventDefault or remote:true (?)
+
 
 
 * Must translate JSON responses from your Rails app into JavaScript Model Objects using either ES6 class or constructor syntax. The Model Objects must have at least one method on the prototype. (Formatters work really well for this.)
@@ -20,7 +17,14 @@ Stop the auto triggering of a form with preventDefault or remote:true (?)
     * Questions:
         * Do I need to recreate objects using JS rather than Rails? If so, in which cases? Any?
         * Does a click method count as the one method?
-    * Pseudo: Stop the auto triggering of a form with preventDefault
+    * Pseudo:
+
+      * Add p div li tags throughout views; you can do this directly in views or create a related css file to with a selector for the section
+      * Create new javascript file start with document ready syntax
+      Write an event handler
+      * Stop the auto triggering of a form with preventDefault or remote:true (?)
+      * Move the redirect from the controller into a redirect_to do block and use formatter (around 19:20 in this video https:/www.youtube.com/watch?v=K-sns5tNdTY)
+      * That block will reference a js file/format that needs to be created (client.js). Not sure if this needs to be erb file(?). This file will render clients contact details. Or appends a new client to a complete list (which you need to do for the next spec).
 
 * Must render at least one index page (index resource - 'list of things') via JavaScript and an Active Model Serialization JSON Backend.
     * For example: in a blog domain with users and posts, you might display the index of the user's posts on the users show page, fetching the posts via a AJAX GET request, with the backend rendering the posts in JSON format, and then appending the posts to the page.
