@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     resources :outcomes, only: [:index, :new, :create, :show]
   end
 
-  resources :clients_programmes, only: [:index, :new, :create, :show, :edit, :update]
+  resources :outcomes, only: [:index, :new, :create, :show]
 
-  # resources :outcomes
+  resources :clients_programmes, only: [:index, :new, :create, :show, :edit, :update]
 
   # Routes for Google authentication
   get 'auth/:provider/callback', to: 'sessions#googleAuth'

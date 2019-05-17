@@ -1,13 +1,14 @@
 class OutcomesController < ApplicationController
 
   def index
-    @client = Client.find(params[:client_id])
-    @programme = @client.programmes
-    @outcomes = @client.outcomes
+    @outcomes = Outcome.all
   end
 
   def show
     @outcome = Outcome.find(params[:id])
+    @client = Client.find(params[:client_id])
+    @programme = @client.programmes
+    @outcomes = @client.outcomes
   end
 
   def new

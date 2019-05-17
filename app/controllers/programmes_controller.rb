@@ -1,8 +1,9 @@
 class ProgrammesController < ApplicationController
 
   def index
-    @organisation = Organisation.find(params[:organisation_id])
-    @programmes = @organisation.programmes
+    @programmes = Programme.all
+    # @organisation = Organisation.find(params[:organisation_id])
+    # @programmes = @organisation.programmes
   end
 
   def show

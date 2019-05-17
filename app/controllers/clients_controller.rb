@@ -1,9 +1,10 @@
 class ClientsController < ApplicationController
 
   def index
-    @programme = Programme.find(params[:programme_id])
-    @clients = @programme.clients
-    @clients_programmes = @programme.clients_programmes
+    @clients = Client.all
+    # @programme = Programme.find(params[:programme_id])
+    # @clients = @programme.clients
+    # @clients_programmes = @programme.clients_programmes
   end
 
   def show
