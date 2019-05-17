@@ -12,6 +12,7 @@
   <p><%= link_to "Add #{@client.first_name}'s Programme Term and Year", new_clients_programme_path %></p>
 <% else %>
   <% @client.clients_programmes.each do |clients_programme| %>
+    <p>Programme Name: <%= link_to clients_programme.programme.title %></p>
     <p>Enrolled?: <%= clients_programme.client_status %></p>
     <p>Term: <%= clients_programme.programme_term %></p>
     <p>Year: <%= clients_programme.programme_year %></p>
