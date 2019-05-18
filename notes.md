@@ -6,12 +6,12 @@ Get rid of turbo links gem?
 Create a seed file
 Create a bookmark of local ports for quick access
 Create a custom rake task that drop, create, migrate seed and start the server (check out rake -t)
-
 Associate a programme with outcomes for Outcomes index.
 
 Planning for Rails w JS project
 
 add respond_to methods in any controller action where you want render both json and html
+change params from keys to selectors so (params[:id]) will become (params["id"])
 
 * Must translate JSON responses from your Rails app into JavaScript Model Objects using either ES6 class or constructor syntax. The Model Objects must have at least one method on the prototype. (Formatters work really well for this.)
     * Take a blog domain example and creating a new Post, instead of plainly taking the JSON response of the newly created Post from the Rails app and appending it to the DOM, you would instead create a Post prototype object and add a function to that prototype to perhaps concatenate (format) the comments authors first and last name. You would then use the object to append the comment information to the DOM.
