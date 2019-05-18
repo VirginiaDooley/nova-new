@@ -2,16 +2,20 @@ class OrganisationsController < ApplicationController
 
     def index
       @organisations = Organisation.all
-      #explicit rendering; responds to request type 
-      respond_to do |o|
-        o.html {render :index}
-        o.json {render json: @organisations}
+      #explicit rendering; responds to request type
+      respond_to do |format|
+        format.html {render :index}
+        format.json {render json: @organisations}
       end
     end
 
     def show
       @organisation = Organisation.find(params[:id])
       @programme = Programme.new
+      respond_to do |format|
+        format.html {render :show}
+        format.json {render json: @organisation}
+      end
     end
 
     def new
@@ -26,10 +30,19 @@ class OrganisationsController < ApplicationController
       else
         render :new
       end
+
+      respond_to do |format|
+        format.html {render :show}
+        format.json {render json: @organisation}
+      end
     end
 
     def edit
       @organisation = Organisation.find(params[:id])
+      respond_to do |format|
+        format.html {render :show}
+        format.json {render json: @organisation}
+      end
     end
 
     def update
