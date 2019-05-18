@@ -1,4 +1,4 @@
 class OrganisationSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :name, :website
   has_many :programmes
 end
