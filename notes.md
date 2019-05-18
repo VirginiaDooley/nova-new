@@ -8,8 +8,11 @@ Associate a programme with outcomes for Outcomes index.
 Planning for Rails w JS project
 
 Get rid of turbo links gem?
+Create a seed file
+Create a bookmark of local ports for quick access
+Create a custom rake task that drop, create, migrate seed and start the server (check out rake -t)
 If I'm rendering some objects with JSON, what happens to tables etc created for rails?
-Clients listed twice in programmes show // Or prevent from adding client more than once 
+Clients listed twice in programmes show // Or prevent from adding client more than once (maybe using uniq)
 
 
 * Must translate JSON responses from your Rails app into JavaScript Model Objects using either ES6 class or constructor syntax. The Model Objects must have at least one method on the prototype. (Formatters work really well for this.)
