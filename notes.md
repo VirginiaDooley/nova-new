@@ -2,24 +2,21 @@ To Do (Rails):
 
 Add a link to create a new client from client index view
 Then refactor clients new to be able to choose an existing programme or create one.
+Get rid of turbo links gem?
+Create a seed file
+Create a bookmark of local ports for quick access
+Create a custom rake task that drop, create, migrate seed and start the server (check out rake -t)
 
 Associate a programme with outcomes for Outcomes index.
 
 Planning for Rails w JS project
 
-Get rid of turbo links gem?
-Create a seed file
-Create a bookmark of local ports for quick access
-Create a custom rake task that drop, create, migrate seed and start the server (check out rake -t)
-If I'm rendering some objects with JSON, what happens to tables etc created for rails?
-Clients listed twice in programmes show // Or prevent from adding client more than once (maybe using uniq)
-
+add respond_to methods in any controller action where you want render both json and html
 
 * Must translate JSON responses from your Rails app into JavaScript Model Objects using either ES6 class or constructor syntax. The Model Objects must have at least one method on the prototype. (Formatters work really well for this.)
     * Take a blog domain example and creating a new Post, instead of plainly taking the JSON response of the newly created Post from the Rails app and appending it to the DOM, you would instead create a Post prototype object and add a function to that prototype to perhaps concatenate (format) the comments authors first and last name. You would then use the object to append the comment information to the DOM.
     * Nova app: Maybe take new client and have a link or button to show contact details using turbolinks(?)
     * Questions:
-        * Do I need to recreate objects using JS rather than Rails? If so, in which cases? Any?
         * Does a click method count as the one method?
     * Pseudo:
 

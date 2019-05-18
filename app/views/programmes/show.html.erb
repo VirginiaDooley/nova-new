@@ -4,7 +4,7 @@
 
 <h4>Programme Clients</h4>
 <ul>
-  <% @programme.clients.each do |client| %>
+  <% @programme.clients.uniq.each do |client| %>
   <li><%= link_to client.full_name, programme_client_path(@programme, client) %>
   </li>
   <% end %>
