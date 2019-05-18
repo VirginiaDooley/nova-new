@@ -2,6 +2,11 @@ class OrganisationsController < ApplicationController
 
     def index
       @organisations = Organisation.all
+      #explicit rendering; responds to request type 
+      respond_to do |o|
+        o.html {render :index}
+        o.json {render json: @organisations}
+      end
     end
 
     def show
@@ -43,4 +48,5 @@ class OrganisationsController < ApplicationController
     def org_params
       params.require(:organisation).permit(:name, :website)
     end
+
 end
