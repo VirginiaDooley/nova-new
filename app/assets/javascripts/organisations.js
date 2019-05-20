@@ -48,3 +48,13 @@ class Organisation {
 		`)
 	}
 }
+
+// This returns an html snippet of the data reponse to the specified div tag
+Organisation.prototype.postHTML = function() {
+	return (`
+		<div id='organisations-index'>
+			<p>${this.name}</p>
+      <p>${this.website}</p>
+		</div>
+	`)
+}
