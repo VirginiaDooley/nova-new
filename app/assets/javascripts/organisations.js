@@ -4,6 +4,22 @@ $(function(){
   // getOrganisations()
 });
 
+function getOrganisations() {
+	$.ajax({
+		url: 'http://localhost:3000/organisations',
+		method: 'get',
+		dataType: 'json'
+    // this is the promise
+  }).done(function(data) {
+			console.log("the data is: ", data)
+      // debugger
+			data.map(org => {
+				const newOrg = new Organisation(org)
+				const newOrgHtml = newOrg.postHTML()
+				document.getElementById('organisations-index').innerHTML += newOrgHtml
+			});
+  });
+};
 
 function showNewOrgForm(){
   $('#new-org-form-link').on('click', function(event){
