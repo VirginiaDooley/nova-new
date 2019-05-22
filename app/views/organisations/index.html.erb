@@ -15,4 +15,9 @@
   <%= link_to "Create a New Organisation", new_organisation_path, id: "new-org-form-link" %>
 
   <div id="new-org-form-div">
+    <%= bootstrap_form_for Organisation.new do |f| %>
+      <%= f.text_field :name %><p>
+      <%= f.text_field :website %><p>
+      <%= f.submit %>
+    <% end %>
   </div>
