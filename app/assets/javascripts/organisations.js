@@ -24,7 +24,7 @@ function showOrganisations() {
     data.map(org => {
       let newOrg = new Organisation(org.name, org.website, org.id)
       let newOrgHtml = newOrg.formatIndex()
-      document.getElementById('organisations-index').innerHTML = newOrgHtml
+      document.getElementById('organisations-index').innerHTML += newOrgHtml
     });
   });
 };
