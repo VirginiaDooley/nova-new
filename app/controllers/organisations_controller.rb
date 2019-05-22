@@ -23,17 +23,15 @@ class OrganisationsController < ApplicationController
     end
 
     def create
+      # binding.pry
       @organisation = Organisation.new(org_params)
-      if @organisation.save
-        flash[:notice] = "Your Organisation was Created."
-        redirect_to organisation_path(@organisation)
+        if @organisation.save
+          respond_to do |f|
+  				f.html {render :index}
+  				f.json {render json: @organisations}
+  			end
       else
         render :new
-      end
-
-      respond_to do |format|
-        format.html {render :show}
-        format.json {render json: @organisation}
       end
     end
 
