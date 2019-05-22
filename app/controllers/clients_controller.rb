@@ -5,6 +5,10 @@ class ClientsController < ApplicationController
     # @programme = Programme.find(params[:programme_id])
     # @clients = @programme.clients
     # @clients_programmes = @programme.clients_programmes
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @clients}
+    end
   end
 
   def show
@@ -13,7 +17,7 @@ class ClientsController < ApplicationController
     @clients_programmes = @client.clients_programmes
 
     respond_to do |format|
-      format.html {render :index}
+      format.html {render :show}
       format.json {render json: @client}
     end
   end
