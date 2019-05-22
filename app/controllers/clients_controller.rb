@@ -11,6 +11,11 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
     @programme = @client.clients_programmes.find_by(programme_id: params[:programme_id])
     @clients_programmes = @client.clients_programmes
+
+    respond_to do |format|
+      format.html {render :index}
+      format.json {render json: @client}
+    end
   end
 
   def new
