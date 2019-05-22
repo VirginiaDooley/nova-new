@@ -1,4 +1,9 @@
 <h2><%= @client.full_name %></h2>
+
+<div id="more-button">
+  <input class="btn btn-secondary" name="more" type="button" value="More Detail">
+</div>
+<div id="contact_details">
   <ul>
     <br>Name: <%= @client.full_name %>
     <br>Email: <%= @client.email %>
@@ -8,6 +13,8 @@
     <br>Post Code: <%= @client.post_code %>
     <br>Country: <%= @client.country %>
   </ul>
+</div>
+
 <% if @client.programmes == nil %>
   <p><%= link_to "Add #{@client.first_name}'s Programme Term and Year", new_clients_programme_path %></p>
 <% else %>
