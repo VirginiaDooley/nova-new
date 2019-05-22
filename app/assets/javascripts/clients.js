@@ -8,7 +8,7 @@ $(function(){
 // of one client on a show page
 
 function showContactDetails() {
-
-
-
+  $("#more-button").on("click", function() {
+    let id = $(this).data("id");
+  })
 }
