@@ -29,7 +29,6 @@ function showOrganisations() {
   });
 };
 
-
 // render a form for creating a resource
 function showNewOrgForm(){
   $('#new-org-form-link').on('click', function(event){
@@ -67,7 +66,7 @@ function submitNewOrg() {
   let formName = document.getElementById("organisation_name").value;
   let formWebsite = document.getElementById("organisation_website").value;
 
-  $('button#submit').on('click', function(event){
+  $('#button#submit').on('click', function(event){
     event.preventDefault();
   // creates an emtpy Organisation based on the prototype above
   // loads JSON into the app using AJAX
