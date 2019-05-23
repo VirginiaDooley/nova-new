@@ -1,18 +1,13 @@
-<h2><%= @client.full_name %></h2>
+<div class="client-id" data-id="<%= @client.id %>">
+  <div id="client-name">
+    <h2><%= @client.full_name %></h2>
+  </div>
+</div>
 
 <div id="more-button">
   <input class="btn btn-secondary" name="more" type="button" value="More Detail">
 </div>
 <div id="contact_details">
-  <ul>
-    <br>Name: <%= @client.full_name %>
-    <br>Email: <%= @client.email %>
-    <br>Phone: <%= @client.phone %>
-    <br>Address: <%= @client.address1 %>
-    <br>City: <%= @client.city %>
-    <br>Post Code: <%= @client.post_code %>
-    <br>Country: <%= @client.country %>
-  </ul>
 </div>
 
 <% if @client.programmes == nil %>
