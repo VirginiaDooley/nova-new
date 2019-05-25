@@ -14,7 +14,7 @@ function hideNewOrgForm(){
 // via JavaScript and an Active Model Serialization JSON Backend.
 function showOrganisations() {
   $.ajax({
-    url: 'http://localhost:3000/organisations',
+    url: '/organisations',
     method: 'get',
     dataType: 'json'
     // this is the promise
