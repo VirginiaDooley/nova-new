@@ -1,13 +1,19 @@
-<h2>Programme Title: <%= @programme.title %></h2>
+<div class="programme-id" data-id="<%= @programme.id %>">
+  <div id="programme-title">
+    <h2>Programme Title: <%= @programme.title %></h2>
+  </div>
+</div>
 
 <p><b><%= @programme.title %></b> is a programme offered by <b><%= link_to @programme.organisation.name, organisation_path(@programme.organisation) %></b>.</p>
 
 <h4>Programme Clients</h4>
-<ul>
-  <% @programme.clients.uniq.each do |client| %>
-  <li><%= link_to client.full_name, programme_client_path(@programme, client) %>
-  </li>
-  <% end %>
-</ul>
+<div id="programme-clients">
+  <ul>
+    <% @programme.clients.uniq.each do |client| %>
+    <li><%= link_to client.full_name, programme_client_path(@programme, client) %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 <p><%= link_to "Add a new Client", new_programme_client_path(@programme, @client) %> to <b><%= @programme.title %>.
