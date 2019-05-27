@@ -2,11 +2,10 @@ class ProgrammesController < ApplicationController
 
   def index
     @programmes = Programme.all
-    # @organisation = Organisation.find(params[:organisation_id])
-    # @programmes = @organisation.programmes
     respond_to do |format|
       format.html {render :index}
       format.json {render json: @programmes}
+      format.json {render json: @clients}
     end
   end
 
@@ -15,7 +14,7 @@ class ProgrammesController < ApplicationController
     @client = Client.new
 
     respond_to do |format|
-      format.html {render :index}
+      format.html {render :show}
       format.json {render json: @programme}
       format.json {render json: @client}
     end
