@@ -1,5 +1,0 @@
-I"](function() {
-  $('#new_link').hide().after('<%= j render("form") %>');
-
-}).call(this);
-:ET

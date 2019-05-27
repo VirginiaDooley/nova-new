@@ -72,7 +72,7 @@ function submitNewOrg() {
   // loads JSON into the app using AJAX
   $.post("http://localhost:3000/organisations",
     {name: formName, website: formWebsite}, function(data) {
-      debugger
+      // debugger
       console.log(data)
       const newOrg = new Organisation(data.name, data.website)
     });

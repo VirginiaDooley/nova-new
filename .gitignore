@@ -1,3 +1,4 @@
 .env
 /db/*.sqlite
 Gemfile.lock
+tmp/cache/assets/sprockets

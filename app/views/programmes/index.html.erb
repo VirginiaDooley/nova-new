@@ -1,11 +1,22 @@
-<div id="programmes">
+<div class="programmes">
   <h2>Programmes</h2>
   <p><% @programmes.each do |programme| %>
     <div id="programme-link">
-    <%= link_to programme.title, programme_path(programme)%>
+
+      <div class="programme-id" data-id="<%= programme.id %>">
+        <p><%= link_to programme.title, programme_path(programme)%></p>
+      </div>
+
+      <div id="programme-clients">
+      </div>
+
+
+    <div id="programme-client-count">
+      <p>Total Clients: <%= programme.clients.count %></p>
     </div>
-    Total Clients: <%= programme.clients.count %>
-    <br><a href="programmes/<%= programme.id %>", data-confirm="Are you sure?" data-method="delete"> delete </a>
-  </p>
+
+    <div id="programme-delete">
+      <p><a href="programmes/<%= programme.id %>", data-confirm="Are you sure?" data-method="delete"> delete </a></p>
+    </div>
   <% end %>
 </div>
