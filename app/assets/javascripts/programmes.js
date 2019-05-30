@@ -1,44 +1,20 @@
 $(function(){
   console.log("programmes.js is loaded");
-  showProgrammeClients();
 });
 
-function showProgrammeClients(){
-  $("#programme-link").on("click", function(event) {
-    event.preventDefault()
-    console.log("link works")
+function getProgrammeClients(){
 
-    let id = parseInt($(".programme-id").attr("data-id"))
+  let programme_id = parseInt($(".programme-id").attr("data-id"));
+  let programme_url = "/programmes/" + programme_id + "/clients"
 
-    let url = "/programmes/" + id
-    $.ajax({
-      url: url,
-      method: 'get',
-      dataType: 'json',
-      success: function(data){
-        console.log("the data is: ", data);
+  $.get(programme_url, function(data){
+    console.log('this is your data', data);
 
-        let clients = data.clients
-        console.log(clients);
-
-        let programme_clients = clients.map(client => {
-
-        return (`
-          <div id="programme-clients">
-          <li>${client.first_name}  ${client.last_name}</li>
-          </div>
-        `);
-        debugger
-      }).join('');
-        document.getElementById('programme-clients').innerHTML = programme_clients
-
-    }});
+    const clientObj = data.map(object => object.first_name + " " + object.last_name)
+    showProgrammeClients(clientObj)
   });
 }
 
-//
-// function clientNamesHTML(programme_clients) {
-//   debugger
-//
-//
-// }
+function showProgrammeClients(c){
+  document.getElementById('programme-clients').append(c)
+}
