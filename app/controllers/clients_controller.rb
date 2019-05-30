@@ -1,13 +1,15 @@
 class ClientsController < ApplicationController
 
   def index
-    @clients = Client.all
-    # @programme = Programme.find(params[:programme_id])
-    # @clients = @programme.clients
-    # @clients_programmes = @programme.clients_programmes
-    respond_to do |format|
-      format.html {render :index}
-      format.json {render json: @clients}
+    #work dually with nested route vs accessing all clients in database
+    if params.has_key?(:programme_id)
+      programme = Programme.find(params[:programme_id])
+      clients = programme.clients
+      render json: clients
+
+      #json
+    else
+      @clients = Client.all
     end
   end
 
