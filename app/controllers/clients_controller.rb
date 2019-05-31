@@ -6,8 +6,6 @@ class ClientsController < ApplicationController
       programme = Programme.find(params[:programme_id])
       clients = programme.clients
       render json: clients
-
-      #json
     else
       @clients = Client.all
     end

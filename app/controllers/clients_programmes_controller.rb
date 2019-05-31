@@ -2,6 +2,7 @@ class ClientsProgrammesController < ApplicationController
 
   def index
     @clients_programmes = ClientsProgramme.currently_enrolled
+    end
   end
 
   def show

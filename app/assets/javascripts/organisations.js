@@ -13,12 +13,7 @@ function hideNewOrgForm(){
 // render at least one index page (index resource - 'list of things')
 // via JavaScript and an Active Model Serialization JSON Backend.
 function showOrganisations() {
-  $.ajax({
-    url: '/organisations',
-    method: 'get',
-    dataType: 'json'
-    // this is the promise
-  }).done(function(data) {
+  $.get('/organisations.json', function(data){
     console.log("the data is: ", data)
 
     data.map(org => {
@@ -70,7 +65,7 @@ function submitNewOrg() {
     event.preventDefault();
   // creates an emtpy Organisation based on the prototype above
   // loads JSON into the app using AJAX
-  $.post("http://localhost:3000/organisations",
+  $.post("/organisations",
     {name: formName, website: formWebsite}, function(data) {
       // debugger
       console.log(data)
