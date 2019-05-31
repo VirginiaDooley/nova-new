@@ -14,6 +14,10 @@
 * Add p div li tags throughout views; you can do this directly in views or create a related css file to with a selector for the section
 * Render multiple nested objects in one action >> refer to serializer in may 15 study group
 * Review difference btwn selectors
+* check out a possible refactor for an event unique to submitting forms for use in org.js
+* change all requests to jquery instead of plain JS
+* CREATE SERIALIZER FOR JOIN TABLE
+look into stringify 
 
 
 **Planning for Rails w JS project**
