@@ -1,16 +1,16 @@
 <div class="programmes">
   <h2>Programmes</h2>
   <p><% @programmes.each do |programme| %>
-    <div class="programme-id" data-id="<%= programme.id %>">
-      <div id="programme-link">
-        <p><a href="#" onclick="getProgrammeClients()"><%= programme.title %></a></p>
-          <div id="programme-client-count">
-            <p>Total Clients: <%= programme.clients.count %></p>
-          </div>
-        <div id="programme-clients">
-        </div>
+
+      <p><a href="#" class="programme-link" data-id="<%= programme.id %>"><%= programme.title %></a></p>
+
+      <div class="programme-<%= programme.id %>-clients" data-id="<%= programme.id %>">
+
       </div>
-    </div>
+
+      <div id="programme-client-count">
+        <p>Total Clients: <%= programme.clients.count %></p>
+      </div>
 
     <div id="programme-delete">
       <p><a href="programmes/<%= programme.id %>", data-confirm="Are you sure?" data-method="delete"> delete <%= programme.title %></a></p>
