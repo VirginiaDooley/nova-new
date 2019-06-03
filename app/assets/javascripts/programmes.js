@@ -24,7 +24,8 @@ function getProgrammeClients(){
 function showProgrammeClients(programme_id, clientArr){
   let text = "<ul>";
   clientArr.forEach(obj => {
-    // const link = `<a href="/clients/${obj.id}"></a>`
-    text += "<li>" + obj.full_name + "</li>"})
+    let link = `<a href="/clients/${obj.id}">`
+    text += "<li>" + link + obj.full_name + "</a>" + "</li>"
+  });
   $('.programme-' + programme_id + '-clients').append(text)
 }
