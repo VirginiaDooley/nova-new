@@ -11,17 +11,20 @@ function getProgrammeClients(){
     let programme_url = "/programmes/" + programme_id + "/clients" + ".json"
 
     $.get(programme_url, function(data){
+
       console.log("this is your programme data", data)
-      const clientArr = data.map(object => object["first_name"] + " " + object["last_name"])
-      showProgrammeClients(programme_id, clientArr)
+
+      data.forEach(obj => console.log(obj))
+
+      showProgrammeClients(programme_id, data)
     });
   });
 }
 
 function showProgrammeClients(programme_id, clientArr){
   let text = "<ul>";
-
-  for (i = 0; i < clientArr.length; i++) {text += "<li>" + clientArr[i] + "</li>";}
-  text += "</ul>";
+  clientArr.forEach(obj => {
+    // const link = `<a href="/clients/${obj.id}"></a>`
+    text += "<li>" + obj.full_name + "</li>"})
   $('.programme-' + programme_id + '-clients').append(text)
 }
