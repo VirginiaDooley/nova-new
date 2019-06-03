@@ -3,12 +3,13 @@
 <h4>Current Programmes</h4>
   <% @organisation.programmes.each do |programme| %>
     <ul>
-      <li><%= link_to programme.title, programme_path(programme) %></li>
+      <li><a href="#" class="programme-link" data-id="<%= programme.id %>"><%= programme.title %></a></li>
+      <div class="programme-<%= programme.id %>-clients" data-id="<%= programme.id %>">
+      </div>
     </ul>
   <% end %>
 
 <p><%= link_to "Add a new Programme", new_organisation_programme_path(@organisation) %></p>
-
 <p><%= link_to "Edit Organisation", edit_organisation_path(@organisation)%></p>
 
 <%= form_tag organisation_path(@organisation.id), method: "delete" do %>
