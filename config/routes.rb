@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :programmes do
-    resources :clients, only: [:new, :create]
+    resources :clients, only: [:new, :create, :index]
   end
 
   resources :clients do
