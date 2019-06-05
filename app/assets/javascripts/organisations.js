@@ -24,12 +24,15 @@ function showOrganisations() {
   });
 };
 
-// render a form for creating a resource
 function showNewOrgForm(){
   $('#new-org-form-link').on('click', function(event){
     event.preventDefault();
     let form = document.getElementById('new-org-form-div');
-    form.style.display = '';
+    if (form.style.display === "none") {
+        form.style.display = "block";
+      } else {
+        form.style.display = "none";
+      }
   });
 }
 
