@@ -4,22 +4,16 @@ $(function(){
 });
 
 function getContactDetails(){
-  $(":button").on("click", function(event) {
-    event.preventDefault()
-    console.log("button works")
+  $(":button").on("click", function(){
 
-    let id = parseInt($(".client-id").attr("data-id"))
+    let client_id = parseInt($(".client-id").attr("data-id"))
 
-    let url = "/clients/" + id
-    $.ajax({
-      url: url,
-      method: 'get',
-      dataType: 'json'
-      // this is the promise
-    }).done(function(data) {
-      console.log("the data is: ", data);
+    let client_url = "/clients/" + client_id + ".json"
+
+    $.get(client_url, function(data){
+      debugger
+      console.log("this is your client data", data);
       clientDetailsHTML(data);
-
       document.getElementById('contact_details').innerHTML = clientDetailsHTML(data);
     });
   });
