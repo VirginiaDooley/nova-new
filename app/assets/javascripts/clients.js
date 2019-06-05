@@ -26,5 +26,6 @@ function clientDetailsHTML(data){
   <br><b>Phone:</b> ${data.phone}
   <br><b>Address:</b> ${data.address1}
   <br><b>City:</b> ${data.city}
+  <br><b>Post Code:</b> ${data.post_code}
   <br><b>Country:</b> ${data.country} </p>`);
 }
