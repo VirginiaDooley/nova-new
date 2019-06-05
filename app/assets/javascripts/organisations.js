@@ -21,7 +21,7 @@ function showOrganisations() {
 };
 
 function showNewOrgForm(){
-  $('#new-org-form-link').on('click', function(event){
+  $('#new-org-form-link').on('click', (event) => {
     event.preventDefault();
     let form = document.getElementById('new-org-form-div');
     if (form.style.display === "none") {
@@ -60,7 +60,7 @@ function submitNewOrg() {
     event.preventDefault();
 
   $.post("/organisations",
-    {name: formName, website: formWebsite}, function(data) {
+    {name: formName, website: formWebsite}, (data) => {
 
       console.log(data)
       const newOrg = new Organisation(data.name, data.website)
