@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
 
   resources :organisations do
-    resources :programmes, only: [:index, :new, :create, :show]
+    resources :programmes, only: [:index, :new, :create]
   end
 
   resources :programmes do
-    resources :clients, only: [:index, :new, :create, :show]
+    resources :clients, only: [:new, :create]
   end
 
   resources :clients do
