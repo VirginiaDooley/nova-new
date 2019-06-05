@@ -27,10 +27,10 @@ function getContactDetails(){
 
 function clientDetailsHTML(data){
   return (`
-  <p>First Name: ${data.first_name}</p>
-  <p>Email: ${data.email}</p>
-  <p>Phone: ${data.phone}</p>
-  <p>Address: ${data.address1}</p>
-  <p>City: ${data.city} </p>
-  <p>Country: ${data.country} </p>`);
+  <p>
+  <br><b>Email:</b> ${data.email}
+  <br><b>Phone:</b> ${data.phone}
+  <br><b>Address:</b> ${data.address1}
+  <br><b>City:</b> ${data.city}
+  <br><b>Country:</b> ${data.country} </p>`);
 }
