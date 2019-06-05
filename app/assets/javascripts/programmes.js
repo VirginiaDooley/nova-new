@@ -1,16 +1,14 @@
-$(function(){
+$(() => {
   console.log("programmes.js is loaded");
   getProgrammeClients()
 });
 
 function getProgrammeClients(){
-
   $("a.programme-link").on('click', function() {
-
     let programme_id = $(this).data("id");
     let programme_url = "/programmes/" + programme_id + "/clients" + ".json"
 
-    $.get(programme_url, function(data){
+    $.get(programme_url, (data) => {
       data.forEach(obj => console.log(obj))
       showProgrammeClients(programme_id, data)
     });
