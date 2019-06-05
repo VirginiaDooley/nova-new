@@ -11,7 +11,7 @@ function hideNewOrgForm(){
 }
 
 function showOrganisations() {
-  $.get('/organisations.json', function(data){
+  $.get('/organisations.json', (data) => {
     data.map(org => {
       let newOrg = new Organisation(org.name, org.website, org.id)
       let newOrgHtml = newOrg.formatIndex()
@@ -42,7 +42,6 @@ class Organisation {
 
 Organisation.prototype.formatIndex = function() {
 let newOrgHtml = (`
-  <div id='organisations-index'>
   <a href="organisations/${this.id}">
   <p>${this.name}</p></a>
   <p>${this.website}</p>
