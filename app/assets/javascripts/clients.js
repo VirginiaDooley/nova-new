@@ -7,12 +7,9 @@ function getContactDetails(){
   $(":button").on("click", function(){
 
     let client_id = parseInt($(".client-id").attr("data-id"))
-
     let client_url = "/clients/" + client_id + ".json"
 
     $.get(client_url, function(data){
-      debugger
-      console.log("this is your client data", data);
       clientDetailsHTML(data);
       document.getElementById('contact_details').innerHTML = clientDetailsHTML(data);
     });

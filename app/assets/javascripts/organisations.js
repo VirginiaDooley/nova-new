@@ -10,12 +10,8 @@ function hideNewOrgForm(){
   $('#new-org-form-div').hide();
 }
 
-// render at least one index page (index resource - 'list of things')
-// via JavaScript and an Active Model Serialization JSON Backend.
 function showOrganisations() {
   $.get('/organisations.json', function(data){
-    console.log("the data is: ", data)
-
     data.map(org => {
       let newOrg = new Organisation(org.name, org.website, org.id)
       let newOrgHtml = newOrg.formatIndex()
@@ -36,7 +32,6 @@ function showNewOrgForm(){
   });
 }
 
-// class constructor to make instance of an organisation
 class Organisation {
   constructor(name, website, id) {
     this.id = id
@@ -45,10 +40,7 @@ class Organisation {
   }
 }
 
-// Prototypes: Allows the addition of properties to all objects of type Object.
-// This returns an html snippet of the data reponse to the specified div tag
 Organisation.prototype.formatIndex = function() {
-// template literal for placeholders enclosed in backticks
 let newOrgHtml = (`
   <div id='organisations-index'>
   <a href="organisations/${this.id}">
@@ -60,17 +52,16 @@ let newOrgHtml = (`
 }
 
 function submitNewOrg() {
-  // retrieves input
+
   let formName = document.getElementById("organisation_name").value;
   let formWebsite = document.getElementById("organisation_website").value;
 
   $('#button#submit').on('click', function(event){
     event.preventDefault();
-  // creates an emtpy Organisation based on the prototype above
-  // loads JSON into the app using AJAX
+
   $.post("/organisations",
     {name: formName, website: formWebsite}, function(data) {
-      // debugger
+
       console.log(data)
       const newOrg = new Organisation(data.name, data.website)
     });

@@ -11,11 +11,7 @@ function getProgrammeClients(){
     let programme_url = "/programmes/" + programme_id + "/clients" + ".json"
 
     $.get(programme_url, function(data){
-
-      console.log("this is your programme data", data)
-
       data.forEach(obj => console.log(obj))
-
       showProgrammeClients(programme_id, data)
     });
   });
