@@ -1,4 +1,4 @@
-$(function(){
+$(() => {
   console.log("organisations.js is loaded");
   hideNewOrgForm()
   showOrganisations();
