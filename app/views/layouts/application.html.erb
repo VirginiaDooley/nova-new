@@ -28,12 +28,10 @@
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link' %> |
             <%= link_to "Home", root_path, :class => 'navbar-link' %> |
             <%= link_to "Organisations", organisations_path, :class => 'navbar-link' %> |
-            <%= link_to "Programmes", programmes_path, :class => 'navbar-link' %> |
             <%= link_to "Clients", clients_path, :class => 'navbar-link' %> |
-            <%= link_to "Outcomes", outcomes_path, :class => 'navbar-link' %> |
 
           <% else %>
-            
+
           <% end %>
         </p>
       </div>
