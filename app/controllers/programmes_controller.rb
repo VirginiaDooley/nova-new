@@ -28,7 +28,7 @@ class ProgrammesController < ApplicationController
     @programme = @organisation.programmes.build(programme_params)
     if @programme.save
       flash[:notice] = "Your Programme was Created"
-      redirect_to organisation_programme_path(@organisation.id, @programme)
+      redirect_to organisation_path(@organisation.id)
     else
       render :new
     end
