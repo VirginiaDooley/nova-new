@@ -2,6 +2,7 @@ class OutcomesController < ApplicationController
 
   def index
     @outcomes = Outcome.all
+    @client = Client.find(params[:client_id])
   end
 
   def show
