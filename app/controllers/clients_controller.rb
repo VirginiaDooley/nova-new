@@ -45,7 +45,7 @@ class ClientsController < ApplicationController
     # byebug
     @client.programmes << @programme
     ClientsProgramme.last.update(client_status_params)
-    redirect_to programme_client_path(@programme, @client)
+    redirect_to client_path(@client)
   end
 
   def edit
