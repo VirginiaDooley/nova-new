@@ -1,9 +1,17 @@
 $(() => {
   console.log("clients.js is loaded");
-  getContactDetails();
+  showContactDetails();
+  hideContactDetails();
 });
 
-function getContactDetails(){
+
+function hideContactDetails(){
+  $(":button").on("click", function(){
+    // $('#contact_details').hide()
+  });
+}
+
+function showContactDetails(){
   $(":button").on("click", function(){
 
     let client_id = parseInt($(".client-id").attr("data-id"))

@@ -3,6 +3,7 @@
 <%= bootstrap_form_for([@programme, @client]) do |f| %>
   <%= f.collection_select(:full_name, Client.all, :id, :full_name, {prompt: true}, {name: 'client[id]'}) %>
   <%= f.hidden_field :client_id, value: @client.id %>
+
 <p>or create one:</p>
 
   <%= f.text_field :first_name %>

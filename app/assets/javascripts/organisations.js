@@ -12,7 +12,20 @@ function hideNewOrgForm(){
 
 function showOrganisations() {
   $.get('/organisations.json', (data) => {
-    data.map(org => {
+
+    let orderedNames = data.sort((function(a, b) {
+      let nameA = a.name.toUpperCase();
+      let nameB = b.name.toUpperCase(); 
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    }))
+
+    orderedNames.forEach(org => {
       let newOrg = new Organisation(org.name, org.website, org.id)
       let newOrgHtml = newOrg.formatIndex()
       document.getElementById('organisations-index').innerHTML += newOrgHtml
@@ -38,17 +51,19 @@ class Organisation {
     this.name = name
     this.website = website
   }
+
+  formatIndex() {
+  let newOrgHtml = (`
+    <a href="organisations/${this.id}">
+    <p>${this.name}</p></a>
+    <p>${this.website}</p>
+    </div>
+    `)
+    return newOrgHtml
+  }
 }
 
-Organisation.prototype.formatIndex = function() {
-let newOrgHtml = (`
-  <a href="organisations/${this.id}">
-  <p>${this.name}</p></a>
-  <p>${this.website}</p>
-  </div>
-  `)
-  return newOrgHtml
-}
+
 
 function submitNewOrg() {
 
@@ -64,11 +79,5 @@ function submitNewOrg() {
       console.log(data)
       const newOrg = new Organisation(data.name, data.website)
     });
-    submitNewOrg()
   });
-}
-
-function addNewOrgToList(){
-  newOrg = submitNewOrg()
-  document.getElementById('organisations-index').append(`<li>${newOrg}</li>`);
 }
