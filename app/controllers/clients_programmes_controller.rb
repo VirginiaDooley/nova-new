@@ -2,7 +2,6 @@ class ClientsProgrammesController < ApplicationController
 
   def index
     @clients_programmes = ClientsProgramme.currently_enrolled
-    end
   end
 
   def show
@@ -41,4 +40,5 @@ class ClientsProgrammesController < ApplicationController
   def client_status_params
     params.require(:clients_programme).permit(:client_status, :client_id, :programme_id)
   end
-end
+
+end 
