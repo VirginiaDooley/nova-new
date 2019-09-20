@@ -1,10 +1,11 @@
 $(() => {
   console.log("programmes.js is loaded");
   getProgrammeClients()
+  showNewClientForm()
 });
 
 function getProgrammeClients(){
-  $("a.programme-link").on('click', function() {
+  $("a.programme-link").one('click', function() {
     let programme_id = $(this).data("id");
     let programme_url = "/programmes/" + programme_id + "/clients" + ".json"
 
@@ -28,3 +29,19 @@ function showProgrammeClients(programme_id, clientArr){
     $('.programme-' + programme_id + '-clients').append(new_link)
   }
 }
+// 
+// function addNewClient(programme_id){
+//
+// }
+
+// function showNewClientForm(){
+//   $('#new-client-form-link').on('click', (event) => {
+//     event.preventDefault();
+//     let form = document.getElementById('new-client-form-div');
+//     if (form.style.display === "none") {
+//         form.style.display = "block";
+//       } else {
+//         form.style.display = "none";
+//       }
+//   });
+// }
