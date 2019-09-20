@@ -2,6 +2,11 @@
   <h2>Programme Title: <%= @programme.title %></h2>
 </div>
 
-<p><b><%= @programme.title %></b> is a programme offered by <b><%= link_to @programme.organisation.name, organisation_path(@programme.organisation) %></b>.</p>
+<p><b><%= @programme.title %></b> is a programme offered by
+  <b><%= link_to @programme.organisation.name,
+    organisation_path(@programme.organisation) %>
+  </b>.
+</p>
 
-<p><%= link_to "Add a new Client", new_programme_client_path(@programme, @client) %> to <b><%= @programme.title %>.
+<p><%= link_to "Add a new Client", new_programme_client_path(@programme, @client) %>
+   to <b><%= @programme.title %>.

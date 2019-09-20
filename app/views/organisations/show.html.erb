@@ -3,7 +3,9 @@
 <h4>Current Programmes</h4>
   <% @organisation.programmes.each do |programme| %>
     <ul>
-      <li><a href="#" class="programme-link" data-id="<%= programme.id %>"><%= programme.title %></a></li>
+      <li>
+        <a href="#" class="programme-link" data-id="<%= programme.id %>"><%= programme.title %></a>
+      </li>
       <div class="programme-<%= programme.id %>-clients" data-id="<%= programme.id %>">
       </div>
     </ul>
