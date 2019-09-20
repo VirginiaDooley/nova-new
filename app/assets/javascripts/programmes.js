@@ -29,19 +29,3 @@ function showProgrammeClients(programme_id, clientArr){
     $('.programme-' + programme_id + '-clients').append(new_link)
   }
 }
-// 
-// function addNewClient(programme_id){
-//
-// }
-
-// function showNewClientForm(){
-//   $('#new-client-form-link').on('click', (event) => {
-//     event.preventDefault();
-//     let form = document.getElementById('new-client-form-div');
-//     if (form.style.display === "none") {
-//         form.style.display = "block";
-//       } else {
-//         form.style.display = "none";
-//       }
-//   });
-// }
