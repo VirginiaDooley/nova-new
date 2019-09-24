@@ -8,6 +8,7 @@ To use this app, clone the repo, run ```bundle``` to install gems followed by ``
 
 #Demo
 Try it out https://nova-new.herokuapp.com
+(guest login: guest@test.com; password: guest1 )
 
 # Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/VirginiaDooley/nova-new. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
